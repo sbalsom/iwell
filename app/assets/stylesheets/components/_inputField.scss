@@ -4,7 +4,7 @@
   width: 500px;
   padding: 45px 50px 70px 50px;
   border-radius: 1px;
-  border: 1px solid #979797;
+  border: 1px solid $border;
 }
 
 .sign-up-title {
@@ -20,7 +20,7 @@
   height: 50px;
   margin-bottom: 37px;
   font-size: 16px;
-  border: 1px solid #DCD2D2;
+  border: 1px solid $border;
   border-radius: 2px;
   padding:5px 1px 5px 16px;
   font-family: Avenir;

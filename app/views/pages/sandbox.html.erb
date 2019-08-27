@@ -69,6 +69,8 @@
     </div>
     <% end %>
   </div>
+
+<!--   signup form  -->
 <form class="sign-up">
     <h1 class="sign-up-title">Sign up </h1>
     <input type="text" class="sign-up-input" placeholder="First Name (or Nickname)" autofocus>
@@ -79,6 +81,8 @@
   <p>Already have an iWell account?<a href="">Log in</a></p>
   </form>
 
+<!--   booking form
+ -->
   <form class="booking-container">
     <h1 class="booking-title">Video Call <br> 35 EUR / Hour </h1>
     <input type="text" class="booking-input" placeholder="this will change" autofocus>
@@ -94,6 +98,8 @@
     <img class="avatar-small" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />
     <p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 15</p>
   </div>
+
+<!--   profile card  -->
   <div class="profile-description">
     <p>Dr. Julia Rosch</p>
     <p>Psychologist</p>
@@ -104,6 +110,9 @@
     <p><strong>Price</strong>: 40€ per hour</p>
   </div>
 </div>
+
+<!-- bio card  -->
+
 <div class="bio-card">
     <p><strong>Specialties</strong>: Anxiety, depression, stress</p>
     <p><strong>Years of Experience</strong>: 5</p>
@@ -113,3 +122,15 @@
     </div>
   </div>
 
+<!-- review card  -->
+
+<div class="review-card">
+  <h4>Reviews</h4>
+  <% 4.times do %>
+  <div class="review">
+    <%= render 'shared/stars' %>
+    <p>I had a great session with this therapist, I would highly recommend them.</p>
+  </div>
+<% end %>
+
+</div>
