@@ -17,6 +17,11 @@
   border: solid 3px black;
   justify-content: space-around;
   align-items: center;
+  .info, .select, .book {
+    border:solid 3px black;
+    height:300px;
+    width:200px;
+  }
 }
 
 .landing-therapists {
@@ -25,6 +30,12 @@
   justify-content: space-around;
   align-items: center;
   height: 500px;
+
+  .flexitem-1,  .flexitem-2,  .flexitem-3 {
+    border: solid 3px black;
+    height:300px;
+    width:200px;
+  }
 }
 
 .landing-quote {
