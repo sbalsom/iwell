@@ -5,6 +5,16 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
+
+  &:hover {
+    box-shadow: $box-shadow 0 0 5px -3px;
+  }
+
+  #name {
+  font-weight: bold;
+
+}
+
 }
 
 .profile-description-content p {
@@ -18,3 +28,4 @@
   font-size: 11px;
   text-align: center;
 }
+
