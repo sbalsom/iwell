@@ -1,0 +1,70 @@
+.booking-container {
+  position: relative;
+  margin: 20px auto;
+  width: 380px;
+  padding: 45px 50px 70px 50px;
+  border-radius: 1px;
+  border: 1px solid $border;
+  height:100%;
+}
+
+.booking-title {
+  margin: 0 -25px 25px ;
+  padding: 10px 0 25px 28px;
+  line-height: 33px;
+  font-size: 22px;
+  text-align: left;
+  font-family: $body-font;
+}
+.booking-input {
+  width: 100%;
+  height: 50px;
+  margin-bottom: 37px;
+  font-size: 16px;
+  border: 1px solid $border;
+  border-radius: 2px;
+  padding:5px 1px 5px 16px;
+  font-family: $body-font;
+}
+
+
+
+.booking-input:focus {
+  border:2px solid #4F5CAD;
+  outline: none;
+
+}
+
+.booking-button {
+  font-family: $body-font;
+  position: relative;
+  vertical-align: top;
+  width: 100%;
+  height: 54px;
+  font-size: 22px;
+  color: white;
+  text-align: center;
+  background: #4F5CAD;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.booking-button:active {
+  top: 1px;
+  outline: none;
+}
+.price-container p {
+  position:absolute;
+  font-size:20px;
+  margin:0;
+}
+.price-container {
+  font-family: $body-font;
+}
+.price-container h1 {
+  text-align:right;
+  font-size:20px;
+}
+
+
+

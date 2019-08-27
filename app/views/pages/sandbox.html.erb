@@ -1,12 +1,7 @@
 <h1>This is where we build our UI kit</h1>
-<nav>
-  <a href="#" id="logo">iWell</a>
-  <a href="#">Bookings</a>
-  <a href="#">My Sessions</a>
-</nav>
 
 <head>
-      <script src="https://kit.fontawesome.com/4f87db517d.js"></script>
+  <script src="https://kit.fontawesome.com/4f87db517d.js"></script>
 
 </head>
 
@@ -17,6 +12,18 @@
 <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="Avatar" class="avatar-small">
 
 
+<!-- navbar -->
+
+<nav class=<%= params[:controller] == "pages" && params[:action] == "home" ? "transparent-nav" : "normal-nav" %>>
+
+
+<!-- <nav>
+  <a href="#" id="logo">iWell</a>
+  <a href="#">Bookings</a>
+  <a href="#">My Sessions</a>
+</nav>
+ -->
+<!-- booking card -->
 <div class="session-card">
   <div class="calendar">
   <!--   should display booking time  -->
@@ -47,4 +54,92 @@
         </div>
       </div>
     <% end %>
+</div>
+
+<!-- stars -->
+  <div class="stars">
+<!--     this first line of code will be unecessary
+ -->    <% therapist_avg_rating = 3.5 %>
+    <% full = therapist_avg_rating.round(half: :down)  %>
+ <% full.times do %>
+    <div class="dark-star">
+      <i class="fas fa-star"></i>
+    </div>
+    <% end %>
+    <% if therapist_avg_rating % 1 != 0 %>
+    <div class="half-star">
+      <i class="fas fa-star-half-alt"></i>
+    </div>
+    <% end %>
+    <% empty = 5 - therapist_avg_rating.round%>
+    <% empty.times do %>
+    <div class="light-star">
+        <i class="far fa-star"></i>
+    </div>
+    <% end %>
+  </div>
+
+<!--   signup form  -->
+<form class="sign-up">
+    <h1 class="sign-up-title">Sign up </h1>
+    <input type="text" class="sign-up-input" placeholder="First Name (or Nickname)" autofocus>
+    <input type="email" class ="sign-up-input" placeholder="E-mail Address"
+           autofocus>
+    <input type="password" class="sign-up-input" placeholder="Password">
+    <input type="submit" value="Sign up" class="sign-up-button">
+  <p>Already have an iWell account?<a href="">Log in</a></p>
+  </form>
+
+<!--   booking form
+ -->
+  <form class="booking-container">
+    <h1 class="booking-title">Video Call <br> 35 EUR / Hour </h1>
+    <input type="text" class="booking-input" placeholder="this will change" autofocus>
+    <input type="text" class ="booking-input" placeholder="this will change" autofocus>
+  <div class="price-container">
+  <p>Total</p>
+  <h1>0 EUR (Trial Call)</h1>
+  </div>
+    <input type="submit" value="Book Appointment" class="booking-button">
+  </form>
+<div class="profile-card">
+  <div class="profile-avatar-spacing">
+    <img class="avatar-small" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />
+    <p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 15</p>
+  </div>
+
+<!--   profile card  -->
+  <div class="profile-description">
+    <p>Dr. Julia Rosch</p>
+    <p>Psychologist</p>
+    <div class="profile-description-content">
+      <p><strong>Specialties</strong>: anxiety, depression, stress</p>
+      <p><strong>Years of experience</strong>: 5</p>
+    </div>
+    <p><strong>Price</strong>: 40€ per hour</p>
+  </div>
+</div>
+
+<!-- bio card  -->
+
+<div class="bio-card">
+    <p><strong>Specialties</strong>: Anxiety, depression, stress</p>
+    <p><strong>Years of Experience</strong>: 5</p>
+    <div class="bio-description">
+      <p>Hi! I am Dr. Julia Rosch, a licensed Clinical Professional Counselor (LCPC) in the state of Illinois. I earned my graduate degree in Clinical and Community Mental Health in Illinois and earned my Doctorate Degree (PhD) in General Psychology.</p>
+      <p>I provide therapy services, specializing in anxiety and depression. I have experience working with individuals, couple and families.</p>
+    </div>
+  </div>
+
+<!-- review card  -->
+
+<div class="review-card">
+  <h4>Reviews</h4>
+  <% 4.times do %>
+  <div class="review">
+    <%= render 'shared/stars' %>
+    <p>I had a great session with this therapist, I would highly recommend them.</p>
+  </div>
+<% end %>
+
 </div>

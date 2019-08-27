@@ -1,4 +1,42 @@
 // Specific CSS for your home-page
 #landing-cta {
   margin-left: 105px;
-  margin-top:15px;}
+  margin-top:15px;
+}
+
+.banner {
+  width: 100vw;
+  height: 600px;
+  border: solid 3px black;
+  background: gray;
+}
+
+.how-it-works {
+  display: flex;
+  height: 400px;
+  border: solid 3px black;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.landing-therapists {
+  display: flex;
+  border: solid 3px black;
+  justify-content: space-around;
+  align-items: center;
+  height: 500px;
+}
+
+.landing-quote {
+  display: flex;
+  border: solid 3px black;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+}
+
+.advert-header {
+  display: flex;
+  justify-content: center;
+}
+
