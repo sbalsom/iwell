@@ -1,9 +1,35 @@
 
 <div class="search-page">
-  <div class="filters"></div>
+  <div class="filters stick-to-nav">
+    <div class="dropdown">
+    </div>
+  </div>
   <div class="search-results">
-    <%= form_with model: @therapist do |f| %>
-      <%= f.search_field :name, class: "search-name" %>
-    <% end %>
+      <%= form_with model: @therapist do |f| %>
+     <%= f.search_field :name, class: "search-by-name" %>
+   <% end %>
+
+   <% @therapists.each do |therapist| %>
+   <%= link_to therapist_path(therapist) do %>
+    <div class="therapist-cards">
+      <div class="profile-card">
+        <div class="profile-avatar-spacing d-flex flex-column align-items-center mt-3">
+        <%= cl_image_tag therapist.photo, class: "avatar-small profile-avatar" %>
+        <%= render 'shared/stars' %></p>
+        </div>
+        <div class="profile-description">
+        <p id="name"><%= "#{therapist.first_name} #{therapist.last_name}" %></p>
+          <div class="profile-description-content">
+            <p><%= therapist.years_exp %> years of experience</p>
+         <p>anxiety, depression, stress</p>
+        </div>
+    <p>(Price)</p>
+  </div>
+</div>
+<% end %>
+
+   <% end %>
+
+
   </div>
 </div>
