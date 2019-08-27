@@ -1,0 +1,19 @@
+
+.button-navy {
+  height: 54px;
+  width: 220px;
+  border-radius: 4px;
+  background-color: #7882E9;
+  color:white;
+  text-align: center;
+  font-size:22px;
+  margin: auto;
+  line-height: 60px;
+  position: relative;
+  vertical-align: top;
+}
+
+.button-navy:hover {
+  background: #5E69AF;
+  color: white;
+}
