@@ -10,10 +10,71 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_26_163416) do
+ActiveRecord::Schema.define(version: 2019_08_27_091920) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "availabilities", force: :cascade do |t|
+    t.integer "week_day"
+    t.time "start_time"
+    t.time "end_time"
+    t.bigint "therapist_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["therapist_id"], name: "index_availabilities_on_therapist_id"
+  end
+
+  create_table "bookings", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "therapist_id"
+    t.datetime "starts_at"
+    t.boolean "free"
+    t.integer "price"
+    t.integer "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["therapist_id"], name: "index_bookings_on_therapist_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "content"
+    t.integer "rating"
+    t.bigint "therapist_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["therapist_id"], name: "index_reviews_on_therapist_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
+  create_table "specialties", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "therapist_specialties", force: :cascade do |t|
+    t.bigint "therapist_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "specialty_id"
+    t.index ["specialty_id"], name: "index_therapist_specialties_on_specialty_id"
+    t.index ["therapist_id"], name: "index_therapist_specialties_on_therapist_id"
+  end
+
+  create_table "therapists", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.integer "avg_rating"
+    t.string "language"
+    t.text "bio"
+    t.string "photo"
+    t.integer "years_exp"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +88,10 @@ ActiveRecord::Schema.define(version: 2019_08_26_163416) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "availabilities", "therapists"
+  add_foreign_key "bookings", "therapists"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "reviews", "therapists"
+  add_foreign_key "reviews", "users"
+  add_foreign_key "therapist_specialties", "therapists"
 end

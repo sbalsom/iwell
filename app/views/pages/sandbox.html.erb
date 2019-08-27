@@ -1,0 +1,42 @@
+<h1>This is where we build our UI kit</h1>
+<nav>
+  <a href="#" id="logo">iWell</a>
+  <a href="#">Bookings</a>
+  <a href="#">My Sessions</a>
+</nav>
+
+<head>
+      <script src="https://kit.fontawesome.com/4f87db517d.js"></script>
+
+</head>
+<div class="session-card">
+  <div class="calendar">
+  <!--   should display booking time  -->
+    <p id="date"><%= Time.now.day %></p>
+    <i class="far fa-calendar"></i>
+  </div>
+  <!-- if Time.now <= @booking.start_time + 24hours -->
+    <% if 4+4 == 7 %>
+      <div class="call">
+        <i class="fas fa-video"></i>
+      </div>
+<!--       otherwise -->
+    <% else %>
+      <div class="info">
+        <div class="text">
+          <h6>Your next appointment is on</h6>
+          <!-- booking time to a day of the week -->
+          <h4><%= Time.now.strftime("%A") %></h4>
+          <i class="fas fa-video-slash"></i>
+        </div>
+        <div class="buttons">
+          <div class="reschedule">
+            Reschedule
+          </div>
+          <div class="cancel">
+            Cancel
+          </div>
+        </div>
+      </div>
+    <% end %>
+</div>
