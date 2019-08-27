@@ -1,0 +1,7 @@
+.stars {
+  display:flex;
+  .light-star, .dark-star, .half-star {
+    font-size:15px;
+    color: $main;
+  }
+}
