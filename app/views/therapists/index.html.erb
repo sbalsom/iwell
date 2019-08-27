@@ -1,0 +1,9 @@
+
+<div class="search-page">
+  <div class="filters"></div>
+  <div class="search-results">
+    <%= form_with model: @therapist do |f| %>
+      <%= f.search_field :name, class: "search-name" %>
+    <% end %>
+  </div>
+</div>
