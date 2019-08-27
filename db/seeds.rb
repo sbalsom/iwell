@@ -57,7 +57,8 @@ end
     avg_rating: half_value(rndr.rand(1.0..5.0)),
     language: Faker::Nation.language,
     bio: (Faker::Marketing.buzzwords)*15,
-    years_exp: rndr.rand(1..5)
+    years_exp: rndr.rand(1..5),
+    remote_photo_url: 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'
     )
 end
 
