@@ -1,0 +1,20 @@
+.profile-card {
+  height: 187px;
+  max-width: 976px;
+  border: 1px solid #F1E8E8;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.profile-description-content p {
+  margin: 0;
+}
+
+.profile-avatar-spacing {
+  padding-left: 40px;
+  padding-right: 50px;
+  color: #4F5CAD;
+  font-size: 11px;
+  text-align: center;
+}
