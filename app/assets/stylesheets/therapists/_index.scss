@@ -1,1 +1,53 @@
 @import "show";
+
+.search-page {
+  display:grid;
+  grid-template-columns: 1fr 3fr;
+  grid-gap:10px;
+  .filters {
+    grid-column-start: 1;
+    grid-column-end:2;
+    border: solid 3px black;
+    height:100vh;
+    // position:fixed;
+
+  }
+
+  .search-results {
+    grid-column-start:2;
+    grid-column-end:4;
+    border: solid 3px black;
+    padding-right:80px;
+
+  a {
+    text-decoration:none;
+    color: black;
+  }
+
+a:hover {
+  text-decoration:none;
+  color: black;
+
+}
+
+  }
+
+  .search-by-name {
+    width:70%;
+    margin:20px;
+  }
+
+  #filter {
+    width:100%;
+
+  }
+
+  .profile-avatar {
+    margin-bottom:5px;
+  }
+
+  .stick-to-nav {
+    position:sticky;
+    top: 0px;
+  }
+}

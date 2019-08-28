@@ -1,6 +1,11 @@
 class TherapistsController < ApplicationController
   before_action :set_therapist, only: :show
   skip_before_action :authenticate_user!, only: :show
+
+  def index
+    @therapists = policy_scope(Therapist)
+  end
+
   def show
     authorize @therapist
   end

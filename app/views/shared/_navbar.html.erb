@@ -1,5 +1,5 @@
 <nav class=<%= params[:controller] == "pages" && params[:action] == "home" ? "transparent-nav" : "normal-nav" %>>
-  <a href="#" id="logo">iWell</a>
+  <%= link_to 'iWell', root_path, id: "logo" %>
   <a href="#">Bookings</a>
   <a href="#">My Sessions</a>
 </nav>
