@@ -6,16 +6,15 @@ class Therapist < ApplicationRecord
   has_many :bookings
   mount_uploader :photo, PhotoUploader
 
-  # include PgSearch::Model
-  # pg_search_scope :global_search,
-  #   against: [:first_name, :last_name, :language],
-  #   associated_against: {
-  #     therapist_specialties: {
-  #       specialty: [:name]
-  #     }
+  def specialties_list
+    specialties.map(&:name).join(', ')
+  end
 
-  #   },
-  #   using: {
-  #     tsearch: { prefix: true }
-  #   }
+  def self.get_by_specialty(params)
+    params = params.downcase
+    dummy = Therapist.all.filter do |therapist|
+      therapist.specialties_list.downcase =~ /#{params}/
+    end
+    dummy
+  end
 end

@@ -14,10 +14,6 @@
   <%= submit_tag "Search", class: "btn btn-primary" %>
 <% end %>
 
-<%= form_tag('search', method: 'get', controller: 'static', action: 'therapists') do %>
-  <%= text_field_tag :tag, params[:tag], placeholder: "Search by specialty" %>
-  <%= submit_tag("Search") %>
-<% end %>
    <% @therapists.each do |therapist| %>
    <%= link_to therapist_path(therapist) do %>
     <div class="therapist-cards">
@@ -31,7 +27,7 @@
           <div class="profile-description-content">
             <p><%= therapist.years_exp %> years of experience</p>
         <p> <% therapist.specialties.each do |specialty|%>
-        <%= specialty.name %>,
+        <%= specialty.name %>
         <% end %>
         </p>
         <p>I speak <%= therapist.language %></p>
