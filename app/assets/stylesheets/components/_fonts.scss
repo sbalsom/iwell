@@ -1,16 +1,16 @@
 h1 {
-font-family: Raleway;
+font-family: $headers-font;
 font-size: 32px;
 font-weight: bold;
 }
 
 h2 {
-font-family: Avenir;
+font-family: $headers-font;
 font-size: 28px;
 font-weight: bold;
 }
 
 p {
-font-family: Avenir;
+font-family: $body-font;
 font-size: 18px;
 }
