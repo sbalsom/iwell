@@ -1,7 +1,7 @@
 <div class="therapist-show-container">
   <div class="show-first-flex-item">
     <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="Avatar" class="avatar-large">
-    <div>Dr <%= @therapist.first_name %> <%= @therapist.last_name %></div>
+    <div id="therapist-name">Dr <%= @therapist.first_name %> <%= @therapist.last_name %></div>
     <div class="stars"></div>
   </div>
   <div>
@@ -33,6 +33,7 @@
         <h1>0 EUR (Trial Call)</h1>
       </div>
       <input type="submit" value="Book Appointment" class="booking-button">
+
     </form>
   </div>
 </div>
