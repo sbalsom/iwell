@@ -1,28 +1,27 @@
 .banner {
-  background-image: url('https://images.unsplash.com/photo-1541976844346-f18aeac57b06?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80');
-  background-size: cover;
-  height: 600px;
-  color: white;
-  font-weight: bold;
-  box-shadow: 0 7px 4px 0 rgba(0,0,0,0.5);
-  h1{
-  color: #FFFFFF;
-  font-family: Raleway;
-  font-size: 40px;
-  font-weight: bold;
-  margin-right: 800px;
-  padding-left: 105px;
-  padding-top:150px;
-  }
-  h2{
-  color: #FFFFFF;
-  font-family: Raleway;
-  font-size: 24px;
-  font-weight: bold;
-  padding-left: 105px;
-  padding-top:20px;
-  margin-right:600px;
-   }
+    background-image: url('https://images.unsplash.com/photo-1541976844346-f18aeac57b06?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80');
+    background-size: cover;
+    height: 600px;
+    color: white;
+    font-weight: bold;
+    h1{
+    color: #FFFFFF;
+    font-family: Raleway;
+    font-size: 3vw;
+    font-weight: bold;
+    padding-left: 105px;
+    width: 75%;
+    padding-top:150px;
+    }
+    h2{
+    color: #FFFFFF;
+    font-family: Raleway;
+    font-size: 1.5vw;
+    font-weight: bold;
+    padding-left: 105px;
+    padding-top:20px;
+    width: 75%;
+    }
   }
 
 
