@@ -19,3 +19,4 @@ class TherapistsController < ApplicationController
     @therapist = policy_scope(Therapist).find(params[:id])
   end
 end
+

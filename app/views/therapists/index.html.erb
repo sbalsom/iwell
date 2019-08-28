@@ -14,10 +14,10 @@
   <%= submit_tag "Search", class: "btn btn-primary" %>
 <% end %>
 
- <!--      <%= form_with model: @therapist do |f| %>
-     <%= f.search_field :name, class: "search-by-name" %>
-   <% end %>
- -->
+<%= form_tag('search', method: 'get', controller: 'static', action: 'therapists') do %>
+  <%= text_field_tag :tag, params[:tag], placeholder: "Search by specialty" %>
+  <%= submit_tag("Search") %>
+<% end %>
    <% @therapists.each do |therapist| %>
    <%= link_to therapist_path(therapist) do %>
     <div class="therapist-cards">
@@ -30,7 +30,10 @@
         <p id="name"><%= "#{therapist.first_name} #{therapist.last_name}" %></p>
           <div class="profile-description-content">
             <p><%= therapist.years_exp %> years of experience</p>
-         <p>anxiety, depression, stress</p>
+        <p> <% therapist.specialties.each do |specialty|%>
+        <%= specialty.name %>,
+        <% end %>
+        </p>
         <p>I speak <%= therapist.language %></p>
         </div>
     <p>(Price)</p>
