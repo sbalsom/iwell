@@ -1,4 +1,5 @@
 class TherapistsController < ApplicationController
+  before_action :set_therapist, only: :show
   skip_before_action :authenticate_user!, only: [:index, :show]
   skip_after_action :verify_authorized, only: :show
 
@@ -20,7 +21,13 @@ class TherapistsController < ApplicationController
   end
 
   def show
-    @therapist = policy_scope(Therapist).find(params[:id])
+    authorize @therapist
+  end
+
+  private
+
+  def set_therapist
+    @therapist = Therapist.find(params[:id])
   end
 end
 

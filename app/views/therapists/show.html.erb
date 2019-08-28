@@ -1,2 +1,39 @@
-<h1>Therapists#show</h1>
-<p>Find me in app/views/therapists/show.html.erb</p>
+<div class="therapist-show-container">
+  <div class="show-first-flex-item">
+    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="Avatar" class="avatar-large">
+    <div>Dr <%= @therapist.first_name %> <%= @therapist.last_name %></div>
+    <div class="stars"></div>
+  </div>
+  <div>
+    <div class="bio-card">
+      <p><strong>Specialties</strong>: <%= @therapist.specialties[0] %></p>
+      <p><strong>Years of Experience</strong>: <%= @therapist.years_exp %></p>
+      <div class="bio-description">
+        <p><%= @therapist.bio %></p>
+      </div>
+    </div>
+    <div class="review-card">
+      <h4>Reviews</h4>
+      <% 4.times do %>
+      <div class="review">
+        <%= render 'shared/stars' %>
+        <p>I had a great session with this therapist, I would highly recommend them.</p>
+      </div>
+    <% end %>
+
+    </div>
+  </div>
+  <div class="show-form">
+    <form class="booking-container">
+      <h1 class="booking-title">Video Call</h1>
+      <input type="text" class="booking-input" placeholder="this will change" autofocus>
+      <input type="text" class ="booking-input" placeholder="this will change" autofocus>
+      <div class="price-container">
+        <p>Total</p>
+        <h1>0 EUR (Trial Call)</h1>
+      </div>
+      <input type="submit" value="Book Appointment" class="booking-button">
+    </form>
+  </div>
+</div>
+
