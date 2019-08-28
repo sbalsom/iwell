@@ -12,9 +12,7 @@ class Therapist < ApplicationRecord
 
   def self.get_by_specialty(params)
     params = params.downcase
-    dummy = Therapist.all.filter do |therapist|
-      therapist.specialties_list.downcase =~ /#{params}/
-    end
-    dummy
+    Therapist.joins(therapist_specialties: :specialty).where('specialties.name ILIKE ?', "%#{params}%")
+
   end
 end

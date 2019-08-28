@@ -1,11 +1,39 @@
 
 <div class="search-page">
   <div class="filters stick-to-nav">
-    <div class="dropdown">
+    <div class="filter-language">
+      <%= form_tag therapists_path, method: :get do %>
+      <%= select_tag "language", options_from_collection_for_select(Therapist.all, "language", "language") %>
+      <% if params[:query].present? %>
+        <%= hidden_field_tag :query, params[:query] %>
+      <% end %>
+      <%= submit_tag "Apply filter" %>
+      <% end %>
+    </div>
+      <div class="filter-rate">
+      <%= form_tag therapists_path, method: :get do %>
+      <%= select_tag "rate", options_from_collection_for_select(Therapist.all, "rate", "rate") %>
+      <% if params[:query].present? %>
+        <%= hidden_field_tag :query, params[:query] %>
+      <% end %>
+      <%= submit_tag "Apply filter" %>
+      <% end %>
+    </div>
+    <div class="filter-exp">
+      <%= form_tag therapists_path, method: :get do %>
+      <%= select_tag "years_exp", options_from_collection_for_select(Therapist.all, "years_exp", "years_exp") %>
+      <% if params[:query].present? %>
+        <%= hidden_field_tag :query, params[:query] %>
+      <% end %>
+      <%= submit_tag "Apply filter" %>
+      <% end %>
     </div>
   </div>
   <div class="search-results">
     <%= form_tag therapists_path, method: :get do %>
+  <% if params[:language].present? %>
+    <%= hidden_field_tag :language, params[:language] %>
+  <% end %>
   <%= text_field_tag :query,
     params[:query],
     class: "form-control",
@@ -32,7 +60,7 @@
         </p>
         <p>I speak <%= therapist.language %></p>
         </div>
-    <p>(Price)</p>
+    <p>€<%= therapist.rate %> /hour</p>
   </div>
 </div>
 <% end %>
@@ -42,3 +70,6 @@
 
   </div>
 </div>
+
+<!-- Therapist.all.collect { |p| [ p.name, p.id ] }
+ -->
