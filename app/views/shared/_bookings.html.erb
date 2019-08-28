@@ -1,0 +1,28 @@
+<div class="upcoming-booking border">
+  <% @bookings.each do |booking|  %>
+
+  <h3>Date <%= l(booking.starts_at, format: :long) %> </h3>
+
+  <div class="d-flex flex-column mb-3">
+    <%# Avatar row %>
+    <div class="p-2 flex-fill border">
+      <div class="booking-therapist-avatar d-flex align-items-center justify-content-center">
+        <%= cl_image_tag booking.therapist.photo, width: 140, class: "avatar-small" %>
+      </div>
+    </div>
+    <div class="p-2 flex-fill border">Flex item 2</div>
+
+    <%# Button row %>
+    <div class="p-2 flex-fill border">
+      <!-- Replace with button_to for actual submit -->
+      <div>
+        <%= button_tag "Reschedule" %>
+      </div>
+      <div>
+        <%= button_tag "Cancel" %>
+      </div>
+    </div>
+  </div>
+
+</div>
+<% end %>

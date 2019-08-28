@@ -1,0 +1,15 @@
+<div class="container">
+  <%# Holds all bookings %>
+  <div class="border" id="bookings">
+    <%# Holds upcming bookings %>
+    <div class="border" id="upcoming-bookings">
+
+      <%= render "shared/bookings", collection: @bookings, as: :booking %>
+    </div>
+  </div>
+<%= @bookings.first.inspect %>
+<%= @booking_therapists.first.inspect %>
+<!-- #double iteration,booking. booking then rtherapist + therapist  -->
+
+</div>
+
