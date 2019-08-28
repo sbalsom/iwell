@@ -1,0 +1,53 @@
+h3{
+  margin-left:100px;
+  margin-top:50px;
+  margin-bottom:30px;
+  font-weight: bold;
+  }
+
+  h5{
+  margin-left:100px;
+  }
+
+
+.review-container {
+  display: flex;
+  width: 70%;
+  border: 2px solid #F5F5F5;
+  padding: 50px;
+  margin-left: 100px;
+  margin-top:40px;
+
+  .first-flex-item div {
+  text-align: center;
+  padding-top: 20px;
+  }
+
+  .button-navy{
+  margin-top:20px;
+  margin-left: 110px;
+  }
+}
+
+.feedback-card {
+    width: 400px;
+    margin: 20px 0px 0px 0px;
+    padding: 10px;
+}
+
+.first-attribute{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom:20px;
+  }
+
+.second-attribute{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom:20px;
+  }
+
+.third-attribute{
+  display: flex;
+  justify-content: space-between;
+  }
