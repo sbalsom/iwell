@@ -1,0 +1,13 @@
+<div class="container">
+  <%# Holds all bookings %>
+  <div class="border" id="bookings">
+    <h1>DASHBOARD!!!</h1>
+    <%# Holds upcming bookings %>
+    <div class="border" id="upcoming-bookings">
+      <h2>Upcoming bookings</h2>
+      <%= render partial: "bookings/booking", collection: @bookings, as: :booking %>
+    </div>
+  </div>
+
+
+</div>
