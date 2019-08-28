@@ -1,16 +1,19 @@
-.show-container {
+.therapist-show-container {
   display: flex;
   padding: 40px 20px 20px 10px;
   justify-content: space-around;
-}
+  margin: 0;
+  width: 100%;
 
-.show-first-flex-item div {
+  .show-first-flex-item div {
   text-align: center;
   padding-top: 20px;
+  }
+
+  .show-form {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+  }
 }
 
-.show-form {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-}
