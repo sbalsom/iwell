@@ -7,28 +7,36 @@
   .filters {
     grid-column-start: 1;
     grid-column-end:2;
-    border: solid 3px black;
     height:100vh;
-    // position:fixed;
+    padding:20px;
+    }
 
+    #search-bar {
+      width: 80%;
+    }
+
+    h3 {
+      font-size:24px;
+    }
+
+  .filter-rate, .filter-language, .filter-exp {
+    margin:20px 0;
   }
-
   .search-results {
     grid-column-start:2;
     grid-column-end:4;
-    border: solid 3px black;
     padding-right:80px;
 
-  a {
+    a {
     text-decoration:none;
     color: black;
-  }
+    }
 
-a:hover {
-  text-decoration:none;
-  color: black;
+    a:hover {
+    text-decoration:none;
+    color: black;
 
-}
+    }
 
   }
 
@@ -54,10 +62,11 @@ a:hover {
 }
 
 .specialty-tag {
-    background-color: $accent;
-    color: white;
+    background-color:white ;
+    color: $accent;
     padding:5px;
     margin:5px;
+    border: solid 1px $accent;
     border-radius:10px;
     text-align:center;
   }
