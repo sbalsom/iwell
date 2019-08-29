@@ -1,53 +1,75 @@
-  <%# Holds all bookings %>
-
+<div class="therapist-show-page-container">
   <div id="therapist-container" class="p-2 flex-fill">
     <div class="therapist-avatar d-flex ">
       <% if @user_therapist %>
-      <%= cl_image_tag @user_therapist.photo, width: 140, class: "avatar-small" %>
-      <p>Your assigned therapist: <%= @user_therapist.first_name %> <%= @user_therapist.last_name %> </p>
+        <%= cl_image_tag @user_therapist.photo, width: 140, class: "avatar-small" %>
+        <p>Your assigned therapist: <%= @user_therapist.first_name %> <%= @user_therapist.last_name %> </p>
       <% else %>
-      <div class="no-therapist d-flex">
-      <%= image_tag 'unknown.jpeg', class: "avatar-small" %>
-      <h2>You don't have an assigned therapist yet !</h2>
-      </div>
+        <div class="no-therapist d-flex">
+          <%= image_tag 'unknown.jpeg', class: "avatar-small" %>
+          <div class="d-flex flex-column justify-content-center">
+            <h2>You don't have an assigned therapist yet !</h2>
+            <% if @next_bookings %>
+            <h3>Would you like to <%= link_to 'browse?', therapists_path %></h3>
+            <% end %>
+          </div>
+        </div>
       <% end %>
-    </div>
+      </div>
   </div>
-  <% @next_bookings.sort_by { |booking| booking.starts_at } %>
-  <% @next_booking = @next_bookings.first %>
-<h1 style="padding: 10px 0 0 50px; margin: 12px 0 -16px 0px;">Next Session</h1>
-  <div class="booking-card">
+
+  <% if @next_bookings %>
+    <% @next_bookings.sort_by { |booking| booking.starts_at } %>
+    <% @next_booking = @next_bookings.first %>
+    <% @next_bookings = @next_bookings.last(@next_bookings.count-1) %>
+    <h1 id="next-session">Next Session</h1>
+    <div class="booking-card">
       <div class="calendar">
-      <!--   should display booking time  -->
         <p id="date"> <%= @next_booking.starts_at.day %> </p>
         <i class="far fa-calendar" aria-hidden="true"></i>
       </div>
-      <!-- if Time.now <= @booking.start_time + 24hours -->
-          <div class="info">
-            <h3>Date: <%= I18n.l(@next_booking.starts_at, format: :long) %></h3>
-            <div class="booking-card-text">
-              <i class="fas fa-video-slash d-flex" aria-hidden="true">
-                <p>You can join the call on your appointment date.</p>
-              </i>
-            </div>
-            <div class="button-container">
-                <%= button_tag "Reschedule", class: "reschedule" %>
-                <%= button_tag "Cancel", class: "cancel" %>
-            </div>
-            <h4><i class="fas fa-info-circle"></i>Cancellation is only possible until before 24 hours of the call.</h4>
-          </div>
+      <div class="info">
+        <h3>Date: <%= I18n.l(@next_booking.starts_at, format: :long) %></h3>
+        <div class="booking-card-text">
+          <i class="fas fa-video-slash d-flex" aria-hidden="true">
+          <p>You can join the call on your appointment date.</p>
+          </i>
+        </div>
+        <div class="button-container">
+          <%= button_tag "Reschedule", class: "reschedule" %>
+          <%= button_tag "Cancel", class: "cancel" %>
+        </div>
+        <h4><i class="fas fa-info-circle"></i>Cancellation is only possible until before 24 hours of the call.</h4>
       </div>
-
-  <div class="d-flex">
-    <div id="upcoming-bookings" class="upcoming-bookings">
-      <h1>Other upcoming bookings</h1>
-
-      <%= render partial: "shared/upcoming_bookings", collection: @next_bookings, as: :booking %>
     </div>
-
+    <% if !@next_bookings.empty? %>
+      <div class="d-flex">
+        <div id="upcoming-bookings" class="upcoming-bookings">
+          <h2 id="upcoming">Other upcoming bookings</h2>
+            <%= render partial: "shared/upcoming_bookings", collection: @next_bookings, as: :booking %>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+      <div class="booking-card  flex-column align-items-center">
+        <p>Nothing to display here yet !</p>
+        <p>Once you've made an appointment, your upcoming appointment will display here.</p>
+        <p>Why don't you </p>
+        <p> <%= link_to 'browse therapists?', therapists_path, class: "button-navy" %></p>
+      </div>
+  <% end %>
+  <h1 id="past-sessions">Past Sessions</h1>
+  <% if !@past_bookings.empty? %>
     <div class="past-bookings">
-      <h1 style="padding: 10px 0 0 50px; margin: 12px 0 -16px 0px;" >Past Sessions</h1>
-      <%= render partial: "shared/past_bookings", past_bookings: @past_bookings %>
+
+        <%= render partial: "shared/past_bookings", past_bookings: @past_bookings %>
+  <% else %>
+      <div class="booking-card flex-column align-items-center">
+        <p>Nothing to display here yet !</p>
+        <p>When you've made a few calls, your past bookings will appear here</p>
+        <div>
+  <% end %>
+      </div>
     </div>
   </div>
 </div>
