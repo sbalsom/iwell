@@ -1,3 +1,4 @@
+.main-review-container{
 h3{
   margin-left:100px;
   margin-top:50px;
@@ -9,20 +10,20 @@ h3{
   margin-left:100px;
   }
 
-.rating {
-  unicode-bidi: bidi-override;
-  direction: rtl;
-}
-.rating > span {
-  display: inline-block;
-  position: relative;
-  width: 1.1em;
-}
-.rating > span:hover:before,
-.rating > span:hover ~ span:before {
-   content: "\2605";
-   position: absolute;
-}
+  .rating {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+  }
+  .rating > span {
+    display: inline-block;
+    position: relative;
+    width: 1.1em;
+  }
+  .rating > span:hover:before,
+  .rating > span:hover ~ span:before {
+     content: "\2605";
+     position: absolute;
+  }
 
 .review-container {
   display: flex;
@@ -65,3 +66,41 @@ h3{
   display: flex;
   justify-content: space-between;
   }
+
+.form {
+    margin:0;
+}
+
+.form li {
+    list-style:none;
+}
+
+.hide {
+    display:none;
+}
+}
+// .rating input[type="radio"] {
+//     position:absolute;
+//     filter:alpha(opacity=0);
+//     -moz-opacity:0;
+//     -khtml-opacity:0;
+//     opacity:0;
+//     cursor:pointer;
+//     width:17px;
+// }
+
+// .rating span {
+//     width:24px;
+//     height:16px;
+//     line-height:16px;
+//     padding:1px 22px 1px 0; /* 1px FireFox fix */
+//     background:url(stars.png) no-repeat -22px 0;
+// }
+
+// .rating input[type="radio"]:checked + span {
+//     background-position:-22px 0;
+// }
+
+// .rating input[type="radio"]:checked + span ~ span {
+//     background-position:0 0;
+// }
