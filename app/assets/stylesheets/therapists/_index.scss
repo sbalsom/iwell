@@ -15,6 +15,19 @@
       width: 80%;
     }
 
+    .position-rel {
+      position:relative;
+    }
+
+    #price {
+      position:absolute;
+      bottom:30px;
+      right:30px;
+      font-size:24px;
+      font-style:bold;
+
+    }
+
     h3 {
       font-size:24px;
     }

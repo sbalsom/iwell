@@ -67,7 +67,7 @@
    <% @therapists.each do |therapist| %>
    <%= link_to therapist_path(therapist) do %>
     <div class="therapist-cards">
-      <div class="profile-card">
+      <div class="profile-card position-rel">
         <div class="profile-avatar-spacing d-flex flex-column align-items-center mt-3">
         <%= cl_image_tag therapist.photo, class: "avatar-small profile-avatar" %>
          <div class="stars">
@@ -98,7 +98,6 @@
             <%= therapist.years_exp %> years of experience
         <p>I speak <%= therapist.language %></p>
         </div>
-    <p>€<%= therapist.rate %> /hour</p>
   </div>
   <div class="d-flex justify-content-end flex-fill
  align-self-start pr-3">  <% therapist.specialties.each do |specialty|%>
@@ -107,6 +106,7 @@
         </div>
         <% end %>
         </div>
+        <div id="price">€<%= therapist.rate %> /hour</div>
 </div>
 <% end %>
 
