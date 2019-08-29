@@ -57,8 +57,13 @@
         <p>Total</p>
         <h1>0 EUR (Trial Call)</h1>
       </div>
-      <input type="submit" value="Book Appointment" class="booking-button">
-
+      <% if user_signed_in? %>
+        <input type="submit" value="Book Appointment" class="booking-button">
+      <% else %>
+        <%= link_to new_user_session_path, method: 'get' do %>
+          <input type="submit" value="Book Appointment" class="offline-booking-button">
+        <% end %>
+      <% end %>
     </form>
   </div>
 </div>

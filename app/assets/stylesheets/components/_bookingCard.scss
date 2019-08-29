@@ -55,6 +55,28 @@
   }
 }
 
+.offline-booking-button {
+  font-family: $body-font;
+  position: relative;
+  vertical-align: top;
+  width: 100%;
+  height: 54px;
+  font-size: 22px;
+  color: white;
+  text-align: center;
+  background: #7882E9;
+  border-radius: 4px;
+
+  .offline-booking-button:active {
+  top: 1px;
+  outline: none;
+  }
+
+  .offline-booking-button:hover {
+    background: #5E69AF;
+  }
+}
+
 .price-container p {
   position:absolute;
   font-size:20px;
