@@ -19,13 +19,13 @@
   <div class="booking-card">
       <div class="calendar">
       <!--   should display booking time  -->
-        <p id="date"> 29 </p>
+        <p id="date"> <%= @next_booking.starts_at.day %> </p>
         <i class="far fa-calendar" aria-hidden="true"></i>
       </div>
       <!-- if Time.now <= @booking.start_time + 24hours -->
           <div class="info">
             <h3>Date: <%= I18n.l(@next_booking.starts_at, format: :long) %></h3>
-            <div class="text">
+            <div class="booking-card-text">
               <i class="fas fa-video-slash d-flex" aria-hidden="true">
                 <p>You can join the call on your appointment date.</p>
               </i>

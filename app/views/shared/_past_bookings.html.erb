@@ -9,8 +9,8 @@
       <div class="info">
         <h3>Date: <%= I18n.l(booking.starts_at, format: :long) %></h3>
         <div class="button-container">
-          <%= button_tag "Leave Review", class: "review" %>
-          <%= button_tag "Assign as my therapist", class: "review" %>
+          <%= link_to 'Leave a review',new_therapist_review_path(booking.therapist), class: "review-path-button" %>
+          <%= button_tag "Assign as my therapist", class: "review-path-button" %>
 
         </div>
       </div>
