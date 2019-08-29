@@ -1,67 +1,112 @@
 
 <div class="search-page">
-  <div class="filters stick-to-nav">
+  <div class="filters stick-to-nav d-flex flex-column">
     <div class="filter-language">
       <%= form_tag therapists_path, method: :get do %>
-      <%= select_tag "language", options_from_collection_for_select(Therapist.all, "language", "language") %>
-      <% if params[:query].present? %>
-        <%= hidden_field_tag :query, params[:query] %>
+      <% languages = [] %>
+      <%  Therapist.all.each do |therapist| %>
+          <% languages << therapist.language %>
+          <% languages = languages.uniq %>
       <% end %>
-      <%= submit_tag "Apply filter" %>
+      <%= label_tag 'language', 'Language spoken:' %>
+      <div class="d-flex">
+        <%= select_tag "language", options_for_select(languages.map{|s| ["#{s}", s]}), class: "form-control" %>
+        <% if params[:query].present? %>
+          <%= hidden_field_tag :query, params[:query] %>
+        <% end %>
+        <%= submit_tag "Apply filter", class: "button-navy-small ml-2" %>
+
+        </div>
       <% end %>
     </div>
+
       <div class="filter-rate">
+      <%= label_tag 'rate', 'Hourly rate:' %>
       <%= form_tag therapists_path, method: :get do %>
-      <%= select_tag "rate", options_from_collection_for_select(Therapist.all, "rate", "rate") %>
+      <div class="d-flex">
+      <%= select_tag "rate", options_for_select((20..100).step(5).to_a.map{|s| ["#{s}€/hour", s]}), class: "form-control" %>
       <% if params[:query].present? %>
         <%= hidden_field_tag :query, params[:query] %>
       <% end %>
-      <%= submit_tag "Apply filter" %>
+      <%= submit_tag "Apply filter", class: "button-navy-small ml-2" %>
+    </div>
       <% end %>
     </div>
+
     <div class="filter-exp">
+      <%= label_tag 'years_exp', 'Years of experience:' %>
       <%= form_tag therapists_path, method: :get do %>
-      <%= select_tag "years_exp", options_from_collection_for_select(Therapist.all, "years_exp", "years_exp") %>
+      <div class="d-flex">
+      <%= select_tag "years_exp", options_for_select((1..10).step(1).to_a.map{|s| ["#{s}", s]}), class: "form-control" %>
       <% if params[:query].present? %>
         <%= hidden_field_tag :query, params[:query] %>
       <% end %>
-      <%= submit_tag "Apply filter" %>
+      <%= submit_tag "Apply filter", class: "button-navy-small ml-2" %>
+    </div>
       <% end %>
     </div>
+
   </div>
-  <div class="search-results">
+  <div class="search-results pl-3">
     <%= form_tag therapists_path, method: :get do %>
-  <% if params[:language].present? %>
+      <% if params[:language].present? %>
     <%= hidden_field_tag :language, params[:language] %>
   <% end %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a therapist"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
+  <div class="d-flex">
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control my-3 mx-3",
+      id: "search-bar",
+      placeholder: "Find a therapist"
+    %>
+    <%= submit_tag "Search", class: "button-navy-md my-3" %>
+
+    </div>
 <% end %>
 
    <% @therapists.each do |therapist| %>
    <%= link_to therapist_path(therapist) do %>
     <div class="therapist-cards">
-      <div class="profile-card">
+      <div class="profile-card position-rel">
         <div class="profile-avatar-spacing d-flex flex-column align-items-center mt-3">
         <%= cl_image_tag therapist.photo, class: "avatar-small profile-avatar" %>
-        <%= render 'shared/stars' %></p>
+         <div class="stars">
+<%  %>
+    <% full = therapist.avg_rating.round(half: :down)  %>
+ <% full.times do %>
+    <div class="dark-star">
+      <i class="fas fa-star"></i>
+    </div>
+    <% end %>
+    <% if therapist.avg_rating % 1 != 0 %>
+    <div class="half-star">
+      <i class="fas fa-star-half-alt"></i>
+    </div>
+    <% end %>
+    <% empty = 5 - therapist.avg_rating.round%>
+    <% empty.times do %>
+    <div class="light-star">
+        <i class="far fa-star"></i>
+    </div>
+    <% end %>
+  </div>
+
         </div>
         <div class="profile-description">
-        <p id="name"><%= "#{therapist.first_name} #{therapist.last_name}" %></p>
+        <h3 id="name"><%= "#{therapist.first_name} #{therapist.last_name}" %></h3>
           <div class="profile-description-content">
-            <p><%= therapist.years_exp %> years of experience</p>
-        <p> <% therapist.specialties.each do |specialty|%>
-        <%= specialty.name %>
-        <% end %>
-        </p>
+            <%= therapist.years_exp %> years of experience
         <p>I speak <%= therapist.language %></p>
         </div>
-    <p>€<%= therapist.rate %> /hour</p>
   </div>
+  <div class="d-flex justify-content-end flex-fill
+ align-self-start pr-3">  <% therapist.specialties.each do |specialty|%>
+          <div class="specialty-tag">
+        <%= specialty.name %>
+        </div>
+        <% end %>
+        </div>
+        <div id="price">€<%= therapist.rate %> /hour</div>
 </div>
 <% end %>
 

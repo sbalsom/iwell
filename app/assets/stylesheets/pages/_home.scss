@@ -7,11 +7,9 @@
 .how-it-works {
   display: flex;
   height: 300px;
-  // border: solid 3px black;
   justify-content: space-around;
   align-items: center;
   .information {
-    //border:solid 3px black;
     height:300px;
     width:250px;
   }
@@ -27,7 +25,6 @@
   align-items: center;
   height: 350px;
   .therapist-box {
-    //border: solid 1px black;
     height:220px;
     width:200px;
   }
@@ -37,8 +34,6 @@
 }
 
 .therapist-LP p {
-   // margin-left: 130px;
-   // margin-right: 100px;
    width: 80%;
    margin: auto;
    margin-bottom: 40px;
@@ -69,15 +64,3 @@
   margin-top:30px;
   margin-bottom: 20px;
 }
-
-// .select h2 {
-//   margin-top:30px;
-//   margin-bottom: 20px;
-// }
-
-// .book h2 {
-//   margin-top:30px;
-//   margin-bottom: 20px;
-// }
-
-

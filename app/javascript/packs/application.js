@@ -1,4 +1,7 @@
-import "bootstrap";
+import 'bootstrap';
+import "../plugins/flatpickr"
+
+
 import { initSweetalert2 } from '../plugins/init_sweetalert2';
 
 initSweetalert2('.booking-button', {
@@ -12,3 +15,6 @@ initSweetalert2('.booking-button', {
     link.click();
   }
 });
+
+
+
