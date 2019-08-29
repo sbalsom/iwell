@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'dashboard', to: "dashboard#show"
   resources :therapists, only: [:index, :show] do
+    resources :bookings, only: [:new, :create]
     resources :reviews, only: [:new, :create]
   end
 
