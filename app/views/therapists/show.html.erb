@@ -49,17 +49,30 @@
     </div>
   </div>
   <div class="show-form">
-    <form class="booking-container">
+    <div class="booking-container">
       <h1 class="booking-title">Video Call</h1>
-      <input type="text" class="booking-input" placeholder="this will change" autofocus>
+    <%= form_for [@therapist, @booking] do |f| %>
+        <%= f.label :starts_at, 'Date' %>:
+        <%= f.datetime_field :starts_at, class: "booking-input" %><br />
+        <%= f.label :free, 'Type of consultation' %>
+        <%= f.select :free, options_for_select(["Free consultation (15 min)", "60 minute Session"]), class: 'booking-input' %>
+        <%# if current_user %>
+        <%= f.submit %>
+        <%# else %>
+        <%#= link_to 'Book now',new_user_session_path, class: "booking-button" %>
+        <%# end %>
+    <% end %>
+    </div>
+<!--       <input type="text" class="booking-input" placeholder="this will change" autofocus>
       <input type="text" class ="booking-input" placeholder="this will change" autofocus>
       <div class="price-container">
         <p>Total</p>
         <h1>0 EUR (Trial Call)</h1>
       </div>
+      <%# if current_user %>
       <input type="submit" value="Book Appointment" class="booking-button">
+      <%# end %> -->
 
-    </form>
   </div>
 </div>
 
