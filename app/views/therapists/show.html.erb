@@ -1,12 +1,19 @@
 <div class="therapist-show-container">
   <div class="show-first-flex-item">
-    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="Avatar" class="avatar-large">
+    <%= cl_image_tag @therapist.photo, class: "avatar-large profile-avatar mx-4" %>
     <div id="therapist-name">Dr <%= @therapist.first_name %> <%= @therapist.last_name %></div>
     <div class="stars"></div>
   </div>
   <div>
     <div class="bio-card">
-      <p><strong>Specialties</strong>: <%= @therapist.specialties[0] %></p>
+      <p><strong>Specialties</strong>: </p>
+      <div class="d-flex">
+      <% @therapist.specialties.each do |specialty| %>
+      <div class="specialty-tag">
+        <%= specialty.name %>
+        </div>
+      <% end %>
+    </div>
       <p><strong>Years of Experience</strong>: <%= @therapist.years_exp %></p>
       <div class="bio-description">
         <p><%= @therapist.bio %></p>
@@ -16,7 +23,25 @@
       <h4>Reviews</h4>
       <% 4.times do %>
       <div class="review">
-        <%= render 'shared/stars' %>
+        <div class="stars">
+    <% full = @therapist.avg_rating.round(half: :down)  %>
+ <% full.times do %>
+    <div class="dark-star">
+      <i class="fas fa-star"></i>
+    </div>
+    <% end %>
+    <% if @therapist.avg_rating % 1 != 0 %>
+    <div class="half-star">
+      <i class="fas fa-star-half-alt"></i>
+    </div>
+    <% end %>
+    <% empty = 5 - @therapist.avg_rating.round%>
+    <% empty.times do %>
+    <div class="light-star">
+        <i class="far fa-star"></i>
+    </div>
+    <% end %>
+  </div>
         <p>I had a great session with this therapist, I would highly recommend them.</p>
       </div>
     <% end %>

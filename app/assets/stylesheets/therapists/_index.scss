@@ -50,4 +50,14 @@ a:hover {
     position:sticky;
     top: 0px;
   }
+
 }
+
+.specialty-tag {
+    background-color: $accent;
+    color: white;
+    padding:5px;
+    margin:5px;
+    border-radius:10px;
+    text-align:center;
+  }
