@@ -2,10 +2,10 @@
   <%= link_to 'iWell', root_path, id: "logo" %>
   <% if user_signed_in? %>
     <%= link_to "Log out", destroy_user_session_path, id: "#", method: "delete" %>
-    <a href="#">My account</a>
-    <a href="#">My bookings</a>
+    <%= link_to "My account", edit_user_registration_path, id: "#" %>
+    <%= link_to "My bookings", dashboard_path, id: "#" %>
   <% else %>
-      <%= link_to "Join as a therapist", new_instrument_path, id: "#" %>
+      <%= link_to "Join as a therapist", id: "#" %>
       <%= link_to "Login", new_user_session_path, id: "#" %>
     </li>
   <% end %>
