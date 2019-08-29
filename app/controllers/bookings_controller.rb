@@ -14,8 +14,8 @@ def create
     @booking.free = false
   end
   if @booking.save
-    raise
-    #call the javascript function
+    flash[:success] = "Thank you for booking!"
+    redirect_to dashboard_path
   else
     render 'therapists/show'
   end
@@ -29,6 +29,3 @@ def booking_params
 end
 
 end
-
-# params[:starts_at]
-# params[:free]
