@@ -1,30 +1,32 @@
 .banner {
-  background-image: image_url('banner.jpeg');
+  background-image: url('https://images.unsplash.com/photo-1541976844346-f18aeac57b06?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80');
   background-size: cover;
   height: 600px;
   color: white;
   font-weight: bold;
-  box-shadow: 0 7px 4px 0 rgba(0,0,0,0.5);
-    h1{
+  h1{
     color: #FFFFFF;
     font-family: Raleway;
-    font-size: 40px;
+    font-size: 2em;
     font-weight: bold;
     padding-left: 105px;
+    width: 75%;
     padding-top:150px;
-    }
+  }
   h2{
     color: #FFFFFF;
     font-family: Raleway;
-    font-size: 24px;
+    font-size: 1em;
     font-weight: bold;
     padding-left: 105px;
     padding-top:20px;
-   }
-   .text-wrap {
-    width: 1240px;
-   }
+    width: 75%;
   }
+  .text-wrap {
+    width: 1240px;
+  }
+
+}
 
 
 

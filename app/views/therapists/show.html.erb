@@ -1,12 +1,19 @@
 <div class="therapist-show-container">
   <div class="show-first-flex-item">
-    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="Avatar" class="avatar-large">
-    <div> Dr <%= @therapist.first_name %> <%= @therapist.last_name %></div>
+    <%= cl_image_tag @therapist.photo, class: "avatar-large profile-avatar mx-4" %>
+    <div id="therapist-name">Dr <%= @therapist.first_name %> <%= @therapist.last_name %></div>
     <div class="stars"></div>
   </div>
   <div>
     <div class="bio-card">
-      <p><strong>Specialties</strong>: <%= @therapist.specialties[0] %></p>
+      <p><strong>Specialties</strong>: </p>
+      <div class="d-flex">
+      <% @therapist.specialties.each do |specialty| %>
+      <div class="specialty-tag">
+        <%= specialty.name %>
+        </div>
+      <% end %>
+    </div>
       <p><strong>Years of Experience</strong>: <%= @therapist.years_exp %></p>
       <div class="bio-description">
         <p><%= @therapist.bio %></p>
@@ -16,23 +23,53 @@
       <h4>Reviews</h4>
       <% 4.times do %>
       <div class="review">
-        <%= render 'shared/stars' %>
+        <div class="stars">
+    <% full = @therapist.avg_rating.round(half: :down)  %>
+ <% full.times do %>
+    <div class="dark-star">
+      <i class="fas fa-star"></i>
+    </div>
+    <% end %>
+    <% if @therapist.avg_rating % 1 != 0 %>
+    <div class="half-star">
+      <i class="fas fa-star-half-alt"></i>
+    </div>
+    <% end %>
+    <% empty = 5 - @therapist.avg_rating.round%>
+    <% empty.times do %>
+    <div class="light-star">
+        <i class="far fa-star"></i>
+    </div>
+    <% end %>
+  </div>
         <p>I had a great session with this therapist, I would highly recommend them.</p>
       </div>
     <% end %>
     </div>
   </div>
-  <div class="show-form">
-    <form class="booking-container">
+  <!-- <div class="show-form">
+    <form class="booking-container", method= 'get'>
       <h1 class="booking-title">Video Call</h1>
-      <input type="text" class="booking-input" placeholder="this will change" autofocus>
+      <input type="string" name="booking[starts_at]" class="booking-input datepicker" placeholder="this will change" autofocus>
       <input type="text" class ="booking-input" placeholder="this will change" autofocus>
       <div class="price-container">
         <p>Total</p>
         <h1>0 EUR (Trial Call)</h1>
       </div>
       <input type="submit" value="Book Appointment" class="booking-button">
-    </form>
+    </form> -->
+  <!-- </div> -->
+  <div class="show-form">
+    <%= simple_form_for :bookings, method: "post", class: "booking-container" do |f| %>
+      <h1 class="booking-title">Video Call</h1>
+      <%= f.input :starts_at, label: "Date & Time", as: :string, input_html: {class: "datepicker"} %>
+      <%= f.input :duration, as: :integer %>
+      <div class="price-container">
+        <p>Total</p>
+        <h1>0 EUR (Trial Call)</h1>
+      </div>
+      <%= f.button :submit, "Book Appointment", class: "booking-button" %>
+    <% end %>
   </div>
 </div>
 
