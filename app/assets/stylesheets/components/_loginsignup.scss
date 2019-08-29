@@ -1,6 +1,5 @@
 .threshold-container {
   padding-top: 10vh;
-  min-width: 400px;
   display: flex;
   justify-content: center;
 
@@ -8,6 +7,7 @@
     margin: 5vh 10vw*2 0 10vw*2;
     border: solid 2px $border;
     padding: 40px 40px;
+    min-width: 350px;
   }
   .form-actions {
     display:flex;
