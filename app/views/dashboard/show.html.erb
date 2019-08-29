@@ -10,6 +10,29 @@
 <%= @bookings.first.inspect %>
 <%= @booking_therapists.first.inspect %>
 <!-- #double iteration,booking. booking then rtherapist + therapist  -->
-
+<div class="session-card">
+  <div class="calendar">
+  <!--   should display booking time  -->
+    <p id="date">29</p>
+    <i class="far fa-calendar" aria-hidden="true"></i>
+  </div>
+  <!-- if Time.now <= @booking.start_time + 24hours -->
+      <div class="info">
+        <div class="text">
+          <h6>Your next appointment is on</h6>
+          <!-- booking time to a day of the week -->
+          <h4>Thursday</h4>
+          <i class="fas fa-video-slash" aria-hidden="true"></i>
+        </div>
+        <div class="buttons">
+          <div class="reschedule">
+            Reschedule
+          </div>
+          <div class="cancel">
+            Cancel
+          </div>
+        </div>
+      </div>
+</div>
 </div>
 
