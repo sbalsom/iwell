@@ -1,5 +1,9 @@
 .therapist-show-page-container {
+  display:flex;
 #upcoming-bookings {
+  text-align:center;
+font-family:$body-font;
+font-size:30px;
 }
 
 #next-session {
@@ -11,7 +15,8 @@
 #past-sessions {
 text-align:center;
 font-family:$body-font;
-font-size:30px;
+  margin-top:20px;
+margin-bottom:30px;
 }
 }
 #therapist-container {
@@ -84,17 +89,6 @@ font-size:30px;
     top:-20px;
   }
 
-  //   .empty-booking-card {
-  //       width:90%;
-  // height:250px;
-  // border-radius:18px;
-  // border: 1px solid #CDD4D6;
-  // background-color: white;
-  // padding:10px;
-  // margin: 40px auto 20px auto;
-  //   }
-
-
 
   .booking-card-text {
     p {
@@ -119,6 +113,10 @@ font-size:30px;
     flex-direction:column;
     justify-content:space-between;
     color: #4F5CAD;
+
+    .button-container {
+
+    }
   }
 
 
@@ -128,18 +126,20 @@ font-size:30px;
     color: $border;
   }
 
-  .reschedule {
+  .reschedule-button {
     border: 1px solid #4F5CAD;
     border-radius: 5px;
     color:#4F5CAD;
     padding:10px;
+    font-size: 15px;
   }
 
-  .cancel {
+  .cancel-button {
     border: 1px solid #4F5CAD;
     border-radius: 5px;
     color:#4F5CAD;
     padding:10px;
+    font-size: 15px;
   }
 
   .call {
@@ -167,12 +167,17 @@ font-size:30px;
 
 .past-sessions{
   width: 90%;
-  border: 1px solid #CDD4D6;
-  border-radius: 18px;
-  margin: 50px auto 30px auto;
+  // border: 1px solid #CDD4D6;
+  // border-radius: 18px;
+  // margin: 50px auto 30px auto;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
 
 
   .past-booking-card {
+    margin-top:20px;
     width:85%;
     height:250px;
     border-bottom: 1px solid #CDD4D6;
@@ -198,6 +203,7 @@ font-size:30px;
     flex-direction:column;
     justify-content:space-between;
     color: #4F5CAD;
+    font-size:24px;
     }
 
   h4 {
