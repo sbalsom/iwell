@@ -1,0 +1,129 @@
+.main-review-container{
+h3{
+  margin-left:100px;
+  margin-top:50px;
+  margin-bottom:30px;
+  font-weight: bold;
+  }
+
+  h5{
+  margin-left:100px;
+  }
+
+  .rating {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+  }
+  .rating > span {
+    display: inline-block;
+    position: relative;
+    width: 1.1em;
+  }
+  .rating > span:hover:before,
+  .rating > span:hover ~ span:before {
+     content: "\2605";
+     position: absolute;
+  }
+
+.review-container {
+  display: flex;
+  width: 70%;
+  border: 2px solid #F5F5F5;
+  padding: 50px;
+  margin-left: 100px;
+  margin-top:40px;
+
+  .first-flex-item div {
+  text-align: center;
+  padding-top: 20px;
+  }
+
+  .button-navy{
+  margin-top:20px;
+  margin-left: 100px;
+  }
+}
+
+.feedback-card {
+    width: 500px;
+    margin: 20px 0px 0px 0px;
+    padding: 10px;
+}
+
+.first-attribute{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom:20px;
+  }
+
+.second-attribute{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom:20px;
+  }
+
+.third-attribute{
+  display: flex;
+  justify-content: space-between;
+  }
+}
+
+.form {
+    margin:0;
+}
+
+.form li {
+    list-style:none;
+}
+
+.hide {
+    display:none;
+}
+
+.main {
+  margin-left: 40%;
+  margin-top: 15%;
+}
+.rating-star {
+    direction: rtl;
+    font-size: 30px;
+    unicode-bidi: bidi-override;
+    display: inline-block;
+    padding-right: 5px;
+    margin-left:50px;
+}
+.rating-star input {
+    opacity: 0;
+    position: relative;
+    left: -30px;
+    z-index: 2;
+    cursor: pointer;
+}
+.rating-star span.star:before {
+    color: #777777;
+}
+.rating-star span.star {
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    position: relative;
+    z-index: 1;
+}
+.rating-star span {
+    margin-left: -30px;
+}
+
+.rating-star span.star:before {
+    color: #777777;
+    content:"\f006";
+}
+.rating-star input:hover + span.star:before, .rating-star input:hover + span.star ~ span.star:before, .rating-star input:checked + span.star:before, .rating-star input:checked + span.star ~ span.star:before {
+    color: #4F5CAD;
+    content:"\f005";
+}
+
+.star{
+    margin-right: 8px;
+}
+
