@@ -1,6 +1,6 @@
 class Therapist < ApplicationRecord
   has_many :reviews, dependent: :destroy
-  has_many :therapist_specialties
+  has_many :therapist_specialties, dependent: :destroy
   has_many :specialties, through: :therapist_specialties
   has_many :availabilities, dependent: :destroy
   has_many :bookings
@@ -12,9 +12,7 @@ class Therapist < ApplicationRecord
 
   def self.get_by_specialty(params)
     params = params.downcase
-    dummy = Therapist.all.filter do |therapist|
-      therapist.specialties_list.downcase =~ /#{params}/
-    end
-    dummy
+    Therapist.joins(therapist_specialties: :specialty).where('specialties.name ILIKE ?', "%#{params}%")
+
   end
 end

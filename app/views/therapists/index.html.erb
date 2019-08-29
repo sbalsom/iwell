@@ -1,11 +1,39 @@
 
 <div class="search-page">
   <div class="filters stick-to-nav">
-    <div class="dropdown">
+    <div class="filter-language">
+      <%= form_tag therapists_path, method: :get do %>
+      <%= select_tag "language", options_from_collection_for_select(Therapist.all, "language", "language") %>
+      <% if params[:query].present? %>
+        <%= hidden_field_tag :query, params[:query] %>
+      <% end %>
+      <%= submit_tag "Apply filter" %>
+      <% end %>
+    </div>
+      <div class="filter-rate">
+      <%= form_tag therapists_path, method: :get do %>
+      <%= select_tag "rate", options_from_collection_for_select(Therapist.all, "rate", "rate") %>
+      <% if params[:query].present? %>
+        <%= hidden_field_tag :query, params[:query] %>
+      <% end %>
+      <%= submit_tag "Apply filter" %>
+      <% end %>
+    </div>
+    <div class="filter-exp">
+      <%= form_tag therapists_path, method: :get do %>
+      <%= select_tag "years_exp", options_from_collection_for_select(Therapist.all, "years_exp", "years_exp") %>
+      <% if params[:query].present? %>
+        <%= hidden_field_tag :query, params[:query] %>
+      <% end %>
+      <%= submit_tag "Apply filter" %>
+      <% end %>
     </div>
   </div>
   <div class="search-results">
     <%= form_tag therapists_path, method: :get do %>
+  <% if params[:language].present? %>
+    <%= hidden_field_tag :language, params[:language] %>
+  <% end %>
   <%= text_field_tag :query,
     params[:query],
     class: "form-control",
@@ -20,19 +48,41 @@
       <div class="profile-card">
         <div class="profile-avatar-spacing d-flex flex-column align-items-center mt-3">
         <%= cl_image_tag therapist.photo, class: "avatar-small profile-avatar" %>
-        <%= render 'shared/stars' %></p>
+         <div class="stars">
+<%  %>
+    <% full = therapist.avg_rating.round(half: :down)  %>
+ <% full.times do %>
+    <div class="dark-star">
+      <i class="fas fa-star"></i>
+    </div>
+    <% end %>
+    <% if therapist.avg_rating % 1 != 0 %>
+    <div class="half-star">
+      <i class="fas fa-star-half-alt"></i>
+    </div>
+    <% end %>
+    <% empty = 5 - therapist.avg_rating.round%>
+    <% empty.times do %>
+    <div class="light-star">
+        <i class="far fa-star"></i>
+    </div>
+    <% end %>
+  </div>
+
         </div>
         <div class="profile-description">
         <p id="name"><%= "#{therapist.first_name} #{therapist.last_name}" %></p>
           <div class="profile-description-content">
             <p><%= therapist.years_exp %> years of experience</p>
-        <p> <% therapist.specialties.each do |specialty|%>
+      <div class="d-flex">  <% therapist.specialties.each do |specialty|%>
+          <div class="specialty-tag">
         <%= specialty.name %>
+        </div>
         <% end %>
-        </p>
+        </div>
         <p>I speak <%= therapist.language %></p>
         </div>
-    <p>(Price)</p>
+    <p>€<%= therapist.rate %> /hour</p>
   </div>
 </div>
 <% end %>
@@ -42,3 +92,6 @@
 
   </div>
 </div>
+
+<!-- Therapist.all.collect { |p| [ p.name, p.id ] }
+ -->
