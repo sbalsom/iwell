@@ -1,7 +1,16 @@
 <nav class=<%= params[:controller] == "pages" && params[:action] == "home" ? "transparent-nav" : "normal-nav" %>>
   <%= link_to 'iWell', root_path, id: "logo" %>
-  <a href="#">Bookings</a>
-  <a href="#">My Sessions</a>
+  <% if user_signed_in? %>
+    <%= link_to "Log out", destroy_user_session_path, id: "#", method: "delete" %>
+    <a href="#">My account</a>
+    <a href="#">My bookings</a>
+  <% else %>
+      <%= link_to "Join as a therapist", new_instrument_path, id: "#" %>
+      <%= link_to "Login", new_user_session_path, id: "#" %>
+    </li>
+  <% end %>
 </nav>
+
+
 
 
