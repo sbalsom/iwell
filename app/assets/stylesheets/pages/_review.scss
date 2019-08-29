@@ -45,7 +45,7 @@ h3{
 }
 
 .feedback-card {
-    width: 400px;
+    width: 500px;
     margin: 20px 0px 0px 0px;
     padding: 10px;
 }
@@ -66,6 +66,7 @@ h3{
   display: flex;
   justify-content: space-between;
   }
+}
 
 .form {
     margin:0;
@@ -78,29 +79,51 @@ h3{
 .hide {
     display:none;
 }
+
+.main {
+  margin-left: 40%;
+  margin-top: 15%;
 }
-// .rating input[type="radio"] {
-//     position:absolute;
-//     filter:alpha(opacity=0);
-//     -moz-opacity:0;
-//     -khtml-opacity:0;
-//     opacity:0;
-//     cursor:pointer;
-//     width:17px;
-// }
+.rating-star {
+    direction: rtl;
+    font-size: 30px;
+    unicode-bidi: bidi-override;
+    display: inline-block;
+    padding-right: 5px;
+    margin-left:50px;
+}
+.rating-star input {
+    opacity: 0;
+    position: relative;
+    left: -30px;
+    z-index: 2;
+    cursor: pointer;
+}
+.rating-star span.star:before {
+    color: #777777;
+}
+.rating-star span.star {
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    position: relative;
+    z-index: 1;
+}
+.rating-star span {
+    margin-left: -30px;
+}
 
-// .rating span {
-//     width:24px;
-//     height:16px;
-//     line-height:16px;
-//     padding:1px 22px 1px 0; /* 1px FireFox fix */
-//     background:url(stars.png) no-repeat -22px 0;
-// }
+.rating-star span.star:before {
+    color: #777777;
+    content:"\f006";
+}
+.rating-star input:hover + span.star:before, .rating-star input:hover + span.star ~ span.star:before, .rating-star input:checked + span.star:before, .rating-star input:checked + span.star ~ span.star:before {
+    color: #4F5CAD;
+    content:"\f005";
+}
 
-// .rating input[type="radio"]:checked + span {
-//     background-position:-22px 0;
-// }
+.star{
+    margin-right: 8px;
+}
 
-// .rating input[type="radio"]:checked + span ~ span {
-//     background-position:0 0;
-// }

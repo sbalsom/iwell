@@ -7,4 +7,8 @@ class ReviewPolicy < ApplicationPolicy
   def new?
    true
   end
+
+  def create?
+    user
+  end
 end
