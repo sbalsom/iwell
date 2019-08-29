@@ -1,15 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
-# remote_url_photo: 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'
-
-require 'date'
-
 def half_value(number)
   (number * 2).round / 2.0
 end
@@ -28,7 +16,13 @@ def language
   end
 end
 
-BIOS = ["I have a doctorate in psychology and am a diploma candidate in analytical psychology at the C.G. Jung Institute Zurich. I am a registered intern of the Oregon Board of Licensed Professional Counselors & Therapists and abide by the Board's Code of Ethics and supervision requirements.",
+# BIO = <<~TEXT
+#   This is my text
+#   It is gonna be formatted exactly like that
+# TEXT
+
+BIOS = [
+  "I have a doctorate in psychology and am a diploma candidate in analytical psychology at the C.G. Jung Institute Zurich. I am a registered intern of the Oregon Board of Licensed Professional Counselors & Therapists and abide by the Board's Code of Ethics and supervision requirements.",
   "Did you know you could change your brain to change your mind? Through the therapeutic relationship and various techniques including Biofeedback, Neurofeedback, mindfulness and cognitive behavioral therapy, you can change your brain and change your relationship to yourself and others.",
   "My job is to provide a safe holding space for you to become more aware of the obstacles in the way of your own healing and growth. This includes any obstacle that keeps you from coming to therapy. Please call, email , or text me so I can help.",
   "Productive therapy and life change happens when a solid, trusting relationship forms between client and therapist. My greatest strength as a therapist is forming that bond quickly with my clients so that we can identify and address the problem(s) together.",
@@ -53,80 +47,83 @@ BIOS = ["I have a doctorate in psychology and am a diploma candidate in analytic
   " I specialize in working with adults searching for meaning and clarity as they contemplate making life changes. These changes can cause anxiety, which we immediately want to suppress, but what if we used anxiety to fuel curiosity about our lives?",
   "Hi, and welcome to my profile page. I am a Clinical Social Worker who prides herself on supporting and being fully present to others. My therapeutic experience includes the public sector--Head Start Consultation --and the private sector--working with individuals and families.",
   "We are all capable of growth. Through secure tele-therapy/online sessions, I aim to provide a space for self exploration and healing through the cultivation of insight, understanding, and compassion. Together, we look into the inner conflicts that are obstacles on the path to a more fulfilled life.",
-  "Successful counseling is built on a positive and trusting relationship, much as successful living is dependent on trusting, healthy relationships. Most importantly I bring myself; my heart, my humor, my understanding, knowledge and years of experience."]
-
-PHOTOSWOMEN = ['https://images.unsplash.com/photo-1513732822839-24f03a92f633?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
-'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
-'https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
-'https://images.unsplash.com/photo-1458071103673-6a6e4c4a3413?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
-'https://images.unsplash.com/photo-1471017851983-fc49d89c57c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
-'https://images.unsplash.com/photo-1552699498-ec96cf4765ac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
-'https://images.unsplash.com/photo-1514448553123-ddc6ee76fd52?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
-'https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
-'https://images.unsplash.com/photo-1518822275865-16eec4d3023d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
-'https://images.unsplash.com/photo-1559172802-f5de3d1ed91d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
-'https://images.unsplash.com/photo-1507152832244-10d45c7eda57?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
-'https://images.unsplash.com/photo-1521511189395-b82252213754?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
-'https://images.unsplash.com/photo-1529232356377-57971f020a94?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
-'https://images.unsplash.com/photo-1551863863-e01bbf274ef6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
-'https://images.unsplash.com/photo-1533781107041-b3b8441e1612?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
-'https://images.unsplash.com/photo-1547212371-eb5e6a4b590c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
-'https://live.staticflickr.com/4688/38423140934_a7207c5c25_b.jpg',
-'https://live.staticflickr.com/4683/38251160585_52dbaaf5dc_b.jpg',
-'https://live.staticflickr.com/3583/3373106750_2ddd4772d9_b.jpg',
-'https://cdn.pixabay.com/photo/2017/08/16/14/21/psychology-2647941_960_720.jpg',
-'https://live.staticflickr.com/4089/5028522377_286bdd625a_b.jpg',
-'https://live.staticflickr.com/4693/38251160315_df360c9b55_z.jpg',
-'https://upload.wikimedia.org/wikipedia/commons/b/bf/LizGorinsky_Headshot_SmilingSideways.jpg',
-'https://images.pexels.com/photos/1973104/pexels-photo-1973104.jpeg?cs=srgb&dl=beautiful-blazer-blonde-1973104.jpg&fm=jpg',
-'https://live.staticflickr.com/840/41804803890_c42368b4d2_z.jpg',
-'https://upload.wikimedia.org/wikipedia/commons/6/61/Hon._Akierra_Mary_Deanne_Missick.jpg',
-'https://upload.wikimedia.org/wikipedia/commons/0/01/Atkins_Headshot.jpg',
-'https://2009-2017.state.gov/img/16/65820/Thailand_150_1.jpg',
-'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP0W23Zdd2RiLPQ7hkOwCyNlA12hmYo0UUczYUxKPVUkLidts2Gw',
-'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKnfKgoXqomzzJyg7ZEUo8zBi9hLgYT1w9wSfG9sEx1dgqFl7R',
-'https://live.staticflickr.com/4040/4333257442_80b749b1ea_b.jpg',
-'https://upload.wikimedia.org/wikipedia/commons/f/f4/Julie_Brown_%28business_person%29.jpg',
-'https://live.staticflickr.com/4641/39101514312_e1aa9c0867_z.jpg',
-'https://upload.wikimedia.org/wikipedia/commons/d/d2/Cara_Hale_Alter.jpg',
-'https://live.staticflickr.com/4599/38251161105_66d4c7022b_z.jpg',
-'https://live.staticflickr.com/814/27755397848_b228fbd94e_b.jpg',
-'https://live.staticflickr.com/441/20379201645_4f78f37b07_b.jpg',
-'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRA3IzhSVXsWW_rdPQMPC0LK0SDadwsEhyFGkHBBt5DAxuQY-hgrQ',
-'https://upload.wikimedia.org/wikipedia/commons/9/94/GW_Photo.jpg',
-'https://images.pexels.com/photos/1869709/pexels-photo-1869709.jpeg?cs=srgb&dl=attractive-beautiful-beauty-1869709.jpg&fm=jpg',
-'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBHIBRSd-spSth44Hed7jHPBIFKM89n4pLHqQSVyDAF8178YjS',
-'https://upload.wikimedia.org/wikipedia/commons/4/49/Dalia_Ziada.jpg',
-'https://cdn.pixabay.com/photo/2017/04/24/05/10/portrait-2255525_960_720.jpg',
-'https://storage.needpix.com/rsynced_images/african-2942355_1280.jpg',
-'https://live.staticflickr.com/5150/5621398789_1c6e6b2d1a_b.jpg',
-'https://storage.needpix.com/rsynced_images/smiling-1180847_1280.jpg',
-'https://storage.needpix.com/rsynced_images/smiling-2385790_1280.jpg',
-'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGB2BxNuAyMqbkEr004Av9lQ6Fos4ABjfETFK9a0nBxQJxHFFDyg',
-'https://storage.needpix.com/rsynced_images/girl-3240646_1280.png',
-'https://images.pexels.com/photos/568039/pexels-photo-568039.jpeg?cs=srgb&dl=africa-black-hair-black-woman-smiling-568039.jpg&fm=jpg',
-'https://live.staticflickr.com/7150/6759452607_886b59afe1_b.jpg',
-'https://live.staticflickr.com/3646/3513281048_df49e6893b_z.jpg',
-'https://i2.nicepik.com/files/364/566/337/pretty-fresh-happy-female.jpg',
-'https://live.staticflickr.com/4248/34768609756_cb97d88299_b.jpg',
-'https://live.staticflickr.com/3250/3100756250_efbe62b282_b.jpg',
-'https://upload.wikimedia.org/wikipedia/commons/f/f2/SaraJacobs_headshot.jpg',
-'https://upload.wikimedia.org/wikipedia/commons/e/e7/Mona2x.jpg',
-'https://static.timesofisrael.com/njjewishnews/uploads/2018/03/LadinJoyCOM.jpg',
-'https://upload.wikimedia.org/wikipedia/commons/1/11/BlackHeadshot.JPG',
-'https://live.staticflickr.com/5311/14365669046_06540bbbff_b.jpg',
-'https://upload.wikimedia.org/wikipedia/commons/f/f2/Sarah_Beattie-Smith.jpg',
-'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwn7FngXrOs-82YZFU7k3gEcURjGX5xKuo984TJgPz6dc9r5IrOw',
-'https://storage.needpix.com/rsynced_images/girl-1512323_1280.jpg',
-'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlpQTh0VkS7tt5Xvxj3c0LsFg7Cb-2exozEs-a9m7GQfo5vGJkZQ',
-'https://upload.wikimedia.org/wikipedia/commons/f/fe/StacyKeibler2011.jpeg',
-'https://i0.nicepik.com/files/513/845/112/attractive-beautiful-beauty-black-and-white.jpg',
-'https://i0.nicepik.com/files/626/548/833/close-up-daylight-eyes-face.jpg',
-'https://i2.nicepik.com/files/624/942/511/woman-smile-person-head-covering.jpg',
-'https://i2.nicepik.com/files/827/264/841/portrait-girl-photoshoot.jpg'
+  "Successful counseling is built on a positive and trusting relationship, much as successful living is dependent on trusting, healthy relationships. Most importantly I bring myself; my heart, my humor, my understanding, knowledge and years of experience."
 ]
 
-PHOTOSMEN = ['https://images.unsplash.com/photo-1544168190-79c17527004f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
+PHOTOSWOMEN = [
+  'https://images.unsplash.com/photo-1513732822839-24f03a92f633?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
+  'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
+  'https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
+  'https://images.unsplash.com/photo-1458071103673-6a6e4c4a3413?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
+  'https://images.unsplash.com/photo-1471017851983-fc49d89c57c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
+  'https://images.unsplash.com/photo-1552699498-ec96cf4765ac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
+  'https://images.unsplash.com/photo-1514448553123-ddc6ee76fd52?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
+  'https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
+  'https://images.unsplash.com/photo-1518822275865-16eec4d3023d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
+  'https://images.unsplash.com/photo-1559172802-f5de3d1ed91d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
+  'https://images.unsplash.com/photo-1507152832244-10d45c7eda57?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
+  'https://images.unsplash.com/photo-1521511189395-b82252213754?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
+  'https://images.unsplash.com/photo-1529232356377-57971f020a94?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
+  'https://images.unsplash.com/photo-1551863863-e01bbf274ef6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
+  'https://images.unsplash.com/photo-1533781107041-b3b8441e1612?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
+  'https://images.unsplash.com/photo-1547212371-eb5e6a4b590c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
+  'https://live.staticflickr.com/4688/38423140934_a7207c5c25_b.jpg',
+  'https://live.staticflickr.com/4683/38251160585_52dbaaf5dc_b.jpg',
+  'https://live.staticflickr.com/3583/3373106750_2ddd4772d9_b.jpg',
+  'https://cdn.pixabay.com/photo/2017/08/16/14/21/psychology-2647941_960_720.jpg',
+  'https://live.staticflickr.com/4089/5028522377_286bdd625a_b.jpg',
+  'https://live.staticflickr.com/4693/38251160315_df360c9b55_z.jpg',
+  'https://upload.wikimedia.org/wikipedia/commons/b/bf/LizGorinsky_Headshot_SmilingSideways.jpg',
+  'https://images.pexels.com/photos/1973104/pexels-photo-1973104.jpeg?cs=srgb&dl=beautiful-blazer-blonde-1973104.jpg&fm=jpg',
+  'https://live.staticflickr.com/840/41804803890_c42368b4d2_z.jpg',
+  'https://upload.wikimedia.org/wikipedia/commons/6/61/Hon._Akierra_Mary_Deanne_Missick.jpg',
+  'https://upload.wikimedia.org/wikipedia/commons/0/01/Atkins_Headshot.jpg',
+  'https://2009-2017.state.gov/img/16/65820/Thailand_150_1.jpg',
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP0W23Zdd2RiLPQ7hkOwCyNlA12hmYo0UUczYUxKPVUkLidts2Gw',
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKnfKgoXqomzzJyg7ZEUo8zBi9hLgYT1w9wSfG9sEx1dgqFl7R',
+  'https://live.staticflickr.com/4040/4333257442_80b749b1ea_b.jpg',
+  'https://upload.wikimedia.org/wikipedia/commons/f/f4/Julie_Brown_%28business_person%29.jpg',
+  'https://live.staticflickr.com/4641/39101514312_e1aa9c0867_z.jpg',
+  'https://upload.wikimedia.org/wikipedia/commons/d/d2/Cara_Hale_Alter.jpg',
+  'https://live.staticflickr.com/4599/38251161105_66d4c7022b_z.jpg',
+  'https://live.staticflickr.com/814/27755397848_b228fbd94e_b.jpg',
+  'https://live.staticflickr.com/441/20379201645_4f78f37b07_b.jpg',
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRA3IzhSVXsWW_rdPQMPC0LK0SDadwsEhyFGkHBBt5DAxuQY-hgrQ',
+  'https://upload.wikimedia.org/wikipedia/commons/9/94/GW_Photo.jpg',
+  'https://images.pexels.com/photos/1869709/pexels-photo-1869709.jpeg?cs=srgb&dl=attractive-beautiful-beauty-1869709.jpg&fm=jpg',
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBHIBRSd-spSth44Hed7jHPBIFKM89n4pLHqQSVyDAF8178YjS',
+  'https://upload.wikimedia.org/wikipedia/commons/4/49/Dalia_Ziada.jpg',
+  'https://cdn.pixabay.com/photo/2017/04/24/05/10/portrait-2255525_960_720.jpg',
+  'https://storage.needpix.com/rsynced_images/african-2942355_1280.jpg',
+  'https://live.staticflickr.com/5150/5621398789_1c6e6b2d1a_b.jpg',
+  'https://storage.needpix.com/rsynced_images/smiling-1180847_1280.jpg',
+  'https://storage.needpix.com/rsynced_images/smiling-2385790_1280.jpg',
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGB2BxNuAyMqbkEr004Av9lQ6Fos4ABjfETFK9a0nBxQJxHFFDyg',
+  'https://storage.needpix.com/rsynced_images/girl-3240646_1280.png',
+  'https://images.pexels.com/photos/568039/pexels-photo-568039.jpeg?cs=srgb&dl=africa-black-hair-black-woman-smiling-568039.jpg&fm=jpg',
+  'https://live.staticflickr.com/7150/6759452607_886b59afe1_b.jpg',
+  'https://live.staticflickr.com/3646/3513281048_df49e6893b_z.jpg',
+  'https://i2.nicepik.com/files/364/566/337/pretty-fresh-happy-female.jpg',
+  'https://live.staticflickr.com/4248/34768609756_cb97d88299_b.jpg',
+  'https://live.staticflickr.com/3250/3100756250_efbe62b282_b.jpg',
+  'https://upload.wikimedia.org/wikipedia/commons/f/f2/SaraJacobs_headshot.jpg',
+  'https://upload.wikimedia.org/wikipedia/commons/e/e7/Mona2x.jpg',
+  'https://static.timesofisrael.com/njjewishnews/uploads/2018/03/LadinJoyCOM.jpg',
+  'https://upload.wikimedia.org/wikipedia/commons/1/11/BlackHeadshot.JPG',
+  'https://live.staticflickr.com/5311/14365669046_06540bbbff_b.jpg',
+  'https://upload.wikimedia.org/wikipedia/commons/f/f2/Sarah_Beattie-Smith.jpg',
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwn7FngXrOs-82YZFU7k3gEcURjGX5xKuo984TJgPz6dc9r5IrOw',
+  'https://storage.needpix.com/rsynced_images/girl-1512323_1280.jpg',
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlpQTh0VkS7tt5Xvxj3c0LsFg7Cb-2exozEs-a9m7GQfo5vGJkZQ',
+  'https://upload.wikimedia.org/wikipedia/commons/f/fe/StacyKeibler2011.jpeg',
+  'https://i0.nicepik.com/files/513/845/112/attractive-beautiful-beauty-black-and-white.jpg',
+  'https://i0.nicepik.com/files/626/548/833/close-up-daylight-eyes-face.jpg',
+  'https://i2.nicepik.com/files/624/942/511/woman-smile-person-head-covering.jpg',
+  'https://i2.nicepik.com/files/827/264/841/portrait-girl-photoshoot.jpg'
+]
+
+PHOTOSMEN = [
+  'https://images.unsplash.com/photo-1544168190-79c17527004f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
   'https://images.unsplash.com/photo-1506919258185-6078bba55d2a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
   'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
   'https://images.unsplash.com/photo-1548372290-8d01b6c8e78c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
@@ -186,6 +183,7 @@ PHOTOSMEN = ['https://images.unsplash.com/photo-1544168190-79c17527004f?ixlib=rb
 ]
 
 puts "checking if you are in development mode"
+
 if Rails.env.development?
   puts "wiping the database "
   Therapist.destroy_all
@@ -206,16 +204,8 @@ else
 end
 
 puts "creating fake users"
- puts "crating 10 women"
 
-10.times do
-  User.create!(
-    email: "#{FIRSTNAMESF.sample}.#{LASTNAMES.sample}@example.com",
-    password: "123456"
-  )
-end
-
-puts "creating ten men"
+puts "creating 10 men"
 
 10.times do
   User.create!(
@@ -224,17 +214,27 @@ puts "creating ten men"
   )
 end
 
+ puts "creating 10 women out of the rib of ten men"
+
+10.times do
+  User.create!(
+    email: "#{FIRSTNAMESF.sample}.#{LASTNAMES.sample}@example.com",
+    password: "123456"
+  )
+end
+
+
 puts "#{User.count} users created"
 
 puts "creating therapists"
 
 
 i = 0
-while i < 62
+while i < 10
   Therapist.create!(
     first_name: FIRSTNAMESF[i],
     last_name: LASTNAMES.sample,
-    avg_rating: half_value(rndr.rand(1.0..5.0)),
+    avg_rating: half_value(rndr.rand(3.0..5.0)),
     language: language,
     bio: BIOS.sample,
     years_exp: rndr.rand(1..5),
@@ -246,11 +246,11 @@ end
 
 n = 0
 
-while n < 56
+while n < 10
   Therapist.create!(
     first_name: FIRSTNAMESM[n],
     last_name: LASTNAMES.sample,
-    avg_rating: half_value(rndr.rand(1.0..5.0)),
+    avg_rating: half_value(rndr.rand(3.0..5.0)),
     language: language,
     bio: BIOS.sample,
     years_exp: rndr.rand(1..5),
@@ -267,137 +267,120 @@ users = User.all
 
 puts "giving the therapists availabilties"
 
-t = therapists.select do |t|
-  t.avg_rating > 3
-end
 
-t.each do |therapist|
-  s = DateTime.parse('3rd Sep 2019 08:05:06+03:30')
-  e = DateTime.parse('3rd Sep 2019 012:05:06+03:30')
+therapists.first(5).each do |therapist|
   Availability.create!(
       week_day: 1,
-      start_time: s,
-      end_time: e,
+      start_time: '08:00:00',
+      end_time: '9:00:00',
       therapist: therapist
     )
    Availability.create!(
       week_day: 2,
-      start_time: s,
-      end_time: e,
+      start_time: '09:00:00',
+      end_time: '10:00:00',
       therapist: therapist
     )
     Availability.create!(
       week_day: 3,
-      start_time: s,
-      end_time: e,
+      start_time: '10:00:00',
+      end_time: '11:00:00',
       therapist: therapist
     )
      Availability.create!(
       week_day: 4,
-      start_time: s,
-      end_time: e,
+      start_time: '09:00:00',
+      end_time: '10:00:00',
       therapist: therapist
     )
     Availability.create!(
-      week_day: 5,
-      start_time: s,
-      end_time: e,
+      week_day: 4,
+      start_time: '10:00:00',
+      end_time: '11:00:00',
       therapist: therapist
     )
     Availability.create!(
-      week_day: 6,
-      start_time: s,
-      end_time: e,
+      week_day: 4,
+      start_time: '11:00:00',
+      end_time: '12:00:00',
       therapist: therapist
     )
 end
 
-t = therapists.select do |t|
-  t.avg_rating < 3
-end
-
-t.each do |therapist|
-  s = DateTime.parse('3rd Sep 2019 012:05:06+03:30')
-  e = DateTime.parse('3rd Sep 2019 05:05:06+03:30')
+therapists.last(5).each do |therapist|
   Availability.create!(
       week_day: 1,
-      start_time: s,
-      end_time: e,
+      start_time: '08:00:00',
+      end_time: '9:00:00',
       therapist: therapist
     )
    Availability.create!(
       week_day: 2,
-      start_time: s,
-      end_time: e,
+      start_time: '09:00:00',
+      end_time: '10:00:00',
       therapist: therapist
     )
     Availability.create!(
       week_day: 3,
-      start_time: s,
-      end_time: e,
+      start_time: '10:00:00',
+      end_time: '11:00:00',
       therapist: therapist
     )
      Availability.create!(
+      week_day: 3,
+      start_time: '09:00:00',
+      end_time: '10:00:00',
+      therapist: therapist
+    )
+    Availability.create!(
       week_day: 4,
-      start_time: s,
-      end_time: e,
+      start_time: '10:00:00',
+      end_time: '11:00:00',
       therapist: therapist
     )
     Availability.create!(
       week_day: 5,
-      start_time: s,
-      end_time: e,
-      therapist: therapist
-    )
-    Availability.create!(
-      week_day: 6,
-      start_time: s,
-      end_time: e,
+      start_time: '11:00:00',
+      end_time: '12:00:00',
       therapist: therapist
     )
 end
 
-t = therapists.select do |t|
-  t.avg_rating == 3
-end
-
-t.each do |therapist|
-  s = DateTime.parse('3rd Sep 2019 8:05:06+03:30')
-  e = DateTime.parse('3rd Sep 2019 05:05:06+03:30')
-  Availability.create!(
+therapists.each do |therapist|
+   Availability.create!(
       week_day: 1,
-      start_time: s,
-      end_time: e,
+      start_time: '16:00:00',
+      end_time: '17:00:00',
       therapist: therapist
     )
    Availability.create!(
       week_day: 2,
-      start_time: s,
-      end_time: e,
+      start_time: '17:00:00',
+      end_time: '18:00:00',
       therapist: therapist
     )
     Availability.create!(
       week_day: 3,
-      start_time: s,
-      end_time: e,
+      start_time: '17:00:00',
+      end_time: '18:00:00',
       therapist: therapist
     )
      Availability.create!(
+      week_day: 3,
+      start_time: '16:00:00',
+      end_time: '17:00:00',
+      therapist: therapist
+    )
+    Availability.create!(
       week_day: 4,
-      start_time: s,
-      end_time: e,
+      start_time: '16:00:00',
+      end_time: '17:00:00',
       therapist: therapist
     )
     Availability.create!(
       week_day: 5,
-      start_time: s,
-      end_time: e,
-      therapist: therapist
-    )
-    Availability.create!(
-      week_day: 6,
-      start_time: s,
-      end_time: e,
+      start_time: '14:00:00',
+      end_time: '13:00:00',
       therapist: therapist
     )
 end
