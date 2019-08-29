@@ -1,0 +1,181 @@
+#therapist-container {
+  height: 14em;
+  background-color: #c6d3f2;
+  .therapist-avatar{
+    margin-left: 60px;
+    margin-top: 5px;
+    p {
+      color:#FFFCFC;
+      font-family: Avenir;
+      font-weight: 500;
+      font-size:30px;
+      line-height: 50px;
+      text-align:center;
+      margin: auto 88px;
+    }
+    .avatar-small {
+      width:200px;
+      height:200px;
+    }
+  }
+}
+.booking-card {
+  width:90%;
+  height:250px;
+  border-radius:18px;
+  border: 1px solid #CDD4D6;
+  display:flex;
+  justify-content: space-around;
+  background-color: white;
+  padding:10px;
+  margin: 40px auto 20px auto;
+
+  .calendar {
+    margin: 31px 0;
+    position: relative;
+    grid-template-rows: 50px 50px 50px;
+    grid-template-columns: 50px 50px 50px;
+    grid-gap:2px;
+    width: 160px;
+    height: 180px;
+  }
+
+  .fa-calendar {
+    font-size:11em;
+    color:$main;
+    position:absolute;
+    top:-20px;
+  }
+   .date {
+    padding:0;
+    margin:0;
+    border: solid;
+    height: 100px;
+    display:inline-block;
+    vertical-align: middle;
+  }
+
+#date {
+    font-size: 6.5em;
+    font-family: $body-font;
+    font-weight:bold;
+    color:$main;
+    margin-top: 10px;
+    margin-right:5px;
+    text-align:center;
+}
+
+  .text {
+    p {
+    color:black;
+    font-family: Avenir;
+    font-size: 15px;
+    font-weight: 900;
+    padding: 15px 0 0 15px;
+      }
+    }
+
+  h4 {
+    color:#A19797;
+    font-family: Avenir;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 15px 0 0 0;
+       }
+
+  .info {
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    color: #4F5CAD;
+  }
+
+
+  .fa-video-slash {
+    text-align:center;
+    font-size:40px;
+    color: $border;
+  }
+
+  .reschedule {
+    border: 1px solid #4F5CAD;
+    border-radius: 5px;
+    color:#4F5CAD;
+    padding:10px;
+  }
+
+  .cancel {
+    border: 1px solid #4F5CAD;
+    border-radius: 5px;
+    color:#4F5CAD;
+    padding:10px;
+  }
+
+  .call {
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+
+  .fa-video {
+    padding: 10px 15px;
+    font-size: 100px;
+    color: $accent;
+    text-align:center;
+    border:solid;
+    border-radius:7px;
+    background-color: $muted;
+
+
+    &:hover {
+      color: $main;
+            }
+    }
+  }
+
+
+.past-sessions{
+  width: 90%;
+  border: 1px solid #CDD4D6;
+  border-radius: 18px;
+  margin: 50px auto 30px auto;
+
+
+  .past-booking-card {
+    width:85%;
+    height:250px;
+    border-bottom: 1px solid #CDD4D6;
+    display:flex;
+    justify-content: space-around;
+    background-color: white;
+    padding:10px;
+    .review {
+      border: 1px solid #4F5CAD;
+      border-radius: 5px;
+      color:#4F5CAD;
+      padding:10px;
+            }
+    p {
+    color:black;
+    font-family: Avenir;
+    font-size: 15px;
+    font-weight: 900;
+    padding: 15px 0 0 15px;
+      }
+    .info > h3 {
+    flex-direction:column;
+    justify-content:space-between;
+    color: #4F5CAD;
+    }
+
+  h4 {
+    color:black;
+    font-family: Avenir;
+    font-size: 25px;
+    font-weight: 500;
+
+       }
+
+}
+
+}
