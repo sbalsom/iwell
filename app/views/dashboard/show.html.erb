@@ -1,12 +1,53 @@
   <%# Holds all bookings %>
 
-  <div id="upcoming-bookings" class="upcoming-bookings">
-    <%# Holds upcming bookings %>
-    <%= render partial: "shared/upcoming_bookings", collection: @next_booking, as: :booking %>
+  <div id="therapist-container" class="p-2 flex-fill">
+    <div class="therapist-avatar d-flex ">
+      <% if @user_therapist %>
+      <%= cl_image_tag @user_therapist.photo, width: 140, class: "avatar-small" %>
+      <p>Your assigned therapist: <%= @user_therapist.first_name %> <%= @user_therapist.last_name %> </p>
+      <% else %>
+      <div class="no-therapist d-flex">
+      <%= image_tag 'unknown.jpeg', class: "avatar-small" %>
+      <h2>You don't have an assigned therapist yet !</h2>
+      </div>
+      <% end %>
+    </div>
   </div>
+  <% @next_bookings.sort_by { |booking| booking.starts_at } %>
+  <% @next_booking = @next_bookings.first %>
+<h1 style="padding: 10px 0 0 50px; margin: 12px 0 -16px 0px;">Next Session</h1>
+  <div class="booking-card">
+      <div class="calendar">
+      <!--   should display booking time  -->
+        <p id="date"> 29 </p>
+        <i class="far fa-calendar" aria-hidden="true"></i>
+      </div>
+      <!-- if Time.now <= @booking.start_time + 24hours -->
+          <div class="info">
+            <h3>Date: <%= I18n.l(@next_booking.starts_at, format: :long) %></h3>
+            <div class="text">
+              <i class="fas fa-video-slash d-flex" aria-hidden="true">
+                <p>You can join the call on your appointment date.</p>
+              </i>
+            </div>
+            <div class="button-container">
+                <%= button_tag "Reschedule", class: "reschedule" %>
+                <%= button_tag "Cancel", class: "cancel" %>
+            </div>
+            <h4><i class="fas fa-info-circle"></i>Cancellation is only possible until before 24 hours of the call.</h4>
+          </div>
+      </div>
 
-  <div class="past-bookings">
-    <h1 style="padding: 10px 0 0 50px; margin: 12px 0 -16px 0px;" >Past Sessions</h1>
-    <%= render partial: "shared/past_bookings", past_bookings: @past_bookings %>
+  <div class="d-flex">
+    <div id="upcoming-bookings" class="upcoming-bookings">
+      <h1>Other upcoming bookings</h1>
+
+      <%= render partial: "shared/upcoming_bookings", collection: @next_bookings, as: :booking %>
+    </div>
+
+    <div class="past-bookings">
+      <h1 style="padding: 10px 0 0 50px; margin: 12px 0 -16px 0px;" >Past Sessions</h1>
+      <%= render partial: "shared/past_bookings", past_bookings: @past_bookings %>
+    </div>
   </div>
 </div>

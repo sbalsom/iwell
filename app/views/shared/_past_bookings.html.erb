@@ -8,9 +8,10 @@
       </div>
       <div class="info">
         <h3>Date: <%= I18n.l(booking.starts_at, format: :long) %></h3>
-        <h4><%= booking.duration %> minutes</h4>
         <div class="button-container">
           <%= button_tag "Leave Review", class: "review" %>
+          <%= button_tag "Assign as my therapist", class: "review" %>
+
         </div>
       </div>
     </div>
