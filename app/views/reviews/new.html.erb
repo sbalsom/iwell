@@ -1,27 +1,31 @@
-  <h3> Rate Your Therapist </h3>
-  <h5>Want to provide some feedback for your therapist?</h5>
-  <div class="review-container">
-    <div class="first-flex-item">
-      <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="Avatar" class="avatar-large">
-      <div> Dr <%= @therapist.first_name %> <%= @therapist.last_name %> </div>
-    </div>
 
-    <div class="second-flex-item">
+
+    <h3> Rate Your Therapist </h3>
+    <h5>Want to provide some feedback for your therapist?</h5>
+    <div class="review-container">
+      <div class="first-flex-item">
+        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="Avatar" class="avatar-large">
+        <div> Dr <%= @therapist.first_name %> <%= @therapist.last_name %> </div>
+      </div>
+
+      <div class="second-flex-item">
         <div class ="feedback-card">
-             <div class="first-attribute">
-               <h5> Patience </h5>
-                <%= render 'shared/stars' %>
-            </div>
-             <div class="second-attribute">
-                <h5> Clarity </h5>
-                <%= render 'shared/stars' %>
-            </div>
-             <div class="third-attribute">
-                <h5> Understanding </h5>
-                <%= render 'shared/stars' %>
-            </div>
+         <div class="first-attribute">
+           <h5> Patience </h5>
+           <div class="rating"> <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+           </div>
+         </div>
+         <div class="second-attribute">
+          <h5> Clarity </h5>
+          <div class="rating"> <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+          </div>
+        </div>
+        <div class="third-attribute">
+          <h5> Understanding </h5>
+          <div class="rating"> <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+          </div>
         </div>
         <input type="submit" value="Submit" class="button-navy">
       </div>
     </div>
-</div>
+  </div>
