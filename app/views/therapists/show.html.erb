@@ -48,6 +48,7 @@
 
     </div>
   </div>
+
   <div class="show-form">
     <div class="booking-container">
       <h1 class="booking-title">Video Call</h1>
@@ -64,6 +65,12 @@
     <% end %>
     </div>
 <!--       <input type="text" class="booking-input" placeholder="this will change" autofocus>
+
+  <!-- <div class="show-form">
+    <form class="booking-container", method= 'get'>
+      <h1 class="booking-title">Video Call</h1>
+      <input type="string" name="booking[starts_at]" class="booking-input datepicker" placeholder="this will change" autofocus>
+
       <input type="text" class ="booking-input" placeholder="this will change" autofocus>
       <div class="price-container">
         <p>Total</p>
@@ -71,7 +78,22 @@
       </div>
       <%# if current_user %>
       <input type="submit" value="Book Appointment" class="booking-button">
+
       <%# end %> -->
+
+
+  <!-- </div> -->
+  <div class="show-form">
+    <%#= simple_form_for :bookings, method: "post", class: "booking-container" do |f| %>
+      <h1 class="booking-title">Video Call</h1>
+      <%#= f.input :starts_at, label: "Date & Time", as: :string, input_html: {class: "datepicker"} %>
+      <%#= f.input :duration, as: :integer %>
+      <div class="price-container">
+        <p>Total</p>
+        <h1>0 EUR (Trial Call)</h1>
+      </div>
+      <%#= f.button :submit, "Book Appointment", class: "booking-button" %>
+    <%# end %>
 
   </div>
 </div>
