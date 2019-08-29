@@ -1,0 +1,36 @@
+
+
+  <div id="therapist-container" class="p-2 flex-fill">
+    <div class="therapist-avatar d-flex ">
+      <%= cl_image_tag booking.therapist.photo, width: 140, class: "avatar-small" %>
+      <p>Your assigned therapist: <%= booking.therapist.first_name %> <%= booking.therapist.last_name %> </p>
+    </div>
+  </div>
+  <h1 style="padding: 10px 0 0 50px; margin: 12px 0 -16px 0px;">Upcoming Session</h1>
+<div class="upcoming-booking">
+  <div class="d-flex flex-column mb-3">
+    <%# Avatar row %>
+    <div class="booking-card">
+      <div class="calendar">
+      <!--   should display booking time  -->
+        <p id="date"> 29 </p>
+        <i class="far fa-calendar" aria-hidden="true"></i>
+      </div>
+      <!-- if Time.now <= @booking.start_time + 24hours -->
+          <div class="info">
+            <h3>Date: <%= I18n.l(booking.starts_at, format: :long) %></h3>
+            <div class="text">
+              <i class="fas fa-video-slash d-flex" aria-hidden="true">
+                <p>You can join the call on your appointment date.</p>
+              </i>
+            </div>
+            <div class="button-container">
+                <%= button_tag "Reschedule", class: "reschedule" %>
+                <%= button_tag "Cancel", class: "cancel" %>
+            </div>
+            <h4><i class="fas fa-info-circle"></i>Cancellation is only possible until before 24 hours of the call.</h4>
+          </div>
+      </div>
+  </div>
+</div>
+

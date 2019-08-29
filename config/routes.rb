@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get 'sandbox', to: 'pages#sandbox'
   resources :therapists, only: :show
+  get 'dashboard/show', to: 'dashboard#show'
 end

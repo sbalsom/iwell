@@ -1,0 +1,18 @@
+<div class="past-sessions">
+<% @past_bookings.each do |booking| %>
+    <div class="past-booking-card">
+      <!-- if Time.now <= @booking.start_time + 24hours -->
+      <div class="therapist-avatar d-flex flex-column" style="padding: 10px 0 0 10px">
+      <%= cl_image_tag booking.therapist.photo, width: 140, class: "avatar-small" %>
+      <p>Dr. <%= booking.therapist.first_name %> <%= booking.therapist.last_name %> </p>
+      </div>
+      <div class="info">
+        <h3>Date: <%= I18n.l(booking.starts_at, format: :long) %></h3>
+        <h4><%= booking.duration %> minutes</h4>
+        <div class="button-container">
+          <%= button_tag "Leave Review", class: "review" %>
+        </div>
+      </div>
+    </div>
+<% end %>
+</div>

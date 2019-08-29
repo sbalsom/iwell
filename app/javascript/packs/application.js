@@ -1,5 +1,4 @@
 import "bootstrap";
-
 import { initSweetalert2 } from '../plugins/init_sweetalert2';
 
 initSweetalert2('.booking-button', {
