@@ -1,3 +1,13 @@
-<h1>Booking confirmation</h1>
-<h3>Thank you <%= @booking.user.name %>,</h3>
-<h3>Your booking is now confirmed</h3>
+<div class="booking-confirmation-container">
+  <div class="booking-confirmation-content">
+    <div>
+      <p>
+        <i class="far fa-check-circle d-flex justify-content-center align-items-center mt-2" id="confirmation-icon"></i>
+      </p>
+      <h2 class="d-flex justify-content-center align-items-center">Booking confirmation</h2>
+    </div>
+    <p class="mt-5">Thank you <%= @booking.user.name %>,</p>
+    <p>Your booking is now set with Dr <%= @booking.therapist.first_name %> <%= @booking.therapist.last_name %> on <%= l(@booking.starts_at, format: :long) %></p>
+    <p><%= link_to "See my bookings", dashboard_path, class: "button-navy d-flex justify-content-center align-items-center mt-5" %></p>
+  </div>
+</div>
