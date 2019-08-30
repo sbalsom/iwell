@@ -21,6 +21,19 @@ def create
   end
 end
 
+def edit
+  @therapist = Therapist.find(params[:therapist_id])
+  @booking = Booking.find(params[:id])
+end
+
+def update
+end
+
+def destroy
+end
+
+
+
 private
 
 def booking_params

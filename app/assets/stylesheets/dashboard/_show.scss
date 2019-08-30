@@ -1,6 +1,14 @@
 #therapist-banner {
-  height: 14em;
+  height: 150px;
   background-color: #c6d3f2;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+
+  #back-to-search {
+    width:200px;
+    font-size: 18px;
+  }
 
   .therapist-banner-inner{
     margin-left: 60px;
@@ -18,8 +26,8 @@
     }
 
   .avatar-small {
-    width:200px;
-    height:200px;
+    width:100px;
+    height:100px;
     margin-right: 30px;
     }
 
@@ -34,36 +42,75 @@
 
 .therapist-show-page-container {
   display:flex;
-
-  #upcoming-bookings {
-    text-align:center;
-    font-family:$body-font;
-    font-size:30px;
-  }
+   h1 {
+      font-family:$body-font;
+      font-size:20px;
+      font-weight:lighter;
+       margin-top:30px;
+       margin-bottom:30px;
+    }
 
   #next-session {
     font-family:$body-font;
     text-align:center;
-    margin-top:20px;
+    font-size:30px;
+    font-weight:bolder;
   }
 
-  #past-sessions {
-    text-align:center;
-    font-family:$body-font;
-    margin-top:20px;
-    margin-bottom:30px;
+  .half-page {
+    margin:0 20px;
+    display:flex;
+    flex-direction:column;
   }
 
   .booking-card {
-    max-width:700px;
+    width: 500px;
     height:250px;
     border-radius:18px;
     border: 1px solid #CDD4D6;
     display:flex;
     justify-content: space-around;
     background-color: white;
-    padding:10px;
+    padding:20px;
     margin: 40px auto 20px auto;
+  }
+
+  .other-upcoming-card {
+     width: 500px;
+    height:150px;
+    border-radius:18px;
+    border: 1px solid #CDD4D6;
+    display:flex;
+    justify-content: space-around;
+    background-color: white;
+    padding:20px;
+    margin: 40px auto 20px auto;
+
+  }
+
+  #notice {
+    text-align:center;
+    font-size:14px;
+    margin:0 15px;
+  }
+
+  #datetime {
+    color:black;
+    font-size:20px;
+  }
+
+  #calendar-day {
+    text-align:center;
+    color:black;
+    font-weight:lighter;
+  }
+
+
+  #cancel-policy-notice {
+    font-size: 15px;
+    color:grey;
+    text-align:center;
+    margin: 0 20px;
   }
 
   #date {
@@ -74,6 +121,7 @@
     margin-top: 10px;
     margin-right:5px;
     text-align:center;
+    margin-left: 18px;
   }
 
   .calendar {
@@ -94,42 +142,13 @@
   }
 
 
-  .booking-card-text p {
-    color:black;
-    font-family: Avenir;
-    font-size: 15px;
-    font-weight: 900;
-    padding: 15px 0 0 15px;
-   }
-
-
-  h4 {
-    color:#A19797;
-    font-family: Avenir;
-    font-size: 15px;
-    font-weight: 500;
-    padding: 15px 0 0 0;
-  }
-
-  .info {
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-    color: #4F5CAD;
-  }
-
-  .fa-video-slash {
-    text-align:center;
-    font-size:40px;
-    color: $border;
-  }
-
   .reschedule-button {
     border: 1px solid #4F5CAD;
     border-radius: 5px;
     color:#4F5CAD;
     padding:10px;
     font-size: 15px;
+    margin-right:10px;
   }
 
   .cancel-button {
@@ -138,6 +157,7 @@
     color:#4F5CAD;
     padding:10px;
     font-size: 15px;
+    margin-left:10px;
   }
 
   .call {
@@ -160,19 +180,9 @@
     color: $main;
   }
 
-  .past-sessions{
-    width: 90%;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-  }
-
   .past-booking-card {
-    margin-top:20px;
     width:85%;
     height:250px;
-    border-bottom: 1px solid #CDD4D6;
     display:flex;
     justify-content: space-around;
     background-color: white;
@@ -183,28 +193,7 @@
     border: 1px solid #4F5CAD;
     border-radius: 5px;
     color:#4F5CAD;
-    padding:10px;
-  }
-  p {
-    color:black;
-    font-family: Avenir;
-    font-size: 15px;
-    font-weight: 900;
-    padding: 15px 0 0 15px;
-  }
-  .info h3 {
-    flex-direction:column;
-    justify-content:space-between;
-    color: #4F5CAD;
-    font-size:24px;
   }
 
-  h4 {
-    color:black;
-    font-family: Avenir;
-    font-size: 25px;
-    font-weight: 500;
-
-    }
 }
 
