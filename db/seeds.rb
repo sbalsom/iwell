@@ -210,7 +210,8 @@ puts "creating 10 men"
 10.times do
   User.create!(
     email: "#{FIRSTNAMESM.sample}.#{LASTNAMES.sample}@example.com",
-    password: "123456"
+    password: "123456",
+    name: FIRSTNAMESM.sample
   )
 end
 
@@ -411,21 +412,21 @@ therapists.each do |therapist|
 end
 end
 
-esin = User.create!(
-    email: "esin@example.com",
-    password: "123456"
-  )
-Booking.create!(
-  user: esin,
-  therapist: Therapist.first,
-  starts_at: Time.now - 1.days
-  )
+# esin = User.create!(
+#     email: "esin@example.com",
+#     password: "123456"
+#   )
+# Booking.create!(
+#   user: esin,
+#   therapist: Therapist.first,
+#   starts_at: Time.now - 1.days
+#   )
 
-Booking.create!(
-  user: esin,
-  therapist: Therapist.last,
-  starts_at: Time.now - 3.days
-  )
+# Booking.create!(
+#   user: esin,
+#   therapist: Therapist.last,
+#   starts_at: Time.now - 3.days
+#   )
 
 puts "#{TherapistSpecialty.count} tags created"
 
