@@ -62,7 +62,7 @@
   </div>
   <div class="half-page">
   <h1 id="past-sessions">Past Sessions</h1>
-  <% if !@past_bookings.empty? %>
+    <% if @past_bookings %>
     <div class="past-bookings">
 
         <%= render partial: "shared/past_bookings", past_bookings: @past_bookings %>

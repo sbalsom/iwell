@@ -415,28 +415,7 @@ puts "#{TherapistSpecialty.count} tags created"
 
 puts "now creating some bookings"
 
-therapists.each do |therapist|
-  users.each do |user|
-  Booking.create!(
-    therapist: therapist,
-    starts_at: Time.now,
-    free: false,
-    user: user
-    )
-    Booking.create!(
-    therapist: therapist,
-    starts_at: Time.now.advance(days: 1),
-    free: false,
-    user: user
-    )
-    Booking.create!(
-    therapist: therapist,
-    starts_at: Time.now.prev_day,
-    free: false,
-    user: user
-    )
-  end
-end
+#myself to have two past bookings
 
 puts "#{Booking.count} bookings created"
 
