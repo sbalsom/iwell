@@ -7,9 +7,12 @@
   text-align: center;
   font-size:22px;
   margin: auto;
-  line-height: 60px;
-  position: relative;
-  vertical-align: top;
+  // line-height: 60px;
+  // position: relative;
+  // vertical-align: top;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .button-navy:hover {
@@ -44,9 +47,12 @@
   text-align: center;
   font-size:14px;
   margin: auto;
-  line-height: 36px;
-  position: relative;
-  vertical-align: top;
+  // line-height: 36px;
+  // position: relative;
+  // vertical-align: top;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .button-navy-md {
@@ -58,8 +64,10 @@
   text-align: center;
   font-size:24px;
   margin: auto;
-  line-height: 36px;
-  position: relative;
-  vertical-align: top;
-
+  // line-height: 36px;
+  // position: relative;
+  // vertical-align: top;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
