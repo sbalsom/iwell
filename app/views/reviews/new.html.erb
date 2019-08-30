@@ -12,7 +12,7 @@
   <%#= f.submit %>
   <%# end %> -->
   <div class="main-review-container">
-   <h3> Rate Your Therapist </h3>
+   <h3> Rate Your Experience </h3>
    <h5>Want to provide some feedback for your therapist?</h5>
     <div class="review-container">
       <div class="first-flex-item">
@@ -22,7 +22,7 @@
     <div class="second-flex-item">
         <div class ="feedback-card">
          <div class="first-attribute">
-          <h5> Patience </h5>
+          <h5> I had the space to express my feelings. </h5>
           <form class="new_review" id="new_review" action="/therapists/<%= @therapist.id %>/reviews" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="xuXh5GGJtIsx0wtA4WnSrs5rFR7LoTiNsv24I/2Io41pukC+q6aJICwqs+NRqvN0HtniRER+5YxcJtdXPDNZUg==" id="rating-form" />
          <span class="rating-star">
               <input type="radio" name="rating_p" value="5"><span class="star"></span>
@@ -33,7 +33,7 @@
        </span>
       </div>
         <div class="second-attribute">
-          <h5> Clarity </h5>
+          <h5> The explanations were clear.</h5>
           <span class="rating-star">
               <input type="radio" name="rating_c" value="5"><span class="star"></span>
               <input type="radio" name="rating_c" value="4"><span class="star"></span>
@@ -43,7 +43,7 @@
       </span>
       </div>
          <div class="third-attribute">
-          <h5> Understanding </h5>
+          <h5> I felt understood by my therapist. </h5>
           <span class="rating-star">
               <input type="radio" name="rating_u" value="5"><span class="star"></span>
               <input type="radio" name="rating_u" value="4"><span class="star"></span>
