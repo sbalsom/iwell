@@ -413,6 +413,12 @@ end
 
 puts "#{TherapistSpecialty.count} tags created"
 
+puts "now creating some bookings"
+
+#myself to have two past bookings
+
+puts "#{Booking.count} bookings created"
+
 puts "current stats :"
   puts "Therapists: #{Therapist.count}"
   puts "Availabilities: #{Availability.count}"

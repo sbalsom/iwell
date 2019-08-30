@@ -2,14 +2,12 @@
 
 <div class="upcoming-booking">
   <div class="d-flex flex-column mb-3">
-    <%# Avatar row %>
     <div class="booking-card">
-      <!-- if Time.now <= @booking.start_time + 24hours -->
           <div class="info">
             <h3>Date: <%= I18n.l(booking.starts_at, format: :long) %></h3>
             <div class="button-container">
-                <%= button_tag "Reschedule", class: "reschedule" %>
-                <%= button_tag "Cancel", class: "cancel" %>
+                <%= button_tag "Reschedule", class: "reschedule-button" %>
+                <%= button_tag "Cancel", class: "cancel-button" %>
             </div>
             <h4><i class="fas fa-info-circle"></i>Cancellation is only possible until before 24 hours of the call.</h4>
           </div>
