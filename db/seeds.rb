@@ -230,7 +230,7 @@ puts "creating therapists"
 
 
 i = 0
-while i < 10
+while i < 50
   Therapist.create!(
     first_name: FIRSTNAMESF[i],
     last_name: LASTNAMES.sample,
@@ -246,7 +246,7 @@ end
 
 n = 0
 
-while n < 10
+while n < 50
   Therapist.create!(
     first_name: FIRSTNAMESM[n],
     last_name: LASTNAMES.sample,
@@ -410,6 +410,22 @@ therapists.each do |therapist|
     specialty: specialties.sample)
 end
 end
+
+esin = User.create!(
+    email: "esin@example.com",
+    password: "123456"
+  )
+Booking.create!(
+  user: esin,
+  therapist: Therapist.first,
+  starts_at: Time.now - 1.days
+  )
+
+Booking.create!(
+  user: esin,
+  therapist: Therapist.last,
+  starts_at: Time.now - 3.days
+  )
 
 puts "#{TherapistSpecialty.count} tags created"
 
