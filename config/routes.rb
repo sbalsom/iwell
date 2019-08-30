@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create, :edit, :update, :destroy]
     resources :reviews, only: [:new, :create]
   end
+  resources :bookings, only: :show
   devise_for :users
   root to: 'pages#home'
   get 'sandbox', to: 'pages#sandbox'
