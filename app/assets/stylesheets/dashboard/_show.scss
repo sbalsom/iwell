@@ -52,17 +52,19 @@
     font-family:$body-font;
     margin-top:20px;
     margin-bottom:30px;
-}
-.booking-card {
-  max-width:700px;
-  height:250px;
-  border-radius:18px;
-  border: 1px solid #CDD4D6;
-  display:flex;
-  justify-content: space-around;
-  background-color: white;
-  padding:10px;
-  margin: 40px auto 20px auto;
+  }
+
+  .booking-card {
+    max-width:700px;
+    height:250px;
+    border-radius:18px;
+    border: 1px solid #CDD4D6;
+    display:flex;
+    justify-content: space-around;
+    background-color: white;
+    padding:10px;
+    margin: 40px auto 20px auto;
+  }
 
   #date {
     font-size: 6.5em;
@@ -92,15 +94,14 @@
   }
 
 
-  .booking-card-text {
-    p {
+  .booking-card-text p {
     color:black;
     font-family: Avenir;
     font-size: 15px;
     font-weight: 900;
     padding: 15px 0 0 15px;
-      }
-    }
+   }
+
 
   h4 {
     color:#A19797;
@@ -108,24 +109,14 @@
     font-size: 15px;
     font-weight: 500;
     padding: 15px 0 0 0;
-       }
+  }
 
   .info {
     display:flex;
     flex-direction:column;
     justify-content:space-between;
     color: #4F5CAD;
-
-    .button-container {
-
-    }
   }
-
-
-}
-
-
-
 
   .fa-video-slash {
     text-align:center;
@@ -163,25 +154,19 @@
     border:solid;
     border-radius:7px;
     background-color: $muted;
-
-
-    &:hover {
-      color: $main;
-            }
-    }
   }
 
+  .fa-video:hover {
+    color: $main;
+  }
 
-.past-sessions{
-  width: 90%;
-  // border: 1px solid #CDD4D6;
-  // border-radius: 18px;
-  // margin: 50px auto 30px auto;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-
+  .past-sessions{
+    width: 90%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+  }
 
   .past-booking-card {
     margin-top:20px;
@@ -192,26 +177,27 @@
     justify-content: space-around;
     background-color: white;
     padding:10px;
-    }
-    .review-path-button {
-      border: 1px solid #4F5CAD;
-      border-radius: 5px;
-      color:#4F5CAD;
-      padding:10px;
-    }
-    p {
+  }
+
+  .review-path-button {
+    border: 1px solid #4F5CAD;
+    border-radius: 5px;
+    color:#4F5CAD;
+    padding:10px;
+  }
+  p {
     color:black;
     font-family: Avenir;
     font-size: 15px;
     font-weight: 900;
     padding: 15px 0 0 15px;
-      }
-    .info > h3 {
+  }
+  .info h3 {
     flex-direction:column;
     justify-content:space-between;
     color: #4F5CAD;
     font-size:24px;
-    }
+  }
 
   h4 {
     color:black;
@@ -220,6 +206,5 @@
     font-weight: 500;
 
     }
-
 }
 
