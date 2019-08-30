@@ -2,16 +2,16 @@
 
 <div class="upcoming-booking">
   <div class="d-flex flex-column mb-3">
-    <div class="booking-card">
+    <div class="other-upcoming-card">
           <div class="info">
-            <h3>Date: <%= I18n.l(booking.starts_at, format: :long) %></h3>
-            <div class="button-container">
-                <%= button_tag "Reschedule", class: "reschedule-button" %>
-                <%= button_tag "Cancel", class: "cancel-button" %>
+
+            <h3 id="datetime"> <p id="calendar-day">Your next appointment with <%= booking.therapist.first_name %> <%= booking.therapist.last_name %> will be on <%= I18n.l(booking.starts_at, format: :long) %></p></h3>
+            <div class="button-container d-flex justify-content-center">
             </div>
-            <h4><i class="fas fa-info-circle"></i>Cancellation is only possible until before 24 hours of the call.</h4>
+            <h4 id="cancel-policy-notice"><i class="fas fa-info-circle"></i> Cancellation is only possible until before 24 hours of the call.</h4>
           </div>
+          <%= link_to '🔄', edit_therapist_booking_path(booking.therapist, booking), class: "mx-2" %>
+           <%= link_to '❌', therapist_booking_path(booking.therapist, booking), method: :destroy, class: "mx-2"%>
       </div>
   </div>
 </div>
-
