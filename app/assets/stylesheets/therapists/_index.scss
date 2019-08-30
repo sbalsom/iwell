@@ -23,7 +23,7 @@
       position:absolute;
       bottom:30px;
       right:30px;
-      font-size:24px;
+      font-size:26px;
       font-style:bold;
 
     }
@@ -78,8 +78,29 @@
     background-color:white ;
     color: $accent;
     padding:5px;
-    margin:5px;
+    margin-top: 20px;
     border: solid 1px $accent;
     border-radius:10px;
     text-align:center;
+    margin-right: 8px;
   }
+
+  .specialty-container{
+    display: flex;
+  }
+
+
+  .therapist-cards{
+    margin-bottom:15px;
+    border: #F8F8F8;
+  }
+
+  .profile-description-content{
+    h3{
+     margin-top:5px;
+   }
+    h6{
+     margin-top:15px;
+   }
+}
+

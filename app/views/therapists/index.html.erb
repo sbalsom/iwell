@@ -77,9 +77,9 @@
   <div class="d-flex">
     <%= text_field_tag :query,
       params[:query],
-      class: "form-control my-3 mx-3",
+      class: "form-control my-3 mr-3",
       id: "search-bar",
-      placeholder: "Find a therapist"
+      placeholder: "Search by specialty or name"
     %>
     <%= submit_tag "Search", class: "button-navy-md my-3" %>
 
@@ -99,11 +99,11 @@
     <div class="dark-star">
       <i class="fas fa-star"></i>
     </div>
-    <% end %>
+  <% end %>
     <% if therapist.avg_rating % 1 != 0 %>
-    <div class="half-star">
+     <div class="half-star">
       <i class="fas fa-star-half-alt"></i>
-    </div>
+      </div>
     <% end %>
     <% empty = 5 - therapist.avg_rating.round%>
     <% empty.times do %>
@@ -112,31 +112,29 @@
     </div>
     <% end %>
   </div>
+</div>
 
-        </div>
-        <div class="profile-description">
+<div class="profile-description">
         <h3 id="name"><%= "#{therapist.first_name} #{therapist.last_name}" %></h3>
           <div class="profile-description-content">
-            <%= therapist.years_exp %> years of experience
-        <p>I speak <%= therapist.language %></p>
+            <h6><strong>Years of experience:</strong> <%= therapist.years_exp %></h6>
+            <h6><strong>Languages:</strong> <%= therapist.language %></h6>
+             <div class="specialty-container">
+            <% therapist.specialties.each do |specialty|%>
+                <div class="specialty-tag">
+                  <%= specialty.name %>
+                </div>
+                <% end %>
+            </div>
+            <div id="price">
+                €<%= therapist.rate %>
+           </div>
         </div>
-  </div>
-  <div class="d-flex justify-content-end flex-fill
- align-self-start pr-3">  <% therapist.specialties.each do |specialty|%>
-          <div class="specialty-tag">
-        <%= specialty.name %>
+  <% end %>
         </div>
-        <% end %>
-        </div>
-        <div id="price">€<%= therapist.rate %> /hour</div>
-</div>
-<% end %>
-
-   <% end %>
-
 
   </div>
 </div>
-
 <!-- Therapist.all.collect { |p| [ p.name, p.id ] }
  -->
+ <%end %>
