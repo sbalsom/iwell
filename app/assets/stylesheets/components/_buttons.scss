@@ -17,6 +17,24 @@
   color: white;
 }
 
+.button-home {
+  padding:10px 20px;
+  border-radius: 4px;
+  background-color: transparent;
+  color:white;
+  text-align: center;
+  font-size:22px;
+  line-height: 60px;
+  border:1px solid white;
+}
+
+.button-home:hover {
+  background: #7881E9;
+  text-decoration: none;
+  color: white;
+  border: none;
+}
+
 .button-navy-small {
   height: 34px;
   width: 85px;

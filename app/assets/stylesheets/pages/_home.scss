@@ -1,7 +1,6 @@
 // Specific CSS for your home-page
 #landing-cta {
   margin-left: 105px;
-  margin-top:15px;
 }
 
 .how-it-works {
@@ -16,14 +15,18 @@
 }
 
 .therapist-container{
-    margin-top: 80px;
+    margin-top: 120px;
+    h2{
+      font-weight:bold;
+      margin-bottom:40px;
+      }
   }
 
 .landing-therapists {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 350px;
+  height: 300px;
   .therapist-box {
     height:220px;
     width:200px;
@@ -36,7 +39,7 @@
 .therapist-LP p {
    width: 80%;
    margin: auto;
-   margin-bottom: 40px;
+   margin-bottom: 20px;
   }
 
 .landing-quote {
@@ -55,12 +58,18 @@
 }
 
 .advert-header {
-  margin-top:20px;
+  margin-top:5px;
   display: flex;
   justify-content: center;
+  h2{
+    margin-top: 30px;
+    font-weight:bold;
+    }
 }
 
 .information h2 {
   margin-top:30px;
   margin-bottom: 20px;
 }
+
+
