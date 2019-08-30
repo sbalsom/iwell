@@ -8,12 +8,12 @@
     <div class="bio-card">
       <p><strong>Specialties</strong>: </p>
       <div class="d-flex">
-      <% @therapist.specialties.each do |specialty| %>
-      <div class="specialty-tag">
-        <%= specialty.name %>
+        <% @therapist.specialties.each do |specialty| %>
+        <div class="specialty-tag">
+          <%= specialty.name %>
         </div>
-      <% end %>
-    </div>
+        <% end %>
+      </div>
       <p><strong>Years of Experience</strong>: <%= @therapist.years_exp %></p>
       <div class="bio-description">
         <p><%= @therapist.bio %></p>
@@ -24,42 +24,41 @@
       <% 4.times do %>
       <div class="review">
         <div class="stars">
-    <% full = @therapist.avg_rating.round(half: :down)  %>
- <% full.times do %>
-    <div class="dark-star">
-      <i class="fas fa-star"></i>
-    </div>
-    <% end %>
-    <% if @therapist.avg_rating % 1 != 0 %>
-    <div class="half-star">
-      <i class="fas fa-star-half-alt"></i>
-    </div>
-    <% end %>
-    <% empty = 5 - @therapist.avg_rating.round%>
-    <% empty.times do %>
-    <div class="light-star">
-        <i class="far fa-star"></i>
-    </div>
-    <% end %>
-  </div>
+          <% full = @therapist.avg_rating.round(half: :down)  %>
+          <% full.times do %>
+          <div class="dark-star">
+            <i class="fas fa-star"></i>
+          </div>
+          <% end %>
+          <% if @therapist.avg_rating % 1 != 0 %>
+          <div class="half-star">
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+          <% end %>
+          <% empty = 5 - @therapist.avg_rating.round%>
+          <% empty.times do %>
+          <div class="light-star">
+            <i class="far fa-star"></i>
+          </div>
+          <% end %>
+        </div>
         <p>I had a great session with this therapist, I would highly recommend them.</p>
       </div>
-    <% end %>
+      <% end %>
     </div>
   </div>
-
   <div class="show-form">
     <div class="booking-container">
       <h1 class="booking-title">Video Call</h1>
-    <%= form_for [@therapist, @booking] do |f| %>
-        <%= f.text_field :starts_at, as: :string, label: "Date & Time", data: {
+      <%= form_for [@therapist, @booking] do |f| %>
+      <%= f.text_field :starts_at, as: :string, label: "Date & Time", data: {
       controller: "flatpickr"}, class: "datepicker mb-4", id: "date-picker" %>
-        <%= f.label :free, 'Type of consultation' %>
-        <%= f.select :free, options_for_select(["Free consultation (15 min)", "60 minute Session"]), class: 'booking-input form-control' %>
-        <div class="d-flex justify-content-center">
+      <%= f.label :free, 'Type of consultation' %>
+      <%= f.select :free, options_for_select(["Free consultation (15 min)", "60 minute Session"]), class: 'booking-input form-control' %>
+      <div class="d-flex justify-content-center">
         <%= f.submit 'Book now', class: 'button-navy' %>
-        </div>
-
-    <% end %>
+      </div>
+      <% end %>
     </div>
-
+  </div>
+</div>
