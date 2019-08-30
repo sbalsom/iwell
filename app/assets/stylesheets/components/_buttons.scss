@@ -10,11 +10,13 @@
   line-height: 60px;
   position: relative;
   vertical-align: top;
+  padding:10px 20px;
 }
 
 .button-navy:hover {
   background: #5E69AF;
   color: white;
+  text-decoration: none;
 }
 
 .button-home {
@@ -43,8 +45,7 @@
   color:white;
   text-align: center;
   font-size:14px;
-  margin: auto;
-  // line-height: 36px;
+  line-height: 36px;
   position: relative;
   vertical-align: top;
 }

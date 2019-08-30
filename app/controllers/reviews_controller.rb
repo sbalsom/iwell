@@ -18,7 +18,7 @@ class ReviewsController < ApplicationController
     @review.rating = rating
     authorize @review
     if @review.save
-      redirect_to therapist_path(@therapist)
+      redirect_to dashboard_path(@therapist)
     else
       render :new
     end
