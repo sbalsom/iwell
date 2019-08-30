@@ -6,18 +6,19 @@
         <p>Your assigned therapist: <%= @user_therapist.first_name %> <%= @user_therapist.last_name %> </p>
       <% else %>
         <div class="no-therapist d-flex">
-          <%= image_tag 'unknown.jpeg', class: "avatar-small" %>
+          <%= image_tag 'faces.png', class: "avatar-small" %>
           <div class="d-flex flex-column justify-content-center">
             <h2>You don't have an assigned therapist yet !</h2>
             <% if @next_bookings %>
-            <h3>Would you like to <%= link_to 'browse?', therapists_path %></>
+            <%= link_to 'Search for one', therapists_path, class: "button-navy-small", id: "back-to-search" %>
             <% end %>
+
           </div>
         </div>
       <% end %>
       </div>
   </div>
-  <div class="therapist-show-page-container">
+  <div class="therapist-show-page-container container">
 <div class="half-page">
   <% if @next_bookings %>
     <% @next_bookings.sort_by { |booking| booking.starts_at } %>
@@ -30,17 +31,21 @@
         <i class="far fa-calendar" aria-hidden="true"></i>
       </div>
       <div class="info">
-        <h3>Date: <%= I18n.l(@next_booking.starts_at, format: :long) %></h3>
+        <h3 id="datetime d-flex flex-column justify-content-center">
+          <p id="calendar-day">Your next appointment is</p>
+          <p id="calendar-day">On <%= @next_booking.starts_at.to_formatted_s(:short) %>
+          at <%= @next_booking.starts_at.hour %> o'clock</p>
+
+        </h3>
         <div class="booking-card-text">
-          <i class="fas fa-video-slash d-flex" aria-hidden="true">
-          <p>You can join the call on your appointment date.</p>
-          </i>
+          <h6 id="notice">You can join the call on your appointment date.</h6>
         </div>
-        <div class="button-container">
-          <%= button_tag "Reschedule", class: "reschedule-button" %>
-          <%= button_tag "Cancel", class: "cancel-button" %>
+        <div class="button-container d-flex justify-content-center">
+          <%= link_to 'Reschedule', edit_therapist_booking_path(@next_booking.therapist, @next_booking), class: "reschedule-button" %>
+          <%= link_to 'Cancel', therapist_booking_path(@next_booking.therapist, @next_booking), method: :destroy, class: "cancel-button" %>
+
         </div>
-        <h4><i class="fas fa-info-circle"></i>Cancellation is only possible  until before 24 hours of the call.</h4>
+        <h4 id="cancel-policy-notice"><i class="fas fa-info-circle"></i> Cancellation is only possible  until before 24 hours of the call.</h4>
       </div>
     </div>
     <% if !@next_bookings.empty? %>
@@ -61,19 +66,17 @@
   <% end %>
   </div>
   <div class="half-page">
-  <h1 id="past-sessions">Past Sessions</h1>
+        <h1 id="past-sessions">Past Sessions</h1>
     <% if @past_bookings %>
-    <div class="past-bookings">
-
         <%= render partial: "shared/past_bookings", past_bookings: @past_bookings %>
   <% else %>
       <div class="booking-card flex-column align-items-center">
         <p>Nothing to display here yet !</p>
         <p>When you've made a few calls, your past bookings will appear here</p>
-        <div>
-  <% end %>
       </div>
-    </div>
+  <% end %>
+  </div>
+
   </div>
   </div>
 </div>
