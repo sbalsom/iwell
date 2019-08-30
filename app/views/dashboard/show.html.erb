@@ -1,6 +1,6 @@
 
-  <div id="therapist-container" class="p-2 flex-fill">
-    <div class="therapist-avatar d-flex ">
+  <div id="therapist-banner" class="p-2 flex-fill">
+    <div class="therapist-banner-inner d-flex ">
       <% if @user_therapist %>
         <%= cl_image_tag @user_therapist.photo, width: 140, class: "avatar-small" %>
         <p>Your assigned therapist: <%= @user_therapist.first_name %> <%= @user_therapist.last_name %> </p>
