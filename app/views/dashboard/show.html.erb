@@ -22,6 +22,8 @@
 <div class="half-page">
   <% if @next_bookings %>
     <% @next_bookings.sort_by { |booking| booking.starts_at } %>
+    <% if !@todays_booking.blank? %>
+    <% @todays_booking = @todays_booking[0] %>
     <h1 id="next-session">Next Session</h1>
     <div class="booking-card">
       <div class="calendar">
@@ -46,6 +48,7 @@
         <h4 id="cancel-policy-notice"><i class="fas fa-info-circle"></i> Cancellation is only possible  until before 24 hours of the call.</h4>
       </div>
     </div>
+    <% end %>
     <% if !@next_bookings.empty? %>
       <div class="d-flex justify-content-center">
         <div id="upcoming-bookings" class="upcoming-bookings">

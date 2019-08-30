@@ -15,7 +15,6 @@ class DashboardController < ApplicationController
     # @booking_therapists = bookings.map do |booking|
     #   Therapist.find(booking.therapist_id)
     # end
-  end
     if current_user.therapist_id
       @my_therapist = Therapist.find(current_user.therapist_id)
     end
