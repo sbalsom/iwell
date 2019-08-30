@@ -1,57 +1,59 @@
-.therapist-show-page-container {
-  display:flex;
-#upcoming-bookings {
-  text-align:center;
-font-family:$body-font;
-font-size:30px;
-}
-
-#next-session {
-  font-family:$body-font;
-  text-align:center;
-  margin-top:20px;
-}
-
-#past-sessions {
-text-align:center;
-font-family:$body-font;
-  margin-top:20px;
-margin-bottom:30px;
-}
-}
-#therapist-container {
+#therapist-banner {
   height: 14em;
   background-color: #c6d3f2;
-  .therapist-avatar{
+
+  .therapist-banner-inner{
     margin-left: 60px;
     margin-top: 5px;
-
   }
 
-   p {
-      color:#FFFCFC;
-      font-family: Avenir;
-      font-weight: 500;
-      font-size:30px;
-      line-height: 50px;
-      text-align:center;
-      margin: auto 88px;
+  p {
+    color:#FFFCFC;
+    font-family: Avenir;
+    font-weight: 500;
+    font-size:30px;
+    line-height: 50px;
+    text-align:center;
+    margin: auto 88px;
     }
-    .avatar-small {
-      width:200px;
-      height:200px;
-      margin-right: 30px;
 
+  .avatar-small {
+    width:200px;
+    height:200px;
+    margin-right: 30px;
     }
-    h2 {
-      font-family: $body-font;
-      color:white;
-      font-style:italic;
-      font-size:24px;
+
+  h2 {
+    font-family: $body-font;
+    color:white;
+    font-style:italic;
+    font-size:24px;
     }
 }
+
+
+.therapist-show-page-container {
+  display:flex;
+
+  #upcoming-bookings {
+    text-align:center;
+    font-family:$body-font;
+    font-size:30px;
+  }
+
+  #next-session {
+    font-family:$body-font;
+    text-align:center;
+    margin-top:20px;
+  }
+
+  #past-sessions {
+    text-align:center;
+    font-family:$body-font;
+    margin-top:20px;
+    margin-bottom:30px;
+}
 .booking-card {
-  // width:90%;
   max-width:700px;
   height:250px;
   border-radius:18px;
@@ -118,6 +120,11 @@ margin-bottom:30px;
 
     }
   }
+
+
+}
+
+
 
 
   .fa-video-slash {
