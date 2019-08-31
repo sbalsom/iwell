@@ -27,10 +27,10 @@ h3{
 
 .review-container {
   display: flex;
-  width: 70%;
+  width: 60%;
   // border: 2px solid #F5F5F5;
   box-shadow: -1px 1px 6px -2px rgba(189,189,189,1);
-  padding: 50px;
+  padding: 20px;
   margin-left: 100px;
   margin-top:40px;
 
@@ -41,14 +41,16 @@ h3{
 
   .button-navy{
   width:130px;
+  height:40px;
   margin-top:20px;
   margin-left: 300px;
+  font-size:18px;
   }
 }
 
 .feedback-card {
     width: 500px;
-    margin: 20px 0px 0px 0px;
+    margin: 20px 20px;
     padding: 20px;
 }
 
