@@ -184,6 +184,8 @@ PHOTOSMEN = [
 
 puts "checking if you are in development mode"
 
+
+if Rails.env == "development"
   puts "wiping the database "
   Therapist.destroy_all
   Booking.destroy_all
@@ -198,9 +200,9 @@ puts "checking if you are in development mode"
   puts "Specialties: #{Specialty.count}"
   puts "Therapist specialty tags: #{TherapistSpecialty.count}"
   puts "Users: #{User.count}"
-
+else
   puts "you are not in development mode !"
-
+end
 
 puts "creating fake users"
 

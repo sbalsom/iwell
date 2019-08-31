@@ -3,15 +3,15 @@
     <div class="therapist-banner-inner d-flex ">
       <% if @user_therapist %>
         <%= cl_image_tag @user_therapist.photo, width: 140, class: "avatar-small" %>
-        <p>Your assigned therapist: <%= @user_therapist.first_name %> <%= @user_therapist.last_name %> </p>
+        <p>Your assigned therapist is <%= @user_therapist.first_name %> <%= @user_therapist.last_name %> </p>
       <% else %>
         <div class="no-therapist d-flex">
           <%= image_tag 'faces.png', class: "avatar-small" %>
           <div class="d-flex flex-column justify-content-center">
             <h2>You don't have an assigned therapist yet !</h2>
             <% if @next_bookings %>
-            <%= link_to 'Search for one', therapists_path, class: "button-navy-small", id: "back-to-search" %>
-            <% end %>
+            <%= link_to 'Search for one', therapists_path, class: "button-navy-small back-to-search" %>
+      <% end %>
 
           </div>
         </div>

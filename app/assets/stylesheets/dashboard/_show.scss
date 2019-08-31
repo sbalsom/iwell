@@ -5,9 +5,16 @@
   flex-direction:column;
   justify-content:center;
 
-  #back-to-search {
+  .back-to-search {
     width:200px;
     font-size: 18px;
+    text-decoration:none;
+  }
+
+  .back-to-search:hover {
+    text-decoration:none;
+    color:white;
+    box-shadow: $box-shadow 0 0 6px 3px;
   }
 
   .therapist-banner-inner{
