@@ -6,10 +6,9 @@
   </div>
   <div>
     <div class="bio-card">
-      <p><strong>Specialties</strong>: </p>
-      <div class="d-flex">
+      <div class="d-flex"> <p><strong>Specialties:  </strong>
       <% @therapist.specialties.each do |specialty| %>
-      <div class="specialty-tag">
+      <div class="specialty-tag" id="specialty-tag-home">
         <%= specialty.name %>
         </div>
       <% end %>
@@ -52,12 +51,13 @@
     <div class="booking-container">
       <h1 class="booking-title">Video Call</h1>
     <%= form_for [@therapist, @booking] do |f| %>
+         <%= f.label :free, 'Date&Time' %>
         <%= f.text_field :starts_at, as: :string, label: "Date & Time", data: {
       controller: "flatpickr"}, class: "datepicker mb-4", id: "date-picker" %>
-        <%= f.label :free, 'Type of consultation' %>
+        <%= f.label :free, 'Duration' %>
         <%= f.select :free, options_for_select(["Free consultation (15 min)", "60 minute Session"]), class: 'booking-input form-control' %>
         <div class="d-flex justify-content-center">
-        <%= f.submit 'Book now', class: 'button-navy' %>
+        <%= f.submit 'Book now', id: "book-button", class: 'button-navy' %>
         </div>
 
     <% end %>
