@@ -8,8 +8,8 @@ class DashboardController < ApplicationController
     else
       @user_therapist = nil
     end
-
-    @todays_booking = Booking.where(starts_at: Date.today)
+    @today_booking = Booking.where("starts_at > ? AND starts_at < ?", Time.now.beginning_of_day, Time.now.end_of_day)
+    # @todays_booking = Booking.where(starts_at: Date.today)
     @next_bookings = current_user.bookings.where("starts_at > ?", Date.today)
     @past_bookings = current_user.bookings.where("starts_at < ?", Date.today)
     # @booking_therapists = bookings.map do |booking|

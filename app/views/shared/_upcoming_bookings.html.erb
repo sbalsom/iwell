@@ -10,9 +10,10 @@
             </div>
             <h4 id="cancel-policy-notice"><i class="fas fa-info-circle"></i> Cancellation is only possible until before 24 hours of the call.</h4>
           </div>
-          <%= link_to '🔄', edit_therapist_booking_path(booking.therapist, booking), class: "mx-2" %>
-           <%= link_to '❌', therapist_booking_path(booking.therapist, booking), method: :destroy, class: "mx-2"%>
+          <%= link_to 'reschedule', edit_therapist_booking_path(booking.therapist, booking), class: "mx-2" %>
+           <%= link_to 'cancel', therapist_booking_path(booking.therapist, booking), method: :delete, data: { confirm: "You sure?" },class: "mx-2" %>
       </div>
   </div>
 </div>
+
 

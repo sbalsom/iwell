@@ -12,14 +12,12 @@ def create
   @booking.therapist = @therapist
   @booking.user = current_user
   authorize @booking
-  # raise
   if booking_params[:free] == "Free consultation (15 min)"
     @booking.free = true
   else
     @booking.free = false
   end
   if @booking.save
-    flash[:success] = "Thank you for booking!"
     redirect_to booking_path(@booking)
   else
     render 'therapists/show'
@@ -29,15 +27,20 @@ end
 def edit
   @therapist = Therapist.find(params[:therapist_id])
   @booking = Booking.find(params[:id])
+  authorize @booking
 end
 
 def update
+  @booking = Booking.new(booking_params)
+  @booking.update
 end
 
 def destroy
+  @booking = Booking.find(params[:id])
+  authorize @booking
+  @booking.destroy
+  redirect_to dashboard_path
 end
-
-
 
 private
 
