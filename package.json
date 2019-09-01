@@ -2,7 +2,7 @@
   "name": "iwell",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "^4.0.7",
+    "@rails/webpacker": "^4.0.0",
     "bootstrap": "^4.3.1",
     "flatpickr": "^4.6.2",
     "jquery": "^3.4.1",
