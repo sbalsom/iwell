@@ -12,9 +12,9 @@ gem 'redis'
 gem 'pundit'
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
-
-gem 'bootstrap-sass', '~> 3.3.7'
-gem 'sass-rails', '>= 3.2'
+# trying to fix bugs
+# gem 'bootstrap-sass', '~> 3.3.7'
+# gem 'sass-rails', '>= 3.2'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'
