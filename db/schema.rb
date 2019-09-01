@@ -94,6 +94,7 @@ ActiveRecord::Schema.define(version: 2019_08_30_143105) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
     t.bigint "therapist_id"
     t.string "name"
     t.index ["email"], name: "index_users_on_email", unique: true

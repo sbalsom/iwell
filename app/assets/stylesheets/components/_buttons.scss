@@ -56,12 +56,10 @@
   background-color: $accent;
   color:white;
   text-align: center;
-  // font-size:24px;
   margin: auto;
-  line-height: 36px;
-  position: relative;
-  vertical-align: top;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #book-button{
@@ -70,3 +68,9 @@
    font-weight:bold;
   }
 
+#flex-button {
+  margin: auto;
+   display: flex;
+  justify-content: center;
+  align-items: center;
+}
