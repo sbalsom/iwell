@@ -62,7 +62,7 @@
         <% if params[:query].present? %>
           <%= hidden_field_tag :query, params[:query] %>
         <% end %>
-        <%= submit_tag "Apply filter", class: "button-navy-small ml-2" %>
+        <%= submit_tag "Apply filter", class: "button-navy-small ml-2"  %>
       </div>
       <% end %>
     </div>
@@ -81,7 +81,7 @@
       id: "search-bar",
       placeholder: "Search by specialty or name"
     %>
-    <%= submit_tag "Search", class: "button-navy-md my-3" %>
+    <%= submit_tag "Search", id: "search-button", class: "button-navy-md my-3" %>
 
     </div>
 <% end %>
@@ -115,10 +115,10 @@
 </div>
 
 <div class="profile-description">
-        <h3 id="name"><%= "#{therapist.first_name} #{therapist.last_name}" %></h3>
+        <h5 id="name"><%= "#{therapist.first_name} #{therapist.last_name}" %></h5>
           <div class="profile-description-content">
-            <h6><strong>Years of experience:</strong> <%= therapist.years_exp %></h6>
-            <h6><strong>Languages:</strong> <%= therapist.language %></h6>
+            <h6><strong> <img src="https://cdn1.iconfinder.com/data/icons/random-crafticons/48/misc-_Flag_-512.png" alt=""></strong> <%= therapist.language %></h6>
+            <h6><strong>Years of Experience</strong> <%= therapist.years_exp %></h6>
              <div class="specialty-container">
             <% therapist.specialties.each do |specialty|%>
                 <div class="specialty-tag">

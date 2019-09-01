@@ -27,7 +27,7 @@ class ReviewsController < ApplicationController
 
   def half_value(number)
   (number * 2).round / 2.0
-end
+  end
 
   def set_therapist
     @therapist = Therapist.find(params[:therapist_id])
