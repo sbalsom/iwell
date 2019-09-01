@@ -1,23 +1,21 @@
 .button-navy {
-  height: 54px;
-  width: 220px;
+  height: 55px;
+  width: 200px;
   border-radius: 4px;
   background-color: $main;
   color:white;
   text-align: center;
   font-size:22px;
   margin: auto;
-  // line-height: 60px;
-  // position: relative;
-  // vertical-align: top;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
+  vertical-align: middle;
+  font-weight:bold;
 }
 
 .button-navy:hover {
   background: #5E69AF;
   color: white;
+  text-decoration: none;
 }
 
 .button-home {
@@ -46,28 +44,33 @@
   color:white;
   text-align: center;
   font-size:14px;
+  line-height: 36px;
+  position: relative;
+  vertical-align: top;
+}
+
+.button-navy-md {
+  height: 40px;
+  width: 160px;
+  border-radius: 4px;
+  background-color: $accent;
+  color:white;
+  text-align: center;
   margin: auto;
-  // line-height: 36px;
-  // position: relative;
-  // vertical-align: top;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.button-navy-md {
-  height: 40px;
-  width: 90px;
-  border-radius: 4px;
-  background-color: $accent;
-  color:white;
-  text-align: center;
-  font-size:24px;
+#book-button{
+   width:100%;
+   font-size:18px;
+   font-weight:bold;
+  }
+
+#flex-button {
   margin: auto;
-  // line-height: 36px;
-  // position: relative;
-  // vertical-align: top;
-  display: flex;
+   display: flex;
   justify-content: center;
   align-items: center;
 }

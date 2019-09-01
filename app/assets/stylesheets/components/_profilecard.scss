@@ -2,10 +2,11 @@
   // height: 187px;
   padding: 15px 0;
   max-width: 976px;
-  border: 1px solid $border;
+  // border: 1px solid $border;
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  box-shadow: -1px 1px 6px -2px rgba(189,189,189,1);
 
   &:hover {
     box-shadow: $box-shadow 0 0 5px -3px;
@@ -13,13 +14,22 @@
 
   #name {
   font-weight: bold;
-
+  margin-top:15px;
+  margin-bottom:15px;
 }
 
 }
 
 .profile-description-content p {
   margin: 0;
+
+}
+
+.profile-description-content img {
+height:30px;
+width:30px;
+margin-right:10px;
+
 }
 
 .profile-avatar-spacing {

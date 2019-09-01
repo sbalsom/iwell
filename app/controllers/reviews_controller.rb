@@ -18,7 +18,7 @@ class ReviewsController < ApplicationController
     @review.rating = rating
     authorize @review
     if @review.save
-      redirect_to therapist_path(@therapist)
+      redirect_to dashboard_path(@therapist)
     else
       render :new
     end
@@ -27,7 +27,7 @@ class ReviewsController < ApplicationController
 
   def half_value(number)
   (number * 2).round / 2.0
-end
+  end
 
   def set_therapist
     @therapist = Therapist.find(params[:therapist_id])
