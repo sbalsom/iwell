@@ -80,9 +80,10 @@
         <% end %>
       </div>
     </div>
-    <div class="button-navy-small more-btn my-3">More filters</div>
+    <div class="button-navy-small more-btn my-3">
+      More filters
+    </div>
   </div>
-
   <div class="search-results px-5 d-flex flex-column justify-content-center">
     <% @therapists.each do |therapist| %>
       <%= link_to therapist_path(therapist) do %>
@@ -117,13 +118,14 @@
             <h6><strong>Years of Experience</strong> <%= therapist.years_exp %></h6>
             <div class="specialty-container">
               <% therapist.specialties.each do |specialty|%>
+
                 <div class="specialty-tag">
                   <%= specialty.name %>
                 </div>
               <% end %>
             </div>
             <div id="price">
-                €<%= therapist.rate %>
+                €<%= therapist.rate %> EUR/hour
            </div>
         </div>
       </div>
