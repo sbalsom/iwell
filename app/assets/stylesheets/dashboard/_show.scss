@@ -1,18 +1,18 @@
 #therapist-banner {
   height: 150px;
   background-color: #c6d3f2;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   .back-to-search {
-    width:200px;
+    width: 200px;
     font-size: 18px;
-    text-decoration:none;
+    text-decoration: none;
   }
 
   .back-to-search:hover {
-    text-decoration:none;
+    text-decoration: none;
     color:white;
     box-shadow: $box-shadow 0 0 6px 3px;
   }
@@ -28,33 +28,33 @@
     font-weight: 400;
     font-size:30px;
     line-height: 50px;
-    text-align:center;
+    text-align: center;
     margin: auto 88px;
     }
 
   .avatar-small {
-    width:100px;
-    height:100px;
+    width: 100px;
+    height: 100px;
     margin-right: 30px;
     }
 
   h2 {
     font-family: $body-font;
-    color:white;
-    font-style:italic;
-    font-size:24px;
+    color: white;
+    font-style: italic;
+    font-size: 24px;
     }
 }
 
 
 .therapist-show-page-container {
-  display:flex;
+  display: flex;
    h1 {
-      font-family:$body-font;
-      font-size:20px;
-      font-weight:lighter;
-       margin-top:30px;
-       margin-bottom:30px;
+      font-family: $body-font;
+      font-size: 20px;
+      font-weight: lighter;
+       margin-top: 30px;
+       margin-bottom: 30px;
     }
 
   #next-session {
@@ -67,7 +67,7 @@
   .half-page {
     margin:0 20px;
     display:flex;
-    flex-direction:column;
+    flex-direction: column;
   }
 
   .booking-card {
@@ -124,7 +124,7 @@
     font-size: 6.5em;
     font-family: $body-font;
     font-weight:bold;
-    color:$main;
+    color: $main;
     margin-top: 10px;
     margin-right:5px;
     text-align:center;
