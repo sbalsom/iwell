@@ -10,29 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_30_143105) do
+ActiveRecord::Schema.define(version: 2019_09_02_110758) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "availabilities", force: :cascade do |t|
-    t.integer "week_day"
-    t.time "start_time"
-    t.time "end_time"
     t.bigint "therapist_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "date"
+    t.time "start_time"
+    t.time "end_time"
     t.index ["therapist_id"], name: "index_availabilities_on_therapist_id"
   end
 
   create_table "bookings", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "therapist_id"
-    t.datetime "starts_at"
+    t.date "starts_at"
     t.boolean "free"
     t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.time "time"
     t.index ["therapist_id"], name: "index_bookings_on_therapist_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
@@ -94,7 +95,6 @@ ActiveRecord::Schema.define(version: 2019_08_30_143105) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "name"
     t.bigint "therapist_id"
     t.string "name"
     t.index ["email"], name: "index_users_on_email", unique: true

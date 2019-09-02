@@ -221,7 +221,8 @@ end
 10.times do
   User.create!(
     email: "#{FIRSTNAMESF.sample}.#{LASTNAMES.sample}@example.com",
-    password: "123456"
+    password: "123456",
+    name: FIRSTNAMESF.sample
   )
 end
 
@@ -267,128 +268,107 @@ puts "#{Therapist.count} therapists created"
 therapists = Therapist.all
 users = User.all
 
-puts "giving the therapists availabilties"
+puts "giving the therapists availabilities"
 
 
-therapists.first(5).each do |therapist|
+therapists.all.each do |therapist|
   Availability.create!(
-      week_day: 1,
-      start_time: '08:00:00',
-      end_time: '9:00:00',
-      therapist: therapist
-    )
-   Availability.create!(
-      week_day: 2,
+      date: '2019-09-01',
       start_time: '09:00:00',
-      end_time: '10:00:00',
+      end_time:'10:00:00',
       therapist: therapist
     )
-    Availability.create!(
-      week_day: 3,
-      start_time: '10:00:00',
-      end_time: '11:00:00',
-      therapist: therapist
-    )
-     Availability.create!(
-      week_day: 4,
-      start_time: '09:00:00',
-      end_time: '10:00:00',
-      therapist: therapist
-    )
-    Availability.create!(
-      week_day: 4,
-      start_time: '10:00:00',
-      end_time: '11:00:00',
-      therapist: therapist
-    )
-    Availability.create!(
-      week_day: 4,
-      start_time: '11:00:00',
-      end_time: '12:00:00',
-      therapist: therapist
-    )
-end
-
-therapists.last(5).each do |therapist|
   Availability.create!(
-      week_day: 1,
-      start_time: '08:00:00',
-      end_time: '9:00:00',
+      date: '2019-09-04',
+      start_time: '09:00:00',
+      end_time:'10:00:00',
       therapist: therapist
     )
    Availability.create!(
-      week_day: 2,
+      date: '2019-09-05',
       start_time: '09:00:00',
-      end_time: '10:00:00',
+      end_time:'10:00:00',
       therapist: therapist
     )
     Availability.create!(
-      week_day: 3,
-      start_time: '10:00:00',
-      end_time: '11:00:00',
-      therapist: therapist
-    )
-     Availability.create!(
-      week_day: 3,
+      date: '2019-09-07',
       start_time: '09:00:00',
-      end_time: '10:00:00',
+      end_time:'10:00:00',
       therapist: therapist
     )
     Availability.create!(
-      week_day: 4,
-      start_time: '10:00:00',
-      end_time: '11:00:00',
+      date: '2019-09-30',
+      start_time: '09:00:00',
+      end_time:'10:00:00',
       therapist: therapist
     )
     Availability.create!(
-      week_day: 5,
-      start_time: '11:00:00',
-      end_time: '12:00:00',
+      date: '2019-09-09',
+      start_time: '09:00:00',
+      end_time:'10:00:00',
       therapist: therapist
     )
+    Availability.create!(
+      date: '2019-09-25',
+      start_time: '09:00:00',
+      end_time:'10:00:00',
+      therapist: therapist
+    )
+    Availability.create!(
+      date: '2019-09-16',
+      start_time: '09:00:00',
+      end_time:'10:00:00',
+      therapist: therapist
+    )
+    Availability.create!(
+      date: '2019-09-17',
+      start_time: '09:00:00',
+      end_time:'10:00:00',
+      therapist: therapist
+    )
+    Availability.create!(
+      date: '2019-09-18',
+      start_time: '09:00:00',
+      end_time:'10:00:00',
+      therapist: therapist
+    )
+    Availability.create!(
+      date: '2019-09-19',
+      start_time: '09:00:00',
+      end_time:'10:00:00',
+      therapist: therapist
+    )
+    Availability.create!(
+      date: '2019-09-20',
+      start_time: '09:00:00',
+      end_time:'10:00:00',
+      therapist: therapist
+    )
+    Availability.create!(
+      date: '2019-09-21',
+      start_time: '09:00:00',
+      end_time:'10:00:00',
+      therapist: therapist
+    )
+    Availability.create!(
+      date: '2019-09-24',
+      start_time: '09:00:00',
+      end_time:'10:00:00',
+      therapist: therapist
+    )
+    Availability.create!(
+      date: '2019-09-23',
+      start_time: '09:00:00',
+      end_time:'10:00:00',
+      therapist: therapist
+    )
+
 end
 
-therapists.each do |therapist|
-   Availability.create!(
-      week_day: 1,
-      start_time: '16:00:00',
-      end_time: '17:00:00',
-      therapist: therapist
-    )
-   Availability.create!(
-      week_day: 2,
-      start_time: '17:00:00',
-      end_time: '18:00:00',
-      therapist: therapist
-    )
-    Availability.create!(
-      week_day: 3,
-      start_time: '17:00:00',
-      end_time: '18:00:00',
-      therapist: therapist
-    )
-     Availability.create!(
-      week_day: 3,
-      start_time: '16:00:00',
-      end_time: '17:00:00',
-      therapist: therapist
-    )
-    Availability.create!(
-      week_day: 4,
-      start_time: '16:00:00',
-      end_time: '17:00:00',
-      therapist: therapist
-    )
-    Availability.create!(
-      week_day: 5,
-      start_time: '14:00:00',
-      end_time: '13:00:00',
-      therapist: therapist
-    )
-end
 
 
-puts "#{Availability.count} availabilties created"
+
+puts "#{Availability.count} availabilities created"
 
 puts "creating specialties"
 
