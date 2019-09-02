@@ -221,7 +221,8 @@ end
 10.times do
   User.create!(
     email: "#{FIRSTNAMESF.sample}.#{LASTNAMES.sample}@example.com",
-    password: "123456"
+    password: "123456",
+    name: FIRSTNAMESF.sample
   )
 end
 
