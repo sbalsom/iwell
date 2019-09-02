@@ -50,10 +50,16 @@
     <div class="booking-container">
       <h1 class="booking-title">Video Call</h1>
     <%= form_for [@therapist, @booking] do |f| %>
-         <%= f.label :starts_at, 'Date & Time' %>
-        <%= f.text_field :starts_at, as: :string, label: "Date & Time", data: {
-      controller: "flatpickr"}, class: "datepicker mb-4", id: "date-picker" %>
-        <%= f.label :free, 'Duration'%>
+         <%= f.label :starts_at, 'Date' %>
+        <%= f.text_field :starts_at, as: :string, label: "Date", data: {
+      controller: "flatpickr"}, class: "cal datepicker mb-4", id: "date-picker" %>
+      <div class="d-flex flex-column">
+        <%= f.label :time, 'Time' %>
+        <%= f.text_field :time, as: :string, label: "Time", data: {
+        controller: "flatpickr"}, class: "timepicker mb-4", id: "date-picker" %>
+
+        </div>
+        <%= f.label :free, 'Duration' %>
         <%= f.select :free, options_for_select(["Free consultation (15 min)", "60 minute Session"]), class: 'booking-input form-control' %>
         <div class="d-flex justify-content-center">
         <%= f.submit 'Book now', id: "book-button", class: 'button-navy' %>
@@ -61,4 +67,21 @@
     <% end %>
     </div>
   </div>
+</div>
+<div class="hidden">
+<div class="testing">
+  <% i = 0 %>
+  <% @therapist.days_available.each do |day| %>
+  <div class="d-flex flex-column day day-<%= i %>">
+  <%= day.date %>
+  </div>
+  <div class="start-time time-<%= i %>">
+      <%= day.start_time %>
+    </div>
+    <div class="end-time time-<%= i %>">
+      <%= day.end_time %>
+    </div>
+  <% i += 1 %>
+  <% end %>
+</div>
 </div>
