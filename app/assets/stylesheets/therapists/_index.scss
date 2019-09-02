@@ -10,6 +10,11 @@
     box-shadow: $box-shadow 0px 6px 5px -9px;
     }
 
+    .filter {
+      margin:0 5px;
+      min-width: 150px;
+    }
+
     #search-bar {
     border-radius: 11px;
     padding: 0.375rem 0.75rem;
@@ -66,6 +71,10 @@
   .stick-to-nav {
     position:sticky;
     top: 0px;
+  }
+
+  .hidden {
+    visibility:hidden;
   }
 
 }
