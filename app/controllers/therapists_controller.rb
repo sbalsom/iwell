@@ -15,10 +15,7 @@ class TherapistsController < ApplicationController
        OR specialties.name ILIKE :query"
     @therapists = @therapists.joins(therapist_specialties: :specialty).where(sql_query, query: "%#{params[:query]}%") if params[:query].present?
     @therapists = @therapists.where(years_exp: params[:years_exp].to_i) if params[:years_exp].present?
-    if params[:rate].present?
-      preferred_rate = params[:rate].to_i
-      @therapists = @therapists.where(rate: 0..preferred_rate)
-    end
+    @therapists = @therapists.where(rate: 0..params[:rate].to_i) if params[:rate].present?
   end
 
   def show
