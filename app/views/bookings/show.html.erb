@@ -1,0 +1,17 @@
+<div class="booking-confirmation-container">
+  <div class="booking-confirmation-content">
+    <div>
+      <p>
+        <i class="far fa-check-circle d-flex justify-content-center align-items-center mt-2" id="confirmation-icon"></i>
+      </p>
+      <h2 class="d-flex justify-content-center align-items-center">Booking confirmation</h2>
+    </div>
+    <% if @booking.user.name %>
+    <p class="mt-5">Thank you <%= @booking.user.name %>,</p>
+    <% else %>
+    Thank you!
+    <% end %>
+    <p>Your booking is now set with Dr <%= @booking.therapist.first_name %> <%= @booking.therapist.last_name %> on <%= l(@booking.starts_at, format: :long) %></p>
+    <p><%= link_to "See my bookings", dashboard_path, class: "button-navy d-flex justify-content-center align-items-center mt-5" %></p>
+  </div>
+</div>

@@ -12,8 +12,15 @@
     }
 
     #search-bar {
-      width: 80%;
+    max-width: 1600px;
+    border-radius:4px;
     }
+
+    #search-bar:focus{
+      -webkit-appearance: none;
+      box-shadow: none !important;
+      border: 1px solid #4F5CAD;
+     }
 
     .position-rel {
       position:relative;
@@ -23,7 +30,7 @@
       position:absolute;
       bottom:30px;
       right:30px;
-      font-size:24px;
+      font-size:26px;
       font-style:bold;
 
     }
@@ -77,9 +84,35 @@
 .specialty-tag {
     background-color:white ;
     color: $accent;
-    padding:5px;
-    margin:5px;
+    padding:6px;
     border: solid 1px $accent;
     border-radius:10px;
     text-align:center;
+    margin-right: 8px;
   }
+
+#specialty-tag-home {
+     margin-left: 10px;
+     height:40px;
+     padding:6px;
+  }
+
+  .specialty-container{
+    display: flex;
+  }
+
+
+  .therapist-cards{
+    margin-bottom:15px;
+    border: #F8F8F8;
+  }
+
+  .profile-description-content{
+    h3{
+     margin-top:5px;
+   }
+    h6{
+     margin-top:15px;
+   }
+}
+

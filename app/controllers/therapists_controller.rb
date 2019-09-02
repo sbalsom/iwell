@@ -16,6 +16,9 @@ class TherapistsController < ApplicationController
     @therapists = @therapists.joins(therapist_specialties: :specialty).where(sql_query, query: "%#{params[:query]}%") if params[:query].present?
     @therapists = @therapists.where(years_exp: params[:years_exp].to_i) if params[:years_exp].present?
     @therapists = @therapists.where(rate: 0..params[:rate].to_i) if params[:rate].present?
+#  commenting this out bc we might need to add average rating as a filter later
+#     @therapists = @therapists.where(avg_rating: params[:avg_rating].to_i..5.0) if params[:avg_rating].present?
+
   end
 
   def show

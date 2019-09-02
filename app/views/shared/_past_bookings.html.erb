@@ -1,16 +1,17 @@
 <div class="past-sessions">
 <% @past_bookings.each do |booking| %>
     <div class="past-booking-card">
-      <!-- if Time.now <= @booking.start_time + 24hours -->
-      <div class="therapist-avatar d-flex flex-column" style="padding: 10px 0 0 10px">
-      <%= cl_image_tag booking.therapist.photo, width: 140, class: "avatar-small" %>
-      <p>Dr. <%= booking.therapist.first_name %> <%= booking.therapist.last_name %> </p>
-      </div>
-      <div class="info">
-        <h3>Date: <%= I18n.l(booking.starts_at, format: :long) %></h3>
+      <%= cl_image_tag booking.therapist.photo, class: "avatar-badge" %>
+      <div class="info justify-content-center">
+        <h3 id="datetime">
+          <p id="calendar-day">Your last appointment with <%= booking.therapist.first_name %> <%= booking.therapist.last_name %> was on</p>
+          <p id="calendar-day">On <%= booking.starts_at.to_formatted_s(:short) %>
+          at <%= booking.starts_at.hour %> o'clock</p>
+
+        </h3>
         <div class="button-container">
-          <%= link_to 'Leave a review',new_therapist_review_path(booking.therapist), class: "review-path-button" %>
-          <%= button_tag "Assign as my therapist", class: "review-path-button" %>
+          <%= link_to 'Leave a review',new_therapist_review_path(booking.therapist), class: "review-path-button mx-3" %>
+          <%= button_tag "Assign as my therapist", class: "review-path-button mx-3" %>
 
         </div>
       </div>
