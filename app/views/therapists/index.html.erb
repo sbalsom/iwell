@@ -1,6 +1,6 @@
 
-<div class="search-page">
-  <div class="filters stick-to-nav">
+  <div class="search-page">
+  <div class="filters-stick-to-nav">
     <div class="item-1">
         <%= form_tag therapists_path, method: :get do %>
           <div class="search-bar d-flex">
@@ -12,7 +12,7 @@
                 params[:query],
                 class: "my-3 mr-3",
                 id: "search-bar",
-                placeholder: "Search by specialty or name" %>
+                placeholder: "Search by name or specialty"  %>
             </div>
             <div class="submit mx-3">
               <%= submit_tag "Search", id: "search-button", class: "button-navy-md my-3" %>
@@ -49,6 +49,10 @@
           <% end %>
         </div>
 
+        <div class="more-btn my-3">
+        More filters
+       </div>
+
         <div class="filter filter-exp toggle hidden">
           <%= label_tag 'years_exp', 'Years of experience:' %>
           <%= form_tag therapists_path, method: :get do %>
@@ -75,15 +79,18 @@
             <%= select_tag "specialty", options_from_collection_for_select(@specialties, 'name', 'name', :selected => params[:specialty]), class: "form-control", onchange: "this.form.submit()" %>
             <% if params[:query].present? %>
             <%= hidden_field_tag :query, params[:query] %>
+          </div>
             <% end %>
           </div>
         <% end %>
       </div>
     </div>
-    <div class="button-navy-small more-btn my-3">
-      More filters
-    </div>
   </div>
+
+   <div class=therapist-results-header>
+   <h4>40 Therapists Found</h4>
+  </div>
+
   <div class="search-results px-5 d-flex flex-column justify-content-center">
     <% @therapists.each do |therapist| %>
       <%= link_to therapist_path(therapist) do %>
@@ -114,8 +121,8 @@
         <div class="profile-description">
           <h5 id="name"><%= "#{therapist.first_name} #{therapist.last_name}" %></h5>
           <div class="profile-description-content">
-            <h6><strong> <img src="https://cdn1.iconfinder.com/data/icons/random-crafticons/48/misc-_Flag_-512.png" alt=""></strong> <%= therapist.language %></h6>
-            <h6><strong>Years of Experience</strong> <%= therapist.years_exp %></h6>
+            <h6> <%= therapist.language %></h6>
+            <h6>Years of Experience: <%= therapist.years_exp %></h6>
             <div class="specialty-container">
               <% therapist.specialties.each do |specialty|%>
 
@@ -133,7 +140,6 @@
   </div>
   <% end %>
   <% end %>
-
  <script>
 
     const moreBtn = document.querySelector(".more-btn");
