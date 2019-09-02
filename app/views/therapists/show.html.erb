@@ -53,7 +53,7 @@
          <%= f.label :starts_at, 'Date & Time' %>
         <%= f.text_field :starts_at, as: :string, label: "Date & Time", data: {
       controller: "flatpickr"}, class: "datepicker mb-4", id: "date-picker" %>
-        <%= f.label :free, 'Duration' %>
+        <%= f.label :free, 'Duration'%>
         <%= f.select :free, options_for_select(["Free consultation (15 min)", "60 minute Session"]), class: 'booking-input form-control' %>
         <div class="d-flex justify-content-center">
         <%= f.submit 'Book now', id: "book-button", class: 'button-navy' %>

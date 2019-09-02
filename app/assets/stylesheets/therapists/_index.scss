@@ -16,6 +16,12 @@
     border-radius:4px;
     }
 
+    #search-bar:focus{
+      -webkit-appearance: none;
+      box-shadow: none !important;
+      border: 1px solid #4F5CAD;
+     }
+
     .position-rel {
       position:relative;
     }
