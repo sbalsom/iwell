@@ -28,10 +28,11 @@
 
     #price {
       position:absolute;
-      bottom:30px;
+      bottom:90px;
       right:30px;
-      font-size:26px;
+      font-size:18px;
       font-style:bold;
+      color: #7881E9;
 
     }
 
@@ -89,6 +90,7 @@
     border-radius:10px;
     text-align:center;
     margin-right: 8px;
+    margin-top:10px;
   }
 
 #specialty-tag-home {
@@ -113,6 +115,11 @@
    }
     h6{
      margin-top:15px;
+     color:#838282;
+     line-height: 0.5;
    }
-}
+  }
 
+// #name{
+//      font-size:18px;
+//   }

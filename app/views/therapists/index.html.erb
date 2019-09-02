@@ -115,10 +115,10 @@
 </div>
 
 <div class="profile-description">
-        <h5 id="name"><%= "#{therapist.first_name} #{therapist.last_name}" %></h5>
+        <p id="name">Dr <%= "#{therapist.first_name} #{therapist.last_name}" %></p>
           <div class="profile-description-content">
-            <h6><strong> <img src="https://cdn1.iconfinder.com/data/icons/random-crafticons/48/misc-_Flag_-512.png" alt=""></strong> <%= therapist.language %></h6>
-            <h6><strong>Years of Experience</strong> <%= therapist.years_exp %></h6>
+            <h6> <%= therapist.language %> </h6>
+            <h6> <%= therapist.years_exp %> years experience </h6>
              <div class="specialty-container">
             <% therapist.specialties.each do |specialty|%>
                 <div class="specialty-tag">
@@ -127,7 +127,7 @@
                 <% end %>
             </div>
             <div id="price">
-                €<%= therapist.rate %>
+                €<%= therapist.rate %> EUR/hour
            </div>
         </div>
   <% end %>
