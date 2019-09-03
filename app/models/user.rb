@@ -4,6 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :bookings, dependent: :destroy
-  belongs_to :therapist
+  has_one :therapist
   validates :name, presence: true
 end
