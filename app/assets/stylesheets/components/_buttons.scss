@@ -49,6 +49,24 @@
   vertical-align: top;
 }
 
+.more-btn {
+    border: solid 1px #CED4DA;
+    border-radius: 10px;
+    height:40px;
+    margin-top: 0.02rem !important;
+    padding:10px;
+    }
+
+.less-btn{
+    border: solid 1px #CED4DA;
+    border-radius: 10px;
+    height:40px;
+    margin-top: 0.05rem !important;
+    padding:10px;
+    position:absolute;
+    right:0px;
+    }
+
 .button-navy-md {
   height: 40px;
   width: 160px;
