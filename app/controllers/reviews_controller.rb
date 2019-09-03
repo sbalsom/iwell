@@ -6,9 +6,8 @@ class ReviewsController < ApplicationController
     authorize @review
   end
 
-
   def create
-    @review = Review.new
+    @review = Review.new(review_params)
     @review.user = current_user
     @review.therapist = @therapist
     clarity = params[:rating_c].to_i
@@ -23,25 +22,18 @@ class ReviewsController < ApplicationController
       render :new
     end
   end
+
   private
 
   def half_value(number)
-  (number * 2).round / 2.0
+    (number * 2).round / 2.0
   end
 
   def set_therapist
     @therapist = Therapist.find(params[:therapist_id])
   end
+
+  def review_params
+    params.permit(:content)
+  end
 end
-
-  # create_table "reviews", force: :cascade do |t|
-  #   t.text "content"
-  #   t.integer "rating"
-  #   t.bigint "therapist_id"
-  #   t.bigint "user_id"
-  #   t.datetime "created_at", null: false
-  #   t.datetime "updated_at", null: false
-  #   t.index ["therapist_id"], name: "index_reviews_on_therapist_id"
-  #   t.index ["user_id"], name: "index_reviews_on_user_id"
-  # end\
-
