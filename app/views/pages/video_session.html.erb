@@ -1,0 +1,69 @@
+
+<!-- <iframe
+  src="https://tokbox.com/embed/embed/ot-embed.js?embedId=b8c20e27-37a8-477b-8799-4b3d32cccb4f&room=DEFAULT_ROOM&iframe=true"
+  width="800px"
+  height="640px"
+  scrolling="auto"
+  allow="microphone; camera"
+></iframe> -->
+<!-- OpenTok.js library -->
+<style>
+  .OT_mirrored.OT_root.OT_publisher.OT_fit-mode-cover {
+  position: absolute;
+  top: 150px;
+  left: 20px;
+}
+
+.OT_root.OT_subscriber.OT_fit-mode-cover {
+  position: relative;
+  margin-top: 20px !important;
+  margin-left: 300px !important;
+  height: 500px !important;
+  width: 800px !important;
+}
+
+#end-call {
+  position: absolute;
+  bottom: 100px;
+  left: 45%;
+}
+
+#call-icon {
+  position: absolute;
+  background: red;
+  color: white;
+  border-radius: 50%;
+  padding: 20px;
+  font-size: 20px;
+  position: cover;
+}
+
+</style>
+<script src="https://static.opentok.com/v2/js/opentok.js"></script>
+<script>
+
+// credentials
+const apiKey = '45828062';
+const sessionId = '2_MX40NTgyODA2Mn5-MTU2NzUxNjkyMzg1M343dHNhLzNKcE9xdm1EWVR0TFYvQTVhWjl-UH4';
+const token = 'T1==cGFydG5lcl9pZD00NTgyODA2MiZzaWc9MmE1MTlhZmE1Zjg3N2RlZDY3ZDZmMGVmYmRmY2Q1MzEzMGVjNzRmODpzZXNzaW9uX2lkPTJfTVg0ME5UZ3lPREEyTW41LU1UVTJOelV4TmpreU16ZzFNMzQzZEhOaEx6TktjRTl4ZG0xRVdWUjBURll2UVRWaFdqbC1VSDQmY3JlYXRlX3RpbWU9MTU2NzUxNjk0MSZub25jZT0wLjY3ODEwMzI0NTA1MTkzMDkmcm9sZT1wdWJsaXNoZXImZXhwaXJlX3RpbWU9MTU2NzYwMzM0MQ==';
+
+// connect to session
+const session = OT.initSession(apiKey, sessionId);
+
+// create publisher
+const publisher = OT.initPublisher();
+session.connect(token, function(err) {
+   // publish publisher
+  session.publish(publisher);
+});
+
+// create subscriber
+session.on('streamCreated', function(event) {
+   session.subscribe(event.stream);
+});
+
+</script>
+<%= link_to dashboard_path do %>
+<div id="end-call"><i class="fas fa-phone-slash" id="call-icon"></i></div>
+<% end %>
+
