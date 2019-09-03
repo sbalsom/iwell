@@ -1,6 +1,11 @@
 
-  <div class="search-page">
-  <div class="filters-stick-to-nav">
+  <div class="search-page ">
+
+  <div class="filters-stick-to-nav relative">
+    <div class="more-btn my-3 absolute">
+        More filters
+       </div>
+
     <div class="item-1">
         <%= form_tag therapists_path, method: :get do %>
           <div class="search-bar d-flex">
@@ -42,9 +47,7 @@
           <% end %>
         </div>
 
-        <div class="more-btn my-3">
-        More filters
-       </div>
+
 
         <div class="filter filter-exp toggle hidden">
           <%= form_tag therapists_path, method: :get do %>
