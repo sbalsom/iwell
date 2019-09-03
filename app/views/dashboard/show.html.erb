@@ -27,14 +27,14 @@
     <h1 id="next-session">Next Session</h1>
     <div class="booking-card">
       <div class="calendar">
-        <p id="date"> <%= @todays_booking.starts_at.day %> </p>
+        <p id="date"> <%= @todays_booking.starts_at %> </p>
         <i class="far fa-calendar" aria-hidden="true"></i>
       </div>
       <div class="info">
         <h3 id="datetime d-flex flex-column justify-content-center">
           <p id="calendar-day">Your next appointment is</p>
           <p id="calendar-day">On <%= @todays_booking.starts_at.to_formatted_s(:short) %>
-          at <%= @todays_booking.starts_at.hour %> o'clock</p>
+          at <%= @todays_booking.starts_at %> o'clock</p>
 
         </h3>
         <div class="booking-card-text">
