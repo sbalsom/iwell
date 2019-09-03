@@ -736,14 +736,15 @@ puts "#{Booking.count} bookings created"
 puts "now creating reviews !"
 
 therapists.each do |therapist|
-  Review.create!(content: "", rating: 3, therapist: therapist, user: User.take)
+  Review.create!(content: "", rating: 5, therapist: therapist, user: User.take)
+  Review.create!(content: "", rating: 5, therapist: therapist, user: User.take)
+  Review.create!(content: "", rating: 5, therapist: therapist, user: User.take)
+  Review.create!(content: "", rating: 5, therapist: therapist, user: User.take)
   Review.create!(content: "", rating: 4, therapist: therapist, user: User.take)
   Review.create!(content: "", rating: 4.5, therapist: therapist, user: User.take)
+  Review.create!(content: "", rating: 3, therapist: therapist, user: User.take)
   Review.create!(content: "", rating: 4.5, therapist: therapist, user: User.take)
-  Review.create!(content: "", rating: 5, therapist: therapist, user: User.take)
-  Review.create!(content: "", rating: 5, therapist: therapist, user: User.take)
-  Review.create!(content: "", rating: 5, therapist: therapist, user: User.take)
-  Review.create!(content: "", rating: 5, therapist: therapist, user: User.take)
+
 end
 
 puts "#{Review.count} reviews written total"
