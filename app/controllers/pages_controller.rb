@@ -8,4 +8,7 @@ class PagesController < ApplicationController
 
   def sandbox
   end
+
+  def video_session
+  end
 end
