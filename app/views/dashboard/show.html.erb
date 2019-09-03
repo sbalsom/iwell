@@ -1,83 +1,79 @@
 
-  <div id="therapist-banner" class="p-2 flex-fill">
-    <div class="therapist-banner-inner d-flex ">
-      <% if @user_therapist %>
-        <%= cl_image_tag @user_therapist.photo, width: 140, class: "avatar-small" %>
-        <p>Your assigned therapist is <%= @user_therapist.first_name %> <%= @user_therapist.last_name %> </p>
-      <% else %>
-        <div class="no-therapist d-flex">
-          <%= image_tag 'faces.png', class: "avatar-small" %>
-          <div class="d-flex flex-column justify-content-center">
-            <h2>You don't have an assigned therapist yet !</h2>
-            <% if @next_bookings %>
-            <%= link_to 'Search for one', therapists_path, class: "button-navy-small back-to-search" %>
-      <% end %>
+<div class="dashboard-container d-flex flex-column px-5">
+  <% if @user_therapist %>
+  <div class="assigned padded-box mt-5 d-flex">
+    <%= cl_image_tag @user_therapist.photo, width: 140, class: "avatar-small mb-3" %>
+    <div class="flex-2">
+      <h3>Your assigned therapist is <%=
+        @user_therapist.first_name %> <%= @user_therapist.last_name %></h3>
+        <% if @next_booking.blank? %>
+        <p>You have no upcoming sessions with your therapist</p>
+        <%= link_to therapists_path do %>
+        <div class="white-button">
+          Book now
+        </div>
+        <% end %>
+        <% end %>
+      </div>
+  </div>
+  <% else %>
+    <div class="assigned padded-box mt-5 d-flex">
+    <%= image_tag 'faces.png', width: 140, class: "avatar-small mb-3" %>
+    <div class="flex-2">
+      <h3>You don't have an assigned therapist yet !</h3>
+        <% if @next_booking.blank? %>
+        <p>You have no upcoming sessions</p>
+        <%= link_to therapists_path do %>
+        <div class="white-button">
+          Book now
+        </div>
+        <% end %>
+        <% end %>
+      </div>
+  </div>
+  <% end %>
 
+  <% if @today_booking %>
+    <div class="today border padded-box mt-5 d-flex relative">
+      <h3 id="absolute">Upcoming Appointments</h3>
+        <div class="calendar">
+          <p id="date"> <%= @today_booking.starts_at.strftime("%d") %> </p>
+          <i class="far fa-calendar" aria-hidden="true"></i>
+        </div>
+        <div class="pl-3 flex-grow">
+          <h3 class="mb-3"> <%= @today_booking.starts_at.strftime("%A, %d.%m.%Y %H:%M") %></h3>
+          <div class="d-flex flex-column justify-content-center">
+            <%= link_to root_path do %>
+            <i class="fas fa-video mb-3" aria-hidden="true"></i>
+            <% end %>
+            <h5>Start Call</h5>
           </div>
         </div>
-      <% end %>
-      </div>
-  </div>
-  <div class="therapist-show-page-container container">
-<div class="half-page">
-  <% if @next_bookings %>
-    <% @next_bookings.sort_by { |booking| booking.starts_at } %>
-    <% if !@todays_booking.blank? %>
-    <% @todays_booking = @todays_booking[0] %>
-    <h1 id="next-session">Next Session</h1>
-    <div class="booking-card">
-      <div class="calendar">
-        <p id="date"> <%= @todays_booking.starts_at %> </p>
-        <i class="far fa-calendar" aria-hidden="true"></i>
-      </div>
-      <div class="info">
-        <h3 id="datetime d-flex flex-column justify-content-center">
-          <p id="calendar-day">Your next appointment is</p>
-          <p id="calendar-day">On <%= @todays_booking.starts_at.to_formatted_s(:short) %>
-          at <%= @todays_booking.starts_at %> o'clock</p>
-
-        </h3>
-        <div class="booking-card-text">
-          <h6 id="notice">You can join the call on your appointment date.</h6>
+        <div class="avatar-box">
+          <%= cl_image_tag @today_booking.therapist.photo, width: 140, class: "avatar-small mb-3" %>
+           <h5>Dr. <%= @today_booking.therapist.first_name %> <%= @today_booking.therapist.last_name %> </h5>
         </div>
-        <div class="button-container d-flex justify-content-center">
-          <%= link_to 'Reschedule', edit_therapist_booking_path(@todays_booking.therapist, @todays_booking), class: "reschedule-button" %>
-          <%= link_to 'Cancel', therapist_booking_path(@todays_booking.therapist, @todays_booking), method: :destroy, class: "cancel-button" %>
-
-        </div>
-        <h4 id="cancel-policy-notice"><i class="fas fa-info-circle"></i> Cancellation is only possible  until before 24 hours of the call.</h4>
-      </div>
     </div>
-    <% end %>
-    <% if !@next_bookings.empty? %>
-      <div class="d-flex justify-content-center">
-        <div id="upcoming-bookings" class="upcoming-bookings">
-          <h2 id="upcoming">Other upcoming bookings</h2>
-            <%= render partial: "shared/upcoming_bookings", collection: @next_bookings, as: :booking %>
-        </div>
-      </div>
-    <% end %>
-  <% else %>
-      <div class="booking-card  flex-column align-items-center">
-        <p>Nothing to display here yet !</p>
-        <p>Once you've made an appointment, your upcoming appointment will display here.</p>
-        <p>Why don't you </p>
-        <p> <%= link_to 'browse therapists?', therapists_path, class: "button-navy" %></p>
-      </div>
+    <% else %>
+    <div class="empty border padded-box mt-5 relative">
+      <h3 id="absolute">Upcoming Appointments</h3>
+      <p>You have no upcoming appointments. When you schedule one, the call button will be displayed</p>here.
+    </div>
   <% end %>
-  </div>
-  <div class="half-page">
-        <h1 id="past-sessions">Past Sessions</h1>
-    <% if @past_bookings %>
-        <%= render partial: "shared/past_bookings", past_bookings: @past_bookings %>
+  <% if !@past_bookings.blank? %>
+    <div class="past padded-box mt-5 relative">
+      <h3 id="absolute">Past Appointments</h3>
+     <%= render partial: "shared/past_bookings", past_bookings: @past_bookings %>
+    </div>
+ <%  %>
   <% else %>
-      <div class="booking-card flex-column align-items-center">
-        <p>Nothing to display here yet !</p>
-        <p>When you've made a few calls, your past bookings will appear here</p>
-      </div>
-  <% end %>
-  </div>
+    <div class="empty border padded-box mt-5 relative">
+      <h3 id="absolute">Past Appointments</h3>
+      <p>You have not completed any sessions. When you have, you will be able to access them here.</p>
+    </div>
+<% end %>
 
-  </div>
-  </div>
 </div>
+
+
+    <%#= link_to 'Add to Calendar', edit_therapist_booking_path(@today_booking.therapist, @today_booking), class: "calendar-button d-flex mx-2" %>
