@@ -23,7 +23,9 @@ class TherapistsController < ApplicationController
 
   def show
     @booking = Booking.new
+    @reviews = Review.where(therapist: @therapist)
     authorize @therapist
+
   end
 
   private

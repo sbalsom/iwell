@@ -20,29 +20,31 @@
     </div>
     <div class="review-card">
       <h4>Reviews</h4>
-      <% 4.times do %>
+      <% if @reviews %>
+      <% @reviews.each do |review| %>
         <div class="review">
           <div class="stars">
-            <% full = @therapist.avg_rating.round(half: :down)  %>
+            <% full = review.rating.round(half: :down)  %>
             <% full.times do %>
               <div class="dark-star">
                 <i class="fas fa-star"></i>
               </div>
             <% end %>
-            <% if @therapist.avg_rating % 1 != 0 %>
+            <% if review.rating % 1 != 0 %>
                <div class="half-star">
                  <i class="fas fa-star-half-alt"></i>
                </div>
             <% end %>
-            <% empty = 5 - @therapist.avg_rating.round%>
+            <% empty = 5 - review.rating.round%>
             <% empty.times do %>
                <div class="light-star">
                  <i class="far fa-star"></i>
                </div>
             <% end %>
           </div>
-        <p>I had a great session with this therapist, I would highly recommend them.</p>
+        <p><%= review.content %></p>
       </div>
+     <% end %>
      <% end %>
     </div>
   </div>
