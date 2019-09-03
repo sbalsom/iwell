@@ -3,7 +3,9 @@ class DashboardController < ApplicationController
 
   def show
     @user = current_user
-    @user_therapist = Therapist.find(@user.therapist_id)
+    if !@user.therapist_id.nil?
+      @user_therapist = Therapist.find(@user.therapist_id)
+    end
     if @user.therapist_id
      @user_therapist = @user.therapist
    else
@@ -13,10 +15,7 @@ class DashboardController < ApplicationController
     @bookings = current_user.bookings
     @next_booking = @bookings.where("starts_at > ?", Date.today)
     @past_bookings = @bookings.where("starts_at < ?", Date.today)
-    #bookings.sort_by do |booking| booking.starts_at
 
-   # @booking_therapists = bookings.map do |booking|
-    #  Therapist.find(booking.therapist_id)
     if current_user.therapist_id
       @my_therapist = Therapist.find(current_user.therapist_id)
     end

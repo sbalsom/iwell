@@ -1,11 +1,24 @@
 import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
+
 const availableDays = document.querySelectorAll(".day");
 const calInput = document.querySelector(".cal");
 const start_times = document.querySelectorAll(".start-time");
 const end_times = document.querySelectorAll(".end-time");
-
+const timePicker = document.getElementById("time-picker");
 // this function only deals with the days
+flatpickr(".timepicker", {
+    enableTime: true,
+    noCalendar: true,
+    dateFormat: "H:i",
+    minDate: min,
+    maxDate: max,
+  });
+
+if (timePicker) {
+  timePicker.disabled = true;
+}
+
 let days = [];
 availableDays.forEach((day) => {
   let time = day.innerText.substring(0, 10);
@@ -28,23 +41,24 @@ console.log(ed);
 let min = '';
 let max = '';
 // listens for the day input and then selects the times
-calInput.addEventListener('input', (event)=> {
-  let v = event.target.value;
-  let i = days.indexOf(v)
-  console.log(v);
-  console.log(st[i]);
-  console.log(ed[i]);
-  min = st[i];
-  max = ed[i];
-  // flatpicker for time initiated only once the user has entered a date
-  flatpickr(".timepicker", {
-    enableTime: true,
-    noCalendar: true,
-    dateFormat: "H:i",
-    minDate: min,
-    maxDate: max,
+
+if (calInput) {
+  calInput.addEventListener('input', (event)=> {
+    let v = event.target.value;
+    let i = days.indexOf(v)
+    console.log(v);
+    console.log(st[i]);
+    console.log(ed[i]);
+    min = st[i];
+    max = ed[i];
+    if (timePicker) {
+      timePicker.disabled = false;
+    }
+    // flatpicker for time initiated only once the user has entered a date
   });
-});
+}
+
+
 
 flatpickr(".datepicker", {
   altInput: true,
