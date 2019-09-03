@@ -12,36 +12,29 @@
                 params[:query],
                 class: "my-3 mr-3",
                 id: "search-bar",
-                placeholder: "Search by name or specialty"  %>
+                placeholder: "Search by name or specialty" %>
             </div>
-            <div class="submit mx-3">
-              <%= submit_tag "Search", id: "search-button", class: "button-navy-md my-3" %>
-            </div>
-          </div>
         <% end %>
     </div>
+    </div>
     <div class="item-2 d-flex">
-      <div class="filter filter-language">
+
+        <div class="d-flex">
         <%= form_tag therapists_path, method: :get do %>
-        <% languages = [] %>
-        <%  Therapist.all.each do |therapist| %>
-            <% languages << therapist.language %>
-            <% languages = languages.uniq %>
-          <% end %>
-        <%= label_tag 'language', 'Language spoken:' %>
           <div class="d-flex">
-            <%= select_tag "language", options_for_select(languages.map{|s| ["#{s}", s]},:selected => params[:language]), class: "form-control", onchange: "this.form.submit()" %>
+            <%= select_tag "specialty", options_from_collection_for_select(@specialties, 'name', 'name', :selected => params[:specialty]), prompt: "Specialty", class: "form-control", onchange: "this.form.submit()" %>
             <% if params[:query].present? %>
-              <%= hidden_field_tag :query, params[:query] %>
+            <%= hidden_field_tag :query, params[:query] %>
+          </div>
             <% end %>
-            </div>
-          <% end %>
-        </div>
+          </div>
+        <% end %>
+      </div>
+
         <div class="filter filter-rate">
-          <%= label_tag 'rate', 'Hourly rate:' %>
           <%= form_tag therapists_path, method: :get do %>
             <div class="d-flex">
-              <%= select_tag "rate", options_for_select((20..100).step(5).to_a.map{|s| ["#{s}€/hour", s]},:selected => params[:rate]), class: "form-control", onchange: "this.form.submit()" %>
+              <%= select_tag "rate", options_for_select((20..100).step(5).to_a.map{|s| ["#{s}€/hour", s]},:selected => params[:rate]), prompt: "Price", class: "form-control", onchange: "this.form.submit()" %>
               <% if params[:query].present? %>
                 <%= hidden_field_tag :query, params[:query] %>
               <% end %>
@@ -54,10 +47,9 @@
        </div>
 
         <div class="filter filter-exp toggle hidden">
-          <%= label_tag 'years_exp', 'Years of experience:' %>
           <%= form_tag therapists_path, method: :get do %>
           <div class="d-flex">
-            <%= select_tag "years_exp", options_for_select((1..10).step(1).to_a.map{|s| ["#{s}", s]}, :selected => params[:years_exp]), class: "form-control", onchange: "this.form.submit()" %>
+            <%= select_tag "years_exp", options_for_select((1..10).step(1).to_a.map{|s| ["#{s}", s]}, :selected => params[:years_exp]), prompt: "Years of Experience",class: "form-control", onchange: "this.form.submit()" %>
             <% if params[:query].present? %>
               <%= hidden_field_tag :query, params[:query] %>
             <% end %>
@@ -65,18 +57,19 @@
         <% end %>
       </div>
       <div class="filter filter-rating toggle hidden">
-        <%= label_tag 'rating', 'Average rating:' %>
         <%= form_tag therapists_path, method: :get do %>
         <div class="d-flex">
-          <%= select_tag "rating", options_for_select((3..5).step(0.5).to_a.map{|s| ["#{s} stars or more", s]}, :selected => params[:rating]), class: "form-control", onchange: "this.form.submit()" %>
-        </div>
+          <%= select_tag "rating", options_for_select((3..5).step(0.5).to_a.map{|s| ["#{s} stars or more", s]}, :selected => params[:rating]), prompt: "Average Rating", class: "form-control", onchange: "this.form.submit()" %>
+           <% if params[:query].present? %>
+            <%= hidden_field_tag :query, params[:query] %>
+            <% end %>
+          </div>
       <% end %>
       </div>
       <div class="filter filter-specialty toggle hidden">
-        <%= label_tag 'specialty', 'Specialty:' %>
         <%= form_tag therapists_path, method: :get do %>
           <div class="d-flex">
-            <%= select_tag "specialty", options_from_collection_for_select(@specialties, 'name', 'name', :selected => params[:specialty]), class: "form-control", onchange: "this.form.submit()" %>
+            <%= select_tag "specialty", options_from_collection_for_select(@specialties, 'name', 'name', :selected => params[:specialty]), prompt: "Specialty", class: "form-control", onchange: "this.form.submit()" %>
             <% if params[:query].present? %>
             <%= hidden_field_tag :query, params[:query] %>
           </div>
@@ -125,7 +118,6 @@
             <h6>Years of Experience: <%= therapist.years_exp %></h6>
             <div class="specialty-container">
               <% therapist.specialties.each do |specialty|%>
-
                 <div class="specialty-tag">
                   <%= specialty.name %>
                 </div>

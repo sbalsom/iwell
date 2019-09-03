@@ -1,6 +1,12 @@
 @import "show";
 
 .search-page {
+
+  .item-2.d-flex{
+    position:relative;
+    width:70vw;
+    }
+
   .filters {
     display: flex;
     flex-direction: column;
@@ -27,6 +33,8 @@
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     border-radius: 20px;
     width:70vw;
+    // margin-left: 1rem !important;
+    // margin-right: 1rem !important;
 
     }
 
@@ -96,6 +104,10 @@
     margin-right: 8px;
     margin-top:20px;
   }
+
+  // .filter-filter-rating-toggle-hidden{
+  //  margin-top:0px;
+  // }
 
 #specialty-tag-home {
      margin-left: 10px;
