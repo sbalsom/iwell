@@ -1,19 +1,39 @@
 <div class="therapist-show-container">
   <div class="show-first-flex-item">
     <%= cl_image_tag @therapist.photo, class: "avatar-large profile-avatar mx-4" %>
-    <div id="therapist-name">Dr <%= @therapist.first_name %> <%= @therapist.last_name %></div>
-    <div class="stars"></div>
+    <div class="d-flex flex-column justify-content-center">
+      <h4 id="therapist-name">Dr <%= @therapist.first_name %> <%= @therapist.last_name %></h4>
+      <div class="stars d-flex justify-content-center">
+         <% full = @therapist.avg_rating.round(half: :down)  %>
+       <% full.times do %>
+      <div class="dark-star">
+        <i class="fas fa-star"></i>
+      </div>
+      <% end %>
+      <% if @therapist.avg_rating % 1 != 0 %>
+      <div class="half-star">
+        <i class="fas fa-star-half-alt"></i>
+      </div>
+      <% end %>
+      <% empty = 5 - @therapist.avg_rating.round%>
+      <% empty.times do %>
+      <div class="light-star">
+          <i class="far fa-star"></i>
+      </div>
+      <% end %>
+      </div>
+      <p><strong>Years of Experience</strong>: <%= @therapist.years_exp %></p>
+      <div class="">
+          <% @therapist.specialties.each do |specialty| %>
+            <div class="specialty-tag" id="specialty-tag-home">
+              <%= specialty.name %>
+            </div>
+          <% end %>
+        </div>
+    </div>
   </div>
   <div>
     <div class="bio-card">
-      <div class="d-flex"> <p><strong>Specialties:  </strong>
-        <% @therapist.specialties.each do |specialty| %>
-          <div class="specialty-tag" id="specialty-tag-home">
-            <%= specialty.name %>
-          </div>
-        <% end %>
-      </div>
-      <p><strong>Years of Experience</strong>: <%= @therapist.years_exp %></p>
       <div class="bio-description">
         <p><%= @therapist.bio %></p>
       </div>
@@ -58,7 +78,7 @@
       <div class="d-flex flex-column">
         <%= f.label :time, 'Time' %>
         <%= f.text_field :time, as: :string, label: "Time", data: {
-        controller: "flatpickr"}, class: "timepicker mb-4", id: "date-picker" %>
+        controller: "flatpickr"}, class: "timepicker mb-4", id: "time-picker" %>
 
         </div>
         <%= f.label :free, 'Duration' %>

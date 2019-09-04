@@ -1,6 +1,18 @@
 @import "show";
 
 .search-page {
+  .relative {
+    position:relative;
+  }
+  .absolute {
+    position: absolute;
+    top: 60px;
+    right: 100px;
+  }
+  .more-btn, .less-btn {
+    width:150px;
+    text-align:center;
+  }
 
   .item-2.d-flex{
     position:relative;

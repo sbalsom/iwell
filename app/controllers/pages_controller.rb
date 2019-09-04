@@ -8,4 +8,10 @@ class PagesController < ApplicationController
 
   def sandbox
   end
+
+  def video_session
+    @booking = Booking.find(params[:booking_id])
+    @booking.completed!
+
+  end
 end

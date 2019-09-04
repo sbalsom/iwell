@@ -45,6 +45,6 @@ end
 private
 
   def booking_params
-    params.require(:booking).permit(:free, :therapist_id, :starts_at)
+    params.require(:booking).permit(:free, :therapist_id, :starts_at, :time)
   end
 end
