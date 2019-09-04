@@ -16,9 +16,17 @@
        <h4> 60 Minutes</h4>
        <% end %>
      </div>
-      <div class="button-container">
+      <div class="button-container d-flex">
         <% therapist = booking.therapist %>
-        <%= link_to "Leave Review", new_therapist_review_path(therapist), class: "specialty-tag" %>
+        <%= link_to therapist_assign_me_path(therapist) do %>
+        <div class="button-navy-md px-3 mx-3">
+          Assign as my therapist
+        </div>
+        <% end %>
+        <% reviewed = @my_reviews.where(therapist: therapist) %>
+        <% if reviewed.blank? %>
+        <%= link_to "Leave Review", new_therapist_review_path(therapist), class: "button-navy-md px-3" %>
+        <% end %>
       </div>
     </div>
   </div>

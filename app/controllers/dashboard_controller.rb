@@ -15,7 +15,7 @@ class DashboardController < ApplicationController
     @bookings = current_user.bookings
     @next_booking = @bookings.where("starts_at > ?", Date.today)
     @past_bookings = @bookings.where(["starts_at < ? or status = ? ", Date.today, 3])
-
+    @my_reviews = Review.where(user: current_user)
     if current_user.therapist_id
       @my_therapist = Therapist.find(current_user.therapist_id)
     end
