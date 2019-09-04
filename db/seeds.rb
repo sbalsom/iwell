@@ -220,10 +220,10 @@ puts "#{User.count} users created"
 
 puts "creating therapists"
 
-
+#creating female therapists
 i = 0
 while i < 50
-  Therapist.create!(
+  t = Therapist.create!(
     first_name: FIRSTNAMESF[i],
     last_name: LASTNAMES.sample,
     avg_rating: half_value(rndr.rand(3.0..5.0)),
@@ -233,13 +233,19 @@ while i < 50
     remote_photo_url: PHOTOSWOMEN[i],
     rate: rndr.rand(20..60)
     )
+  Review.create!(content: "She been nothing but helpful and supportive. Talking to my therapist has been clarifying and affirming, and I appreciate her understanding of different situations. Thank you! ", rating: 4, therapist: t, user: User.take)
+  Review.create!(content: "I felt that even though she was listening me, she did not take enough time to understand my problems. I didn't get useful advise which I can apply to my life.", rating: 3, therapist: t, user: User.take)
+  Review.create!(content: "She is a wonderful person, mentor, and counselor. She’s, patient, non-judgmental, and really shows how much she cares. It’s comforting to know that I am able to contact her at anytime for any problem. ", rating: 4.5, therapist: t, user: User.take)
+  Review.create!(content: "She is an amazing counsellor. She is great to work with and always made me feel like I could say any thing that was on my mind", rating: 4.5, therapist: t, user: User.take)
+  Review.create!(content: "She has been amazing. She truly understands my concerns and empathizes with me. She works hard to check in and help me create goals and long lasting plans. I’m so happy I found my therapist!", rating: 4.5, therapist: t, user: User.take)
+  Review.create!(content: "Very capable and competent, and very nice to deal with. A real professional with a good guiding hand toward getting to the root of problems and building toward solutions.", rating: 4.5, therapist: t, user: User.take)
   i += 1
 end
 
 n = 0
-
+# creating male therapists
 while n < 50
-  Therapist.create!(
+  t = Therapist.create!(
     first_name: FIRSTNAMESM[n],
     last_name: LASTNAMES.sample,
     avg_rating: half_value(rndr.rand(3.0..5.0)),
@@ -249,6 +255,12 @@ while n < 50
     remote_photo_url: PHOTOSMEN[n],
     rate: rndr.rand(20..60)
     )
+  Review.create!(content: "He is very understanding and professional. He gets back to me super fast and is always on time when we have meetings and gives me excellent feedback and helpful information. ", rating: 4, therapist: t, user: User.take)
+  Review.create!(content: "I felt that even though he was listening me, he did not take enough time to understand my problems. I didn't get useful advise which I can apply to my life.", rating: 3, therapist: t, user: User.take)
+  Review.create!(content: "He is a wonderful person, mentor, and counselor. She’s, patient, non-judgmental, and really shows how much she cares. It’s comforting to know that I am able to contact him at anytime for any problem. ", rating: 4.5, therapist: t, user: User.take)
+  Review.create!(content: "He is an amazing counsellor. He is great to work with and always made me feel like I could say any thing that was on my mind", rating: 4.5, therapist: t, user: User.take)
+  Review.create!(content: "He has been amazing. He truly understands my concerns and empathizes with me. She works hard to check in and help me create goals and long lasting plans. I’m so happy I found my therapist!", rating: 4.5, therapist: t, user: User.take)
+  Review.create!(content: "Very capable and competent, and very nice to deal with. A real professional with a good guiding hand toward getting to the root of problems and building toward solutions.", rating: 4.5, therapist: t, user: User.take)
   n += 1
 end
 
