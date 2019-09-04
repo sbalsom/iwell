@@ -49,7 +49,6 @@
           <% end %>
         </div>
 
-<!--  UPDATEDSEED had this old code-->
       <div class="filter filter-specialty">
         <%= form_tag therapists_path, method: :get do %>
            <div class="d-flex">
@@ -61,9 +60,9 @@
         <% end %>
       </div>
         <div class="filter filter-exp toggle hidden">
-          <%#= form_tag therapists_path, method: :get do %>
+          <%= form_tag therapists_path, method: :get do %>
           <div class="d-flex">
-            <%#= select_tag "years_exp", options_for_select((1..10).step(1).to_a.map{|s| ["#{s}", s]}, :selected => params[:years_exp]), prompt: "Years of experience", class: "form-control", onchange: "this.form.submit()" %>
+            <%= select_tag "years_exp", options_for_select((1..10).step(1).to_a.map{|s| ["#{s}", s]}, :selected => params[:years_exp]), prompt: "Years of experience", class: "form-control", onchange: "this.form.submit()" %>
             <% if params[:query].present? %>
               <%= hidden_field_tag :query, params[:query] %>
             <% end %>
