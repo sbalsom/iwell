@@ -1,0 +1,29 @@
+<div class="container mt-5">
+  <h3>Welcome to iWell. So that we can show the best professionals for you, please enter the following info first:</h3>
+  <%= form_tag therapists_path, method: :get do %>
+    <% languages = [] %>
+    <%  Therapist.all.each do |therapist| %>
+    <% languages << therapist.language %>
+    <% languages = languages.uniq %>
+  <% end %>
+  <div class="d-flex">
+    <%= select_tag "language", options_for_select(languages.map{|s| ["#{s}", s]},:selected => params[:language]), prompt: "Language", class: "form-control" %>
+      <% if params[:query].present? %>
+        <%= hidden_field_tag :query, params[:query] %>
+      <% end %>
+      <% if params[:specialty].present? %>
+        <%= hidden_field_tag :specialty, params[:specialty] %>
+      <% end %>
+  </div>
+  <div class="d-flex">
+    <%= select_tag "specialty", options_from_collection_for_select(@specialties, 'name', 'name', :selected => params[:specialty]), prompt: "Specialty", class: "form-control" %>
+      <% if params[:query].present? %>
+        <%= hidden_field_tag :query, params[:query] %>
+      <% end %>
+      <% if params[:language].present? %>
+        <%= hidden_field_tag :language, params[:language] %>
+      <% end %>
+  </div>
+  <%= submit_tag :submit, class: "button-navy" %>
+  <% end %>
+</div>

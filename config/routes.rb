@@ -12,6 +12,10 @@ Rails.application.routes.draw do
   end
    resources :bookings, only: :show
   get 'sandbox', to: 'pages#sandbox'
+  get 'welcome', to: 'pages#welcome'
+  resources :bookings, only: :show do
+    get 'video_session', to: 'pages#video_session'
+  end
 
 end
 
