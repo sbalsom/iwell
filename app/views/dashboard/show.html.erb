@@ -3,7 +3,9 @@
 
   <% if @user_therapist %>
   <div class="assigned d-flex px-5">
+    <%= link_to therapist_path(@user_therapist) do %>
     <%= cl_image_tag @user_therapist.photo, width: 140, class: "avatar-small mb-3" %>
+    <% end %>
     <div class="flex-2">
       <h3>Your assigned therapist is <%=
         @user_therapist.first_name %> <%= @user_therapist.last_name %></h3>
@@ -19,7 +21,6 @@
       <div class="avatar-small mb-3" id="no-therapist">
 
       </div>
-    <%#= image_tag 'faces.png', width: 140, class: "avatar-small mb-3" %>
     <div class="flex-2">
       <h3>You don't have an assigned therapist yet !</h3>
         <%= link_to therapists_path do %>
@@ -50,7 +51,9 @@
           </div>
         </div>
         <div class="avatar-box">
+          <%= link_to therapist_path(@today_booking.therapist) do %>
           <%= cl_image_tag @today_booking.therapist.photo, width: 140, class: "avatar-small mb-3" %>
+          <% end %>
            <h5>Dr. <%= @today_booking.therapist.first_name %> <%= @today_booking.therapist.last_name %> </h5>
         </div>
     </div>
