@@ -9,10 +9,19 @@
     <div class="flex-2">
       <h3>Your assigned therapist is <%=
         @user_therapist.first_name %> <%= @user_therapist.last_name %></h3>
+        <% if @user_therapist %>
+        <%= link_to therapist_path(@user_therapist) do %>
+        <div class="white-button">
+          Book now
+        </div>
+        <% end %>
+        <% else %>
         <%= link_to therapists_path do %>
         <div class="white-button">
           Book now
         </div>
+        <% end %>
+
         <% end %>
       </div>
   </div>
