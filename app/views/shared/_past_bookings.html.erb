@@ -7,7 +7,7 @@
 
     <div class="past-info d-flex flex-column justify-content-around ml-5">
      <div class="flex-1">
-      <h3> <%= booking.starts_at.strftime("%A, %d.%m.%Y %H:%M") %></h3>
+      <h3> <%= booking.starts_at.strftime("%A, %d.%m.%Y") %></h3>
        <% if booking.free %>
        <h4> 15 Minutes </h4>
        <% else %>

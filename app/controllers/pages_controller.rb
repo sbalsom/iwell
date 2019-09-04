@@ -12,6 +12,11 @@ class PagesController < ApplicationController
   def video_session
     @booking = Booking.find(params[:booking_id])
     @booking.completed!
-
+    @therapist = Therapist.find(params[:therapist_id])
   end
+
+  def assign
+    @therapist = Therapist.find(params[:therapist_id])
+  end
+
 end

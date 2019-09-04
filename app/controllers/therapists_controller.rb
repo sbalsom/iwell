@@ -28,6 +28,14 @@ class TherapistsController < ApplicationController
 
   end
 
+  def update_main_therapist
+    @therapist = Therapist.find(params[:therapist_id])
+    authorize @therapist
+    current_user.therapist_id = @therapist.id
+    current_user.save
+    redirect_to dashboard_path
+  end
+
   private
 
   def set_therapist
