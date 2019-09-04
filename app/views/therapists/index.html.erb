@@ -1,6 +1,6 @@
 <div class="search-page ">
   <div class="filters-stick-to-nav relative">
-    <div class="more-btn my-3 absolute">
+    <div class="more-btn my-3 absolute border-conform">
         More filters
        </div>
     <div class="item-1">
@@ -25,7 +25,7 @@
 
                 <%= text_field_tag :query,
                 params[:query],
-                class: "my-3 mr-3",
+                class: "my-3 mr-3 border-conform",
                 id: "search-bar",
                 placeholder: "Search by name or specialty" %>
             </div>
@@ -163,7 +163,7 @@
     <% @therapists.each do |therapist| %>
       <%= link_to therapist_path(therapist) do %>
       <div class="therapist-cards">
-        <div class="profile-card position-rel mx-5">
+        <div class="profile-card position-rel mx-5 border-conform mb-2">
           <div class="profile-avatar-spacing d-flex flex-column align-items-center mt-3">
             <%= cl_image_tag therapist.photo, class: "avatar-small profile-avatar" %>
           <div class="stars">
