@@ -3,13 +3,13 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   devise_for :users
   resources :therapists, only: [:index, :show] do
-    resources :bookings, only: [:new, :create, :edit, :update, :destroy]
+    resources :bookings, only: [:new, :create, :edit, :update, :destroy] do
+      get 'assign', to: 'pages#assign'
+      get 'video_session', to: 'pages#video_session'
+    end
     resources :reviews, only: [:new, :create]
   end
-  resources :bookings, only: :show do
-    get 'video_session', to: 'pages#video_session'
-    get 'assign', to: 'pages#assign'
-  end
+   resources :bookings, only: :show
   get 'sandbox', to: 'pages#sandbox'
 
 end
