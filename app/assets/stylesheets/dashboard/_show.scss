@@ -1,51 +1,96 @@
-.therapist-avatar{
-    position: absolute;
-    right: 150px;
-    margin:15px;
-
-    p {
-      color:black;
-      font-family: Avenir;
-      font-size:20px;
-      line-height: 50px;
-      text-align:center;
-
-<<<<<<< HEAD
-=======
-  .therapist-banner-inner{
-    margin-left: 60px;
-    margin-top: 5px;
+// whole page stylıng
+.dashboard-container {
+  a, a:hover {
+    text-decoration:none;
+  }
+  #absolute {
+    position:absolute;
+    top: -50px;
   }
 
-  p {
-    color:#FFFCFC;
-    font-family: Avenir;
-    font-weight: 400;
-    font-size:30px;
-    line-height: 50px;
-    text-align: center;
-    margin: auto 88px;
->>>>>>> master
-    }
-    .avatar-small {
-      width:170px;
-      height:170px;
-    }
+  .relative {
+    position:relative;
   }
 
-.booking-card {
-  width:90%;
-  height:260px;
-  border-radius:18px;
-  border: 1px solid #CDD4D6;
+  h3{
+    color: #4F5CAD;
+  }
+
+   h5 {
+    font-weight: normal;
+  }
+
+.padded-box {
+  padding: 0 20px;
+  border: 1px solid $border;
+  border-radius: 18px;
+
+}
+
+.empty {
+  height:200px;
+  margin: 30px 0;
   display:flex;
-  background-color: white;
-  padding:10px;
-  margin: 40px auto 20px auto;
-
+  flex-direction:column;
+  justify-content:center;
+  p {
+    font-size: 23px;
+    color: #a7a8b3;
+    text-align:center;
   }
 
-  .calendar {
+}
+// assigned therapıst stylıng
+.assigned {
+  height:200px;
+  background-color: #94ABE4;
+  padding-top:30px;
+  margin-bottom:30px;
+  h3, p {
+    color:white;
+  }
+  .flex-2 {
+    margin-left:30px;
+  }
+
+}
+// past bookings styling
+.past {
+  border: 1px solid $main;
+
+  h4 {
+    font-size: 21px;
+    padding: 10px 0 0 0 ;
+  }
+
+
+}
+.past-booking-card {
+  border-top: 1px solid #CDD4D6;
+  padding: 20px 20px;
+}
+.past-booking-card:first-child {
+  border: none;
+
+}
+
+
+
+
+// today booking stylıng
+.today {
+  padding-top: 40px;
+  margin-bottom:30px;
+  .avatar-box {
+    padding-right: 30px;
+  }
+
+}
+.flex-grow {
+  flex-grow: 1;
+}
+
+.calendar {
     margin: 21px;
     position: relative;
     grid-template-rows: 50px 50px 50px;
@@ -60,15 +105,13 @@
     color:$main;
     position:absolute;
     top:-20px;
+  }
+  .calendar-button {
+    color:#7882E9;
+    font-weight: 500;
+    font-family: Avenir;
     }
-    .calendar-button {
-      color:#7882E9;
-      font-weight: 500;
-      font-family: Avenir;
-      }
-
-
-#date {
+    #date {
     font-size: 6.5em;
     font-family: $body-font;
     font-weight:bold;
@@ -76,36 +119,7 @@
     margin-top: 10px;
     margin-right:5px;
     text-align:center;
-}
-
-  .session-button {
-
-    color:black;
-    font-family: Avenir;
-    font-size: 15px;
-    font-weight: 900;
-
-
-    }
-
-  h4 {
-    color:#A19797;
-    font-family: Avenir;
-    font-size: 15px;
-    font-weight: 500;
-    padding: 15px 0 0 0;
-       }
-  .info-container{
-    margin:23px;
-    justify-content: space-between;
   }
-  .info {
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-    color: #4F5CAD;
-  }
-
 
   .fa-video {
     text-align:center;
@@ -121,71 +135,15 @@
             }
   }
 
-  .reschedule {
-    border: 1px solid #4F5CAD;
-    border-radius: 5px;
-    color:#4F5CAD;
-    padding:10px;
-  }
-
-  .cancel {
-    border: 1px solid #4F5CAD;
-    border-radius: 5px;
-    color:#4F5CAD;
-    padding:10px;
-  }
-
-  .call {
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-  }
-
-
-
-
-.past-sessions{
-  width: 90%;
-  border: 1px solid #CDD4D6;
-  border-radius: 18px;
-  margin: 30px auto;
-
-
-  .past-booking-card {
-    width:85%;
-    height:250px;
-    border-bottom: 1px solid #CDD4D6;
-    display:flex;
-    justify-content: space-around;
-    background-color: white;
-    padding:10px;
-    .review {
-      border: 1px solid #4F5CAD;
-      border-radius: 5px;
-      color:#4F5CAD;
-      padding:10px;
-            }
-    p {
+  .session-button {
     color:black;
     font-family: Avenir;
     font-size: 15px;
     font-weight: 900;
-    padding: 15px 0 0 15px;
-      }
-    .info > h3 {
-    flex-direction:column;
-    justify-content:space-between;
-    color: #4F5CAD;
-    }
+  }
 
-  h4 {
-    color:black;
-    font-family: Avenir;
-    font-size: 25px;
-    font-weight: 500;
 
-       }
 
 }
 
-}
+

@@ -108,5 +108,4 @@ ActiveRecord::Schema.define(version: 2019_09_02_140411) do
   add_foreign_key "reviews", "therapists"
   add_foreign_key "reviews", "users"
   add_foreign_key "therapist_specialties", "therapists"
-  add_foreign_key "users", "therapists"
 end
