@@ -1,4 +1,4 @@
-<div class="booking-confirmation-container">
+<div class="booking-confirmation-container px-5">
   <div class="booking-confirmation-content">
     <div>
       <p>
@@ -7,7 +7,7 @@
       <h2 class="d-flex justify-content-center align-items-center">Booking confirmation</h2>
     </div>
     <% if @booking.user.name %>
-    <p class="mt-5">Thank you <%= @booking.user.name %>,</p>
+    <p class="mt-5">Thank you <%= @booking.user.name.capitalize %>,</p>
     <% else %>
     Thank you!
     <% end %>
