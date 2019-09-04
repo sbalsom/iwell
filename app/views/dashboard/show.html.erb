@@ -46,7 +46,7 @@
           <p id="date"> <%= @today_booking.starts_at.strftime("%d") %> </p>
           <i class="far fa-calendar" aria-hidden="true"></i>
         </div>
-        <div class="pl-3 flex-grow">
+        <div class="calendar-date pl-3 flex-grow">
           <h3 class="mb-3"> <%= @today_booking.starts_at.strftime("%A, %d.%m.%Y %H:%M") %></h3>
           <div class="d-flex flex-column justify-content-center">
             <%= link_to booking_video_session_path(@today_booking) do %>
