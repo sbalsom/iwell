@@ -15,28 +15,41 @@ flatpickr(".timepicker", {
     maxDate: max,
   });
 
-if (timePicker) {
-  timePicker.disabled = true;
-}
-
 let days = [];
 availableDays.forEach((day) => {
   let time = day.innerText.substring(0, 10);
   days.push(time + " 00:00");
 });
-console.log(days);
+
+flatpickr(".datepicker", {
+  altInput: true,
+  enableTime: true,
+  dateFormat: "Y-m-d H:i",
+  time_24hr: true,
+  minDate: "today",
+  maxDate: new Date().fp_incr(60),
+  enable: days
+});
+
+
+if (timePicker) {
+  timePicker.disabled = true;
+}
+
+
+// console.log(days);
 
 let st = [];
 start_times.forEach((time) => {
   st.push(time.innerText.substring(11,19));
 });
-console.log(st);
+// console.log(st);
 
 let ed = [];
 end_times.forEach((time) => {
   ed.push(time.innerText.substring(11,19));
 });
-console.log(ed);
+// console.log(ed);
 
 let min = '';
 let max = '';
@@ -60,11 +73,4 @@ if (calInput) {
 
 
 
-flatpickr(".datepicker", {
-  altInput: true,
-  dateFormat: "Y-m-d H:i",
-  time_24hr: true,
-  minDate: "today",
-  maxDate: new Date().fp_incr(60),
-  enable: days
-});
+
