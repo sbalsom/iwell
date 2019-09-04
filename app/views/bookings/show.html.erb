@@ -6,7 +6,7 @@
       </p>
       <h2 class="d-flex justify-content-center align-items-center">Booking confirmation</h2>
     </div>
-    <% if @booking.user.name %>
+    <% if @booking.user.name.capitalize %>
     <p class="mt-5">Thank you <%= @booking.user.name %>,</p>
     <% else %>
     Thank you!
