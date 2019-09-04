@@ -1,4 +1,13 @@
+// global styles
+.padded-box {
+  padding: 0 20px;
+  border: 1px solid $border;
+  border-radius: 18px;
+
+}
+
 // whole page stylıng
+
 .dashboard-container {
   a, a:hover {
     text-decoration:none;
@@ -22,13 +31,6 @@
    h5 {
     font-weight: normal;
   }
-
-.padded-box {
-  padding: 0 20px;
-  border: 1px solid $border;
-  border-radius: 18px;
-
-}
 
 .empty {
   height:200px;

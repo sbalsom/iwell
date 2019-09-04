@@ -25,13 +25,10 @@
     <%#= image_tag 'faces.png', width: 140, class: "avatar-small mb-3" %>
     <div class="flex-2">
       <h3>You don't have an assigned therapist yet !</h3>
-        <% if @next_booking.blank? %>
-        <p>You have no upcoming sessions</p>
         <%= link_to therapists_path do %>
         <div class="white-button">
           Book now
         </div>
-        <% end %>
         <% end %>
       </div>
   </div>
@@ -49,7 +46,7 @@
         <div class="calendar-date pl-3 flex-grow">
           <h3 class="mb-3"> <%= @today_booking.starts_at.strftime("%A, %d.%m.%Y") %>  <%= @today_booking.time.strftime("%H:%M")%></h3>
           <div class="d-flex flex-column justify-content-center">
-            <%= link_to booking_video_session_path(@today_booking) do %>
+            <%= link_to  therapist_booking_video_session_path(@today_booking.therapist, @today_booking) do %>
             <i class="fas fa-video mb-3" aria-hidden="true"></i>
             <% end %>
             <h5>Start Call</h5>
