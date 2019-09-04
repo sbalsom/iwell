@@ -1,7 +1,8 @@
 
-<div class="dashboard-container d-flex flex-column px-5">
+<div class="dashboard-container d-flex flex-column">
+
   <% if @user_therapist %>
-  <div class="assigned padded-box mt-5 d-flex">
+  <div class="assigned d-flex px-5">
     <%= cl_image_tag @user_therapist.photo, width: 140, class: "avatar-small mb-3" %>
     <div class="flex-2">
       <h3>Your assigned therapist is <%=
@@ -17,8 +18,11 @@
       </div>
   </div>
   <% else %>
-    <div class="assigned padded-box mt-5 d-flex">
-    <%= image_tag 'faces.png', width: 140, class: "avatar-small mb-3" %>
+    <div class="assigned d-flex px-5">
+      <div class="avatar-small mb-3" id="no-therapist">
+
+      </div>
+    <%#= image_tag 'faces.png', width: 140, class: "avatar-small mb-3" %>
     <div class="flex-2">
       <h3>You don't have an assigned therapist yet !</h3>
         <% if @next_booking.blank? %>
@@ -33,6 +37,8 @@
   </div>
   <% end %>
 
+
+
   <% if @today_booking %>
     <div class="today border padded-box mt-5 d-flex relative">
       <h3 id="absolute">Upcoming Appointments</h3>
@@ -43,7 +49,7 @@
         <div class="pl-3 flex-grow">
           <h3 class="mb-3"> <%= @today_booking.starts_at.strftime("%A, %d.%m.%Y %H:%M") %></h3>
           <div class="d-flex flex-column justify-content-center">
-            <%= link_to root_path do %>
+            <%= link_to booking_video_session_path(@today_booking) do %>
             <i class="fas fa-video mb-3" aria-hidden="true"></i>
             <% end %>
             <h5>Start Call</h5>
@@ -73,6 +79,7 @@
     </div>
 <% end %>
 
+</div>
 </div>
 
 
