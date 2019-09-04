@@ -18,7 +18,11 @@ class ReviewsController < ApplicationController
     @review.rating = rating
     authorize @review
     if @review.save
-      redirect_to dashboard_path(@therapist)
+      if params[:assign]
+        redirect_to therapist_assign_me_path
+      else
+        redirect_to dashboard_path
+      end
     else
       render :new
     end

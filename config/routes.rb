@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     end
     resources :reviews, only: [:new, :create]
   end
-   resources :bookings, only: :show
+  resources :bookings, only: :show
   get 'sandbox', to: 'pages#sandbox'
   get 'welcome', to: 'pages#welcome'
   resources :bookings, only: :show do
