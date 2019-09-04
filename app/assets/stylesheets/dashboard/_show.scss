@@ -1,12 +1,23 @@
+// global styles
+.padded-box {
+  padding: 0 20px;
+  border: 1px solid $border;
+  border-radius: 18px;
+
+}
+
 // whole page stylıng
+
 .dashboard-container {
   a, a:hover {
     text-decoration:none;
   }
   #absolute {
     position:absolute;
-    top: -50px;
+    top: -62px;
+    left: 2px;
     margin-top:1rem;
+
   }
 
   .relative {
@@ -21,16 +32,9 @@
     font-weight: normal;
   }
 
-.padded-box {
-  padding: 0 20px;
-  border: 1px solid $border;
-  border-radius: 18px;
-
-}
-
 .empty {
   height:200px;
-  margin: 30px 0;
+  margin: 45px ;
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -43,10 +47,10 @@
 }
 // assigned therapıst stylıng
 .assigned {
-  height:200px;
+  height: 180px;
   background-color: #94ABE4;
-  padding-top:30px;
-  margin-bottom:30px;
+  padding-top: 20px;
+  margin-bottom: 18px;
   h3, p {
     color:white;
   }
@@ -72,6 +76,7 @@
 // past bookings styling
 .past {
   border: 1px solid $main;
+  margin: 45px;
 
   h4 {
     font-size: 21px;
@@ -94,10 +99,12 @@
 
 // today booking stylıng
 .today {
-  padding-top: 40px;
-  margin-bottom:30px;
+  padding: 40px;
+  margin: 45px;
+  height: 232px;
   .avatar-box {
     padding-right: 30px;
+    margin-top: -14px;
   }
 
 }
@@ -116,10 +123,10 @@
   }
 
   .fa-calendar {
-    font-size:11em;
-    color:$main;
-    position:absolute;
-    top:-20px;
+    font-size: 9em;
+    color: #7882e9;
+    position: absolute;
+    top: -33px;
   }
   .calendar-button {
     color:#7882E9;
@@ -127,22 +134,24 @@
     font-family: Avenir;
     }
     #date {
-    font-size: 6.5em;
-    font-family: $body-font;
-    font-weight:bold;
-    color:$main;
-    margin-top: 10px;
-    margin-right:5px;
-    text-align:center;
+    font-size: 4.5em;
+    font-family: "Avenir", "Helvetica", "sans-serif";
+    font-weight: bold;
+    color: #7882e9;
+    margin-top: 4px;
+    margin-left: 21px;
+  }
+  .calendar-date {
+    margin-top: -13px;
   }
 
   .fa-video {
-    text-align:center;
-    font-size:40px;
-    padding: 21px;
+    text-align: center;
+    font-size: 40px;
+    padding: 15px;
     color: #888888;
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     background-color: #D8D8D8;
     &:hover {

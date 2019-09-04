@@ -15,6 +15,9 @@ class PagesController < ApplicationController
   end
 
   def welcome
-    @therapists = Therapist.all
+  end
+
+  def assign
+    @therapist = Therapist.find(params[:therapist_id])
   end
 end
