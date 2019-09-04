@@ -1,83 +1,76 @@
 
-  <div id="therapist-banner" class="p-2 flex-fill">
-    <div class="therapist-banner-inner d-flex ">
-      <% if @user_therapist %>
-        <%= cl_image_tag @user_therapist.photo, width: 140, class: "avatar-small" %>
-        <p>Your assigned therapist is <%= @user_therapist.first_name %> <%= @user_therapist.last_name %> </p>
-      <% else %>
-        <div class="no-therapist d-flex">
-          <%= image_tag 'faces.png', class: "avatar-small" %>
-          <div class="d-flex flex-column justify-content-center">
-            <h2>You don't have an assigned therapist yet !</h2>
-            <% if @next_bookings %>
-            <%= link_to 'Search for one', therapists_path, class: "button-navy-small back-to-search" %>
-      <% end %>
-
-          </div>
-        </div>
-      <% end %>
-      </div>
+<div class="d-flex flex-column">
+  <div class="assigned">
+    (wıll dısplay the current therapıst ınfo)
   </div>
-  <div class="therapist-show-page-container container">
-<div class="half-page">
-  <% if @next_bookings %>
-    <% @next_bookings.sort_by { |booking| booking.starts_at } %>
-    <% if !@todays_booking.blank? %>
-    <% @todays_booking = @todays_booking[0] %>
-    <h1 id="next-session">Next Session</h1>
-    <div class="booking-card">
+  <% if @today_booking %>
+    <div class="today">
       <div class="calendar">
-        <p id="date"> <%= @todays_booking.starts_at.day %> </p>
+      <!--   should display booking time  -->
+        <p id="date"> <%= @today_booking.starts_at.strftime("%d") %> </p>
         <i class="far fa-calendar" aria-hidden="true"></i>
+        <%= link_to 'Add to Calendar', edit_therapist_booking_path(@today_booking.therapist, @today_booking), class: "calendar-button d-flex mx-2" %>
       </div>
-      <div class="info">
-        <h3 id="datetime d-flex flex-column justify-content-center">
-          <p id="calendar-day">Your next appointment is</p>
-          <p id="calendar-day">On <%= @todays_booking.starts_at.to_formatted_s(:short) %>
-          at <%= @todays_booking.starts_at.hour %> o'clock</p>
-
-        </h3>
-        <div class="booking-card-text">
-          <h6 id="notice">You can join the call on your appointment date.</h6>
-        </div>
-        <div class="button-container d-flex justify-content-center">
-          <%= link_to 'Reschedule', edit_therapist_booking_path(@todays_booking.therapist, @todays_booking), class: "reschedule-button" %>
-          <%= link_to 'Cancel', therapist_booking_path(@todays_booking.therapist, @todays_booking), method: :destroy, class: "cancel-button" %>
-
-        </div>
-        <h4 id="cancel-policy-notice"><i class="fas fa-info-circle"></i> Cancellation is only possible  until before 24 hours of the call.</h4>
-      </div>
+    <p>Your call with Dr. <%=
+   @today_booking&.therapist.first_name %> <%= @today_booking&.therapist.last_name %> is today!</p>
     </div>
-    <% end %>
-    <% if !@next_bookings.empty? %>
-      <div class="d-flex justify-content-center">
-        <div id="upcoming-bookings" class="upcoming-bookings">
-          <h2 id="upcoming">Other upcoming bookings</h2>
-            <%= render partial: "shared/upcoming_bookings", collection: @next_bookings, as: :booking %>
-        </div>
-      </div>
-    <% end %>
-  <% else %>
-      <div class="booking-card  flex-column align-items-center">
-        <p>Nothing to display here yet !</p>
-        <p>Once you've made an appointment, your upcoming appointment will display here.</p>
-        <p>Why don't you </p>
-        <p> <%= link_to 'browse therapists?', therapists_path, class: "button-navy" %></p>
-      </div>
   <% end %>
+  <% if @past_bookings %>
+    <div class="past">
+     <%= render partial: "shared/past_bookings", past_bookings: @past_bookings %>
+    </div>
+<% end %>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div id="upcoming-bookings" class="upcoming-bookings">
+  <% if !@today_booking %>
+   <h5>Your call with Dr. <%=
+   @today_booking&.therapist.first_name %> <%= @today_booking&.therapist.last_name %> is today! </h5>
+
+<div class="upcoming-booking">
+  <div class="d-flex flex-row mb-3">
+    <div class="booking-card">
+
+      <div class="calendar">
+      <!--   should display booking time  -->
+        <p id="date"> <%= @today_booking.starts_at.strftime("%d") %> </p>
+        <i class="far fa-calendar" aria-hidden="true"></i>
+        <%= link_to 'Add to Calendar', edit_therapist_booking_path(@today_booking.therapist, @today_booking), class: "calendar-button d-flex mx-2" %>
+      </div>
+      <!-- if Time.now <= @booking.start_time + 24hours -->
+            <div class="info-container d-flex flex-column">
+            <div class="info">
+            <h3><%= @today_booking.starts_at.strftime("%A, %d.%m.%Y %H:%M") %></h3>
+            </div>
+              <i class="fas fa-video" aria-hidden="true"></i>
+              <%= link_to 'Start Call', therapist_booking_path(@today_booking.therapist, @today_booking),class: "session-button mx-2" %>
+
+            </div>
+             <div class="therapist-avatar"">
+             <%= cl_image_tag @today_booking.therapist.photo, width: 140, class: "avatar-small" %>
+              <p>Dr. <%= @today_booking.therapist.first_name %> <%= @today_booking.therapist.last_name %> </p>
+            </div>
+      </div>
   </div>
-  <div class="half-page">
-        <h1 id="past-sessions">Past Sessions</h1>
-    <% if @past_bookings %>
-        <%= render partial: "shared/past_bookings", past_bookings: @past_bookings %>
-  <% else %>
-      <div class="booking-card flex-column align-items-center">
-        <p>Nothing to display here yet !</p>
-        <p>When you've made a few calls, your past bookings will appear here</p>
-      </div>
-  <% end %>
+</div>
+<% end %>
+  <h1>Upcoming Session</h1>
+<p> You don't have a saved therapist yet. You can choose one after your call.</p>
+    <%= render partial: "shared/upcoming_bookings", next_bookings: @next_booking %>
   </div>
 
-  </div>
+  <div class="past-bookings">
+    <h1 style="padding: 10px 0 0 50px; margin: 12px 0 -16px 0px;" >Past Sessions</h1>
+    <%= render partial: "shared/past_bookings", past_bookings: @past_bookings %>
   </div>
 </div>
