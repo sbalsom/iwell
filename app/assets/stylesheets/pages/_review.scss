@@ -1,4 +1,9 @@
 .main-review-container{
+  width:700px;
+  margin: 0 auto;
+  h6 {
+    text-align: center;
+  }
 #header, #sub-header {
     margin-left:100px;
   }
@@ -36,12 +41,10 @@ form {
   }
 
 .review-container {
-  width: 60%;
-  min-width:350px;
+  width: 378px;
   box-shadow: -1px 1px 6px -2px rgba(189,189,189,1);
   padding: 20px;
-  margin-left: 100px;
-  margin-top:40px;
+  margin:40px auto;
   padding: 20px 20px;
 
   .first-flex-item div {
@@ -136,6 +139,7 @@ form {
 #comment-section {
   width:300px;
   height:100px;
-  padding:0;
+  padding:15px;
+  margin: 20px 0px;
 }
 
