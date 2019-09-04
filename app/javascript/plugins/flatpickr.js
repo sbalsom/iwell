@@ -23,9 +23,7 @@ availableDays.forEach((day) => {
 
 flatpickr(".datepicker", {
   altInput: true,
-  enableTime: true,
-  dateFormat: "Y-m-d H:i",
-  time_24hr: true,
+  dateFormat: "Y-m-d",
   minDate: "today",
   maxDate: new Date().fp_incr(60),
   enable: days
