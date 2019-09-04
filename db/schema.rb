@@ -16,23 +16,24 @@ ActiveRecord::Schema.define(version: 2019_09_02_140411) do
   enable_extension "plpgsql"
 
   create_table "availabilities", force: :cascade do |t|
-    t.integer "week_day"
-    t.time "start_time"
-    t.time "end_time"
     t.bigint "therapist_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "date"
+    t.time "start_time"
+    t.time "end_time"
     t.index ["therapist_id"], name: "index_availabilities_on_therapist_id"
   end
 
   create_table "bookings", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "therapist_id"
-    t.datetime "starts_at"
+    t.date "starts_at"
     t.boolean "free"
     t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.time "time"
     t.index ["therapist_id"], name: "index_bookings_on_therapist_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
@@ -107,4 +108,5 @@ ActiveRecord::Schema.define(version: 2019_09_02_140411) do
   add_foreign_key "reviews", "therapists"
   add_foreign_key "reviews", "users"
   add_foreign_key "therapist_specialties", "therapists"
+  add_foreign_key "users", "therapists"
 end

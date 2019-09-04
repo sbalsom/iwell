@@ -1,6 +1,7 @@
 <div class="past-sessions">
 <% @past_bookings.each do |booking| %>
     <div class="past-booking-card">
+<<<<<<< HEAD
       <!-- if Time.now <= @booking.start_time + 24hours -->
       <div class="therapist-avatar d-flex flex-column" style="padding: 10px 0 0 10px">
       <%= cl_image_tag booking.therapist.photo, width: 140, class: "avatar-small" %>
@@ -8,6 +9,16 @@
       </div>
       <div class="info">
         <h3><%= booking.starts_at.strftime("%A, %d.%m.%Y %H:%M") %></h3>
+=======
+      <%= cl_image_tag booking.therapist.photo, class: "avatar-badge" %>
+      <div class="info justify-content-center">
+        <h3 id="datetime">
+          <p id="calendar-day">Your last appointment with <%= booking.therapist.first_name %> <%= booking.therapist.last_name %> was on</p>
+          <p id="calendar-day">On <%= booking.starts_at.to_formatted_s(:short) %>
+          at <%= booking.starts_at %> o'clock</p>
+
+        </h3>
+>>>>>>> master
         <div class="button-container">
           <%= button_tag "Leave Review", class: "review" %>
         </div>

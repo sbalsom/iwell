@@ -1,15 +1,25 @@
 .main-review-container{
-h3{
-  margin-left:100px;
-  margin-top:50px;
-  margin-bottom:30px;
-  font-weight: bold;
+#header, #sub-header {
+    margin-left:100px;
   }
 
-  p{
-  margin-left:100px;
+  #header {
+    margin-top:30px;
   }
 
+  #name {
+    text-align: center;
+  }
+
+
+form {
+  max-width: 300px;
+  margin-top:30px;
+}
+
+.review-photo {
+  margin: 20px 20px 20px 20px;
+}
   .rating {
     unicode-bidi: bidi-override;
     direction: rtl;
@@ -26,12 +36,13 @@ h3{
   }
 
 .review-container {
-  display: flex;
   width: 60%;
+  min-width:350px;
   box-shadow: -1px 1px 6px -2px rgba(189,189,189,1);
   padding: 20px;
   margin-left: 100px;
   margin-top:40px;
+  padding: 20px 20px;
 
   .first-flex-item div {
   text-align: center;
@@ -55,29 +66,20 @@ h3{
 }
 
 .first-attribute{
-  display: flex;
-  justify-content: space-between;
   margin-bottom:20px;
   }
 
 .second-attribute{
-  display: flex;
-  justify-content: space-between;
   margin-bottom:20px;
   }
 
 .third-attribute{
-  display: flex;
-  justify-content: space-between;
+   margin-bottom:20px;
   }
-}
 
-.form {
-    margin:0;
-}
-
-.form li {
-    list-style:none;
+  #review-submit {
+    margin: 20px 0;
+  }
 }
 
 .hide {
@@ -129,5 +131,11 @@ h3{
 
 .star{
     margin-right: 8px;
+}
+
+#comment-section {
+  width:300px;
+  height:100px;
+  padding:0;
 }
 

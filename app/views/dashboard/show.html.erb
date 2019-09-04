@@ -6,13 +6,37 @@
   <% if @today_booking %>
     <div class="today">
       <div class="calendar">
+<<<<<<< HEAD
       <!--   should display booking time  -->
         <p id="date"> <%= @today_booking.starts_at.strftime("%d") %> </p>
+=======
+        <p id="date"> <%= @todays_booking.starts_at %> </p>
+>>>>>>> master
         <i class="far fa-calendar" aria-hidden="true"></i>
         <%= link_to 'Add to Calendar', edit_therapist_booking_path(@today_booking.therapist, @today_booking), class: "calendar-button d-flex mx-2" %>
       </div>
+<<<<<<< HEAD
     <p>Your call with Dr. <%=
    @today_booking&.therapist.first_name %> <%= @today_booking&.therapist.last_name %> is today!</p>
+=======
+      <div class="info">
+        <h3 id="datetime d-flex flex-column justify-content-center">
+          <p id="calendar-day">Your next appointment is</p>
+          <p id="calendar-day">On <%= @todays_booking.starts_at.to_formatted_s(:short) %>
+          at <%= @todays_booking.starts_at %> o'clock</p>
+
+        </h3>
+        <div class="booking-card-text">
+          <h6 id="notice">You can join the call on your appointment date.</h6>
+        </div>
+        <div class="button-container d-flex justify-content-center">
+          <%= link_to 'Reschedule', edit_therapist_booking_path(@todays_booking.therapist, @todays_booking), class: "reschedule-button" %>
+          <%= link_to 'Cancel', therapist_booking_path(@todays_booking.therapist, @todays_booking), method: :destroy, class: "cancel-button" %>
+
+        </div>
+        <h4 id="cancel-policy-notice"><i class="fas fa-info-circle"></i> Cancellation is only possible  until before 24 hours of the call.</h4>
+      </div>
+>>>>>>> master
     </div>
   <% end %>
   <% if @past_bookings %>
