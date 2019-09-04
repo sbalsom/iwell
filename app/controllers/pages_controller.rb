@@ -18,4 +18,5 @@ class PagesController < ApplicationController
   def assign
     @therapist = Therapist.find(params[:therapist_id])
   end
+
 end

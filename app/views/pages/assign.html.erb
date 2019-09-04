@@ -1,16 +1,22 @@
-<div class="container">
-  <h1>Your session has ended</h1>
+<div class="assign-container container">
+  <h1 class="mt-5">Your session has ended</h1>
   <p>We hope your call went well. All data is confidential.</p>
 
   <div class="padded-box d-flex">
       <%= cl_image_tag @therapist.photo, class: "avatar-large px-3 py-3" %>
-    <div class="flex-item-2">
-      <h3>Would you like to save <%= @therapist.first_name %> as your main therapist ? </h3>
-      <div class="button-navy-small">
-        Yes
+    <div class="flex-item-2 d-flex flex-column justify-content-center">
+      <div class="flex-wrapper">
+        <h3 class= "mb-4" id="assign-heading">Would you like to save <%= @therapist.first_name %> as your main therapist ? </h3>
+        <div class="buttons-container d-flex">
+          <%= link_to therapist_assign_me_path(@therapist) do %>
+          <div class="button-navy-small mr-3" id="yes">
+            Yes
+          </div>
+          <% end %>
+          <div class="specialty-tag" id="no">
+            No, find another therapist
+          </div>
       </div>
-      <div class="white-button">
-        No, find another therapist
       </div>
     </div>
   </div>

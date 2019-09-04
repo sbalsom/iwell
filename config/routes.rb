@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   devise_for :users
   resources :therapists, only: [:index, :show] do
+    get 'update_main_therapist', to: 'therapists#update_main_therapist', as: 'assign_me'
     resources :bookings, only: [:new, :create, :edit, :update, :destroy] do
       get 'assign', to: 'pages#assign'
       get 'video_session', to: 'pages#video_session'
