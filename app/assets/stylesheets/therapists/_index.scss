@@ -111,12 +111,15 @@
 .specialty-tag {
     background-color:white ;
     color: $accent;
-    padding:6px;
+    padding:4px;
     border: solid 1px $accent;
     border-radius:10px;
     text-align:center;
     margin-right: 8px;
     margin-top:20px;
+    width: fit-content;
+    height:fit-content;
+
   }
 
   // .filter-filter-rating-toggle-hidden{
