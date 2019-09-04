@@ -13,7 +13,8 @@ class ReviewsController < ApplicationController
     clarity = params[:rating_c].to_i
     patience = params[:rating_p].to_i
     understanding = params[:rating_u].to_i
-    rating = (clarity + patience + understanding) / 3
+    description = params[:rating_d].to_i
+    rating = (clarity + patience + understanding + description) / 4
     @review.rating = rating
     authorize @review
     if @review.save
