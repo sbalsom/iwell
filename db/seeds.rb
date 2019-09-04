@@ -174,14 +174,13 @@ PHOTOSMEN = [
 puts "checking if you are in development mode"
 
 
-if Rails.env == "development"
+ if Rails.env == "development"
   puts "wiping the database "
-  Therapist.destroy_all
-  Booking.destroy_all
-  Review.destroy_all
-  Specialty.destroy_all
-  Specialty.destroy_all
   User.destroy_all
+  Therapist.destroy_all
+  Specialty.destroy_all
+  # Booking.destroy_all (unecessary)
+  # Review.destroy_all (unecessary)
   puts "current stats :"
   puts "Therapists: #{Therapist.count}"
   puts "Availabilities: #{Availability.count}"
@@ -190,9 +189,9 @@ if Rails.env == "development"
   puts "Specialties: #{Specialty.count}"
   puts "Therapist specialty tags: #{TherapistSpecialty.count}"
   puts "Users: #{User.count}"
-else
-  puts "you are not in development mode !"
-end
+ else
+   puts "you are not in development mode !"
+ end
 
 puts "creating fake users"
 
