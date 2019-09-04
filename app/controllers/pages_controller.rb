@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home, :sandbox]
+  skip_before_action :authenticate_user!, only: [:home, :sandbox, :welcome]
   skip_after_action :verify_authorized
   skip_after_action :verify_policy_scoped
 
@@ -15,6 +15,7 @@ class PagesController < ApplicationController
   end
 
   def welcome
+    @specialties = Specialty.all
   end
 
   def assign
