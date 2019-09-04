@@ -15,7 +15,8 @@
        <% end %>
      </div>
       <div class="button-container">
-        <%= button_tag "Leave Review", class: "specialty-tag" %>
+        <% therapist = booking.therapist %>
+        <%= link_to "Leave Review", new_therapist_review_path(therapist), class: "specialty-tag" %>
       </div>
     </div>
   </div>
