@@ -7,7 +7,7 @@ rndr = Random.new
 FIRSTNAMESF = %w(Anna Bertha Elisabeth Emma Frieda Gertrude Margarethe Maria Marie Martha Edith Elfriede Erna Gerda Gertrude Hildegard Ilse Irmgard Lieselotte Ursula Dieter Uwe Christa Elke Erika Gisela Helga Ingrid Karin Monika Renate Ursula Uwe Andrea Angelika Birgit Gabriele Heike Martina Petra Sabine Susanne Ute Anja Christina Julia Katrin Melanie Nadine Nicole Sabrina Sandra Stefanie Anna Hannah Julia Lara Laura Lea Lena Lisa Michelle Sarah)
 FIRSTNAMESM = %w(Ernst Friedrich Hans Heinrich Hermann Karl Otto Paul Walter Wilhelm Gerhard Günter Hans Heinz Helmut Herbert Karl Kurt Walter Werner Günter Hans Horst Jürgen Klaus Manfred Peter Wolfgang Andreas Frank Jörg Jürgen Klaus Michael Peter Stefan Thomas Alexander Christian Daniel Dennis Jan Martin Michael Sebastian Stefan Thomas Finn Jan Jannik Jonas Leon Luca Lukas Niklas Tim Tom)
 LASTNAMES = %w(Abel Aber Achen Ackert Adelberg Ahlgrim Aller Altenberg Altmann Ames Anders Angert Anschuetz Appel Asch Ascher Aulbach Austen Babler Bach Bachmann Bahler Bahn Ballmann Balsinger Bank Banner Bartel Bauch Bauer Baum Bayer Beck Beemer Behringer Bellinger Belser Berg Berger Bernd Bernstein Bertels Bertram Bickel Bieber Biehl Biel Birk Blacker Blaschko Blatt Bliss Blum Blumberg Bluth Boeder Bohnert Bohr Bose Brahm Brandt Brecker Brenner Brickle Buck Buller Burger Burr Buseman Butz Clemens Cruse Dahm Danner Debus Decker Degler Deichert Dell Denhart Denning Denzel Deutsch Dewitz Dick Dickmann Dieleman Dieter Dinkelman Dittmann Doppler Dorfman Dorner Dreiling Duell Eben Eberhhardt Eckard Eckelman Edinger Egle Eichmann Eidman Eiker Eisenberg Eisenhauer Eleazer Elfman Elm Emmerich Endorf Engel Erler Esther Eulberg Eyer Fackler Fahrer Falkner Fassbender Faust Federer Fehler Feldmann Fey Fickle Fieber Fink Finkel Fitz Florman Frankenstein Frei Friedemann Fritz Fuhr Funke Gabel Gebhardt Gehr Geiss Geller Gerner Gerwig Giebler Ginger Glaser Glassmann Goethe Gossmann Goth Grande Greber Gressler Grimm Grimmer Grof Grund Gunderman Haag Haber Hader Hager Hahn Halberg Haling Hammerstein Handler Hansel Hardt Hardwick Harling Hasselbach Haubert Heffner Heimlich Heinkel Helberg Heller Helsing Hemp Hendler Henke Hensel Herber Hertz Hiegel Hilde Hilger Himmel Hoch Hoffman Hoffner Hogg Hopper Hoss Hummel Hurst Ingman Isaac Jackels Jaeger Jager Janowitz Jenner Johannes Judd Kafer Kahl Kalbach Kant Kaplan Katz Kaufmann Kegel Kehr Kemper Kiehl Kimmel Klamm Klauss Kleinfield Kleinmann Klopp Kloss Knapp Koback Koepf Kohl Konrad Kopp Kostner Krall Kramer Kroll Kroner Krueger Kuehler Kupper Lachmann Landt Last Lauer Lehr Lemmer Lichtenberg Liebe Lillich Linde Lindt Lockert Loeb Loewe Lottman Lowitz Ludwig Lukas Lux Mahler Majer Mandel Markus Mauer Mayer Mechler Mehr Merkel Messer Metz Moretz Muehl Muller Nacht Naser Neider Nessel Neuer Neumann Nickol Nimz Nix Norder Oberhaus Oberlin Ockert Odenwald Offen Osen Ostermeyer Ostwald Pahl Palmer Paxman Peifer Perleberg Pfeiffer Picker Pier Pine Pittman Plath Platt Pohl Polk Posner Prather Printz Radke Rahman Rand Ranger Rasner Rath Redmann Reinhart Rembold Reuter Rigler Ringer Ringwald Rinkel Ritter Rockefeller Rodebaugh Roemer Rosenbach Roth Rothschild Ruben Rucker Rummel Sachs Salzberg Schaeffer Scheffer Schlei Schmidt Scholl Schweiger Schwimmer Seifried Seiss Seltzer Seyfried Siegel Simson Sonderman Spader Spangler Spielmann Spier Stahler Stark Stein Sterling Steuber Stiller Strick Stueber Suess Tannanbaum Tinsman Traeger Tripp Uber Uehling Uhl Ulrich Ungerer Vasel Visel Voelker Vogel Berg Stein Voss Wack Wagler Walberg Wall Weigel Weimer Wein Weisel Weiser Weiss Weltman Wendle Werth Wertz Wicker Wieber Wiese Wilhelms Winkel Wisser Wurst Xander Zachmann Zaske Zeiger Zeller Zimmermann Zuckerman)
-LANGUAGES = %w(Turkish Japanese Chinese English English English English English English Spanish English Hindi Arabic French Italian)
+LANGUAGES = %w(Turkish Japanese Chinese English German German German German German German English English English English English Spanish English Hindi Arabic French Italian)
 def language
   if rand(10) <= 8
     "German"
@@ -16,38 +16,27 @@ def language
   end
 end
 
-# BIO = <<~TEXT
-#   This is my text
-#   It is gonna be formatted exactly like that
-# TEXT
-
 BIOS = [
-  "I have a doctorate in psychology and am a diploma candidate in analytical psychology at the C.G. Jung Institute Zurich. I am a registered intern of the Oregon Board of Licensed Professional Counselors & Therapists and abide by the Board's Code of Ethics and supervision requirements.",
-  "Did you know you could change your brain to change your mind? Through the therapeutic relationship and various techniques including Biofeedback, Neurofeedback, mindfulness and cognitive behavioral therapy, you can change your brain and change your relationship to yourself and others.",
-  "My job is to provide a safe holding space for you to become more aware of the obstacles in the way of your own healing and growth. This includes any obstacle that keeps you from coming to therapy. Please call, email , or text me so I can help.",
-  "Productive therapy and life change happens when a solid, trusting relationship forms between client and therapist. My greatest strength as a therapist is forming that bond quickly with my clients so that we can identify and address the problem(s) together.",
-  "As a therapist, I consider it an honor to be a part of my clients journey as they develop insight, create change, and identify goals. Life can bring up challenging and painful situations that can make us feel lost or stuck. My goal is to provide you with the tools you need to get to a better place.",
-  "I think counseling is always useful, even when there's nothing wrong We get a lot of chances to go, go, go but not a lot to slow down and reflect. Usually it takes some crisis of feeling or relationship to tell us it's time. I see those crises as opportunities, doorways to deeper understanding.",
-  "I believe strongly in the human potential for growth and change especially during times of difficulty and personal crisis. I believe that every problem presents us with an opportunity, as we often resist that which we need to learn most.",
-  "I use a straight-forward supportive approach, building on strengths to develop needed resources. I value diversity in my part time practice. I also have a salaried position working with physicians and their families. Sliding fee may be an option.",
-  "I am a down-to-earth therapist, who brings my genuine self, and a spirit of openness to my relationships. Areas of focus include supporting the LGBTQ+ community and offering financial therapy to individuals & couples. A strength of mine is noticing and building upon the strengths of others.",
-  "Thank you for taking the time to visit my site. I believe that all of life’s challenges can be overcome and I would be honored to walk beside you on that path to a happier and healthier way of living.",
-  "You appear to be taking the awesome and courageous step of looking for a therapist. I’d love to help. I bring affirmation, warmth and humor as a way to create a comfortable space for you to feel welcomed exactly as you are.",
-  "Hello! I'm a Licensed Marriage and Family Therapist who specializes in a variety of therapeutic modalities and orientation. I especially enjoy utilizing Animal-Assisted Therapy to treat children and teens with anxiety and and other stress-related disorders.",
-  "I genuinely care for the well-being of others, and I have the ability to fully support each person I counsel. In addition to traditional therapy, I offer wilderness immersion counseling and outdoor therapy services throughout all of Europe.",
-  "I have been studying human behavior and interactions ever since I can remember. First, in my family and through literature. I became interested in Eastern Philosophy in high school and that has influenced my psychotherapy approach.",
-  "Do you struggle to cope with intense emotion? Are you triggered by small, unforeseeable incidents? It may feel like your life is in shambles, but you can cope. As an LGBT+ affirming counselor, I work with you to learn how to access your inner resources so that you may live a mindful, healthy life.",
-  "Are you struggling with some overwhelming issues in your life? I would love to help you overcome your obstacles, take control of your life and live it to the full. Let's collaborate together to help you reach your goals.",
-  "I am a positive and nurturing person, bringing heart and soul into my work. Together we will find creative solutions to complicated problems and help you feel empowered and optimistic about the challenges you face. Please email me to schedule a free 20 minute phone consultation.",
-  "Each person seeking counseling deserves to be seen and respected as an individual, and the counseling process must reflect this individuality. It is my job as a counselor to help my clients plan and use their personal strengths, resources, and supports to find new ways to live.",
-  "The problem is on one side of the table, you and I sit on the other. I’ve got your back. I also tools and evidenced-based practices to support the process.",
-  "Decision coaching, career counseling, personal productivity coaching, strategic planning and achieving goals. Specialites: lifestyle and career choices; change and transitions; leadership and team decisions, time-management and productivity.",
-  "I am a Licensed Clinical Social Worker and a Certified Holistic Nutritionist who believes strongly in working with clients around both the physical and mental factors that are keeping them from enjoying vibrant health. I love working with children, families and adults.",
-  "I've been helping people like you live happier lives for 12 years. I focus on anxiety and depression issues that cause you to view the world in negative, fearful ways. I help you learn to feel more hopeful and positive about yourself and your life.",
-  " I specialize in working with adults searching for meaning and clarity as they contemplate making life changes. These changes can cause anxiety, which we immediately want to suppress, but what if we used anxiety to fuel curiosity about our lives?",
-  "Hi, and welcome to my profile page. I am a Clinical Social Worker who prides herself on supporting and being fully present to others. My therapeutic experience includes the public sector--Head Start Consultation --and the private sector--working with individuals and families.",
-  "We are all capable of growth. Through secure tele-therapy/online sessions, I aim to provide a space for self exploration and healing through the cultivation of insight, understanding, and compassion. Together, we look into the inner conflicts that are obstacles on the path to a more fulfilled life.",
-  "Successful counseling is built on a positive and trusting relationship, much as successful living is dependent on trusting, healthy relationships. Most importantly I bring myself; my heart, my humor, my understanding, knowledge and years of experience."
+  "I have a doctorate in psychology and am a diploma candidate in analytical psychology at the C.G. Jung Institute Zurich. I am a registered intern of the European Board of Licensed Professional Counselors & Therapists and abide by the Board's Code of Ethics and supervision requirements. \n My interest in psychological health began in the early 1980s, and I have been studying, practicing, and working in the field since then. \n I obtained my Masters degree in counseling, and have continued to learn as new knowledge in the field unfolds. I have engaged in significant personal growth, which offers an added layer of understanding to my work. My goal is to help you understand yourself, use your inner wisdom and your strengths. I encourage compassionate treatment of self, which can greatly enhance the healing process. I use both thought- and body-based approaches, such as cognitive behavior therapy, EMDR and somatic work. I can weave in spirituality and creativity, as clients are interested. This can bring deeper meaning and a richness to life.",
+  "Did you know you could change your brain to change your mind? Through the therapeutic relationship and various techniques including Biofeedback, Neurofeedback, mindfulness and cognitive behavioral therapy, you can change your brain and change your relationship to yourself and others.\n I adapt my modalities based on individual needs and situations. I am trained in CBT, DBT, and take a humanistic/existential approach. I enjoy art therapy, play therapy and being creative/open-minded with the therapeutic process.",
+  "My job is to provide a safe holding space for you to become more aware of the obstacles in the way of your own healing and growth. This includes any obstacle that keeps you from coming to therapy. Please call, email , or text me so I can help. \n Though originally trained in family systems with a CBT and Group orientation, I have added from Jungian, self-psychology, internal family systems, and addictions training (including eating disorders and alcohol). I am comfortable working with people who take psychiatric medication or people who have medical conditions. I appreciate collaboration with primary care providers. \n I am certified in mediation, using the Myers-Briggs Type Indicator, and Gottman couples therapy. I enjoy doing team building with small organizations and have training in DBT/CBT/Mindfulness, PTSD, ADD and critical incident debriefing. I have many years of experience as a clinical supervisor.",
+  "Productive therapy and life change happens when a solid, trusting relationship forms between client and therapist. My greatest strength as a therapist is forming that bond quickly with my clients so that we can identify and address the problem(s) together. \n I believe people have an innate capacity to learn and grow. Therapy offers fertile ground for you to safely explore the rich depth of your inner life and focus on what stands in the way of being who you want to be. We will collaborate to understand your unique emotions, mind, body, and history as the process of healing unfolds. Making sense of who you are, individually and in relationship, enhances your ability to make wise choices about your life. I believe creativity is available to all of us and enjoy working with clients who like to engage their own creative process in any form. I value creativity and intuition as key elements in nourishing the spirit.",  "As a therapist, I consider it an honor to be a part of my clients journey as they develop insight, create change, and identify goals. Life can bring up challenging and painful situations that can make us feel lost or stuck. My goal is to provide you with the tools you need to get to a better place. \n My treatment approach is eclectic and tailored to your needs. I will listen carefully and without judgment to understand your unique challenges, strengths and hopes. Healing and growth become possible through an accepting, trusting, collaborative relationship. We will use our understanding of your development, temperament, communication and relational style, and coping skills to understand the causes of your distress and what treatment works best for you. My work style ranges from insight oriented discussions to more structured activities, depending on your needs. \n  Over the years my private practice work has been enhanced through specialized advanced training in Psychodynamic Psychotherapy and Developmental/Attachment based Psychotherapy with adults as well as participation in ongoing professional consultation and reading groups.",
+  "I think counseling is always useful, even when there's nothing wrong We get a lot of chances to go, go, go but not a lot to slow down and reflect. Usually it takes some crisis of feeling or relationship to tell us it's time. I see those crises as opportunities, doorways to deeper understanding. \n My clients feel accepted and nourished. They feel like I get them. They have found a place where they can be themselves. We start with awareness in the present moment and go from there. As they explore and express their tender emotions - the shame and pain diminishes to uncover the needs hidden underneath. In claiming those needs and accepting their own vulnerability, my clients carve a path which frees them to make choices that bring joy and fulfillment into their lives. This healing allows them to be true to themselves. \n In 2010, I trained in Interpersonal Neurobiology with Dan Seigel & attended an IPNB & Mindfulness workshop with Jack Kornfield & Dan Seigel. I study mindfulness by following the teachings of Pema Chodron, Jack Kornfeld, Tara Brach, Jon Kabat Zinn, & James Baraz. I also have a meditation practice.",
+  "I believe strongly in the human potential for growth and change especially during times of difficulty and personal crisis. I believe that every problem presents us with an opportunity, as we often resist that which we need to learn most. \n We will work collaboratively to reach your goals and move at a pace that is comfortable for you. My work is based on non-pathologizing and empowering methods drawing from theories such as Jungian and Internal Family Systems. Integrating these theoretical perspectives allows for exploration of your inner world, better understanding of Self, and helps you to develop a richer story of your life. Using creative modalities such as imagery, metaphors, journaling, sand tray and dream work are powerful healing tools that encourages the integration of body, mind and soul. Together we will utilize effective strategies that will help you develop the capacity to release old wounds and gain health and wellness. \n I specialize in working with adult children of narcissists; helping them to understand and heal from their past, set boundaries, break patterns, and learn to trust themselves and others in order to have happier and healthier relationships.",
+  "I use a straight-forward supportive approach, building on strengths to develop needed resources. I value diversity in my part time practice. I also have a salaried position working with physicians and their families. Sliding fee may be an option. \n My approach to therapy is to build a collaborative, creative relationship with you that encourages you to identify and engage your own inner wisdom and resilience to face life’s challenges. By supporting you to cultivate curiosity and compassion towards yourself and your experience, I hope to help you achieve the positive change and movement in your life that you seek. I have a particular passion for helping couples increase intimacy and security in their relationships. The model of couples therapy that I work with most is PACT (psychobiological approach to couples therapy). This approach developed by Stan Tatkin (Wired for Love) integrates the latest research in attachment, neuroscience, and arousal regulation. It focuses on helping couples become experts on each other to improve communication and deepen your understanding of your partner and yourself. \n I have been licensed as a Marriage and Family Therapist since 2010. I've been in the field providing counseling and psychotherapy for over 10 years. I've worked with teens, individuals, couples, and groups in a variety of clinic environments and private practice. I also worked for many years at Hospice providing counseling to terminally ill patients and their families during the dying process.",
+  "I am a down-to-earth therapist, who brings my genuine self, and a spirit of openness to my relationships. Areas of focus include supporting the LGBTQ+ community and offering financial therapy to individuals & couples. A strength of mine is noticing and building upon the strengths of others. \n I draw from Systemic, Emotionally-Focussed, Cognitive Behavioral and Narrative theories in my work. I begin therapy with creating a warm relationship as I get to know your current concern and past relationships. I investigate context and offer alternatives to unsatisfying patterns as we use current life examples and plan for long-term goals. \n I have worked with individuals, couples and families in a variety of settings from residential treatment to research. My ongoing studies have included courses in Interpersonal Neurobiology, the Gottman Method and Emotionally Focused Therapy. \n I am a client-centered and relationally based therapist. Using an integrative approach grounded in humanistic theory, I facilitate a process of personal discovery, emotional healing and continued growth. I maintain a strengths-based style that empowers individuals to follow their self-direction and to make effective changes in their lives. I also incorporate solution-focused and cognitive techniques in order to address negative patterns of thinking that may interfere with productive living. I am an honest, warm, down to earth person, who appreciates that humor can aid in the healing process.",
+  "Thank you for taking the time to visit my site. I believe that all of life’s challenges can be overcome and I would be honored to walk beside you on that path to a happier and healthier way of living. \n I view counseling as a joint partnership between a counselor and client and I listen carefully to the concerns of my clients. I am passionate about creating a safe environment for you to explore and heal from pasts pain, while also discovering purpose and meaning in your life. I use an integrated approach to counseling, which means that I am willing to apply creativity and various types of interventions that may benefit you. I love to work with clients from all orientations and walks of life. I have a background in working with individuals and groups who have spiritual concerns, however, out of care and respect for my clients, I will never impose my personal beliefs or opinions onto clients. I immigrated to the US two decades ago, so I can relate to the difficulties many people face in adapting to a new country, language, and culture \n I am trained to meet the unique needs of clients who are survivors of domestic and intimate partner violence. I also have many years of experience helping clients with challenging relationships, addiction, food struggles, trauma, anxiety, depression, bipolar., spiritual issues, and cultural challenges. \n I work collaboratively with you to address your aims, enhance well being, and the ability to create a life you find joyfully meaningful. We will explore and transform feelings, thoughts , and behaviors that negatively limit your sense of self and relationships. I use a whole person--body/mind--approach, strengthening self-compassion and acceptance. Most clients will be asked to practice outside of session any skills they find especially useful.",
+  "You appear to be taking the awesome and courageous step of looking for a therapist. I’d love to help. I bring affirmation, warmth and humor as a way to create a comfortable space for you to feel welcomed exactly as you are. \n My clients appreciate my humor and my direct, compassionate attitude. Laughter is often a part of therapy, maybe not in every session, but often. Change is really difficult, and getting into the deep stuff is really hard, but it is quicker and a little less painful when we do it together. I am not the nod and smile type of therapist. I will call you on your stuff, but with empathy, compassion and curiosity. I want to get in there with you and help you figure out what is keeping you from your best life. I provide feedback that is both emotional and practical, with strategies that you can put into practice immediately. When I am not building a thriving practice and witnessing people improve their lives, I do participatory action research with the OHSU/PSU School of Public Health. In my leisure time I enjoy hanging out with my partner and our pets. \n  I have experience working with people who have chronic illness and/or pain, poor body image, disordered eating, disabilities, anxiety, depression, life transition difficulties and trauma. I utilize several evidence-based theoretical approaches in therapy including attachment based therapy, compassion based, humanistic, person centered, somatic and psychodynamic. My work is informed by the shame research of Brene Brown, the trauma work of Bessel van der Kolk, the self compassion research of Kristin Neff, buddhism and Eastern spirituality.",
+  "Hello! I'm a Licensed Marriage and Family Therapist who specializes in a variety of therapeutic modalities and orientation. I especially enjoy utilizing Animal-Assisted Therapy to treat children and teens with anxiety and and other stress-related disorders. \n I approach therapy with the understanding that we are all shaped by experiences throughout our lives in context with our family of origin and cultural background. These experiences inform how we make meaning in our lives and understand our multiple identities. I approach my work with a multicultural lens with which I presume that culture influences our experience of ourselves and others across cultural groups. I believe the therapeutic relationship is the most important element of therapy within which we collaborate to discover meaningful change. By learning about you and your story we will seek to create a safe emotional space which will allow us to attend to what brings you to therapy. I will help you to establish a solid ground from which you may increase your awareness and understanding of self in relation to others. I trust that this process will naturally lead you on a path toward healing and growth. \n  I have experience working with culturally diverse populations which include Asian, Native American and Latino/a's, Adolescents and adults. I have experience using Collaborative Problem-solving techniques with children and adolescents. I utilize EFT for couples work. I also conduct sessions in Spanish for patients needing a Spanish speaking clinician.",
+  "I genuinely care for the well-being of others, and I have the ability to fully support each person I counsel. In addition to traditional therapy, I offer wilderness immersion counseling and outdoor therapy services throughout all of Europe. \n I provide individuals, families, couples and teens the opportunity to safely and confidently explore your life experiences and help you feel whole and well. My therapy practice offers an opportunity to become accepting and empowered about your life experience, your behavior and choices. I offer thoughtful, collaborative, compassionate, client-centered therapy. Part of my practice includes calling attention to how the body is responding to narrative, discussion, emotion and using skills of breathwork and sometimes physical movement to allow the body to feel safe in the therapy process. By being in relationship with the body, one can learn to have a comprehensive understanding of present time safety and develop opportunities to relax, calm down the mind and shift emotions. In the presence of a skilled therapist, these tools can be used to heal and feel in control. \n I am dedicated to offering an ethical and compassionate trauma-informed, somatic-integrated, honest, thoughtful and unconditional counseling experience. I have practiced counseling in private practice, mental health agency setting, partial hospital treatment program, and gambling addictions services since 2005. I am inspired by family/relationship dynamics, attachment, human development, client-centered, trauma-informed therapy rooted in compassion and unconditional positive regard. I believe that a mindful approach to any therapeutic technique or theory can offer healing results and improve your mood, health, ambition and relationships. In addition to my counseling credentials, I have 500-hr Yoga certification through Yoga Alliance. I have taught yoga classes and private/couples yoga since 2003. I offer private, couples and small group yoga as needed and therapeutically appropriate. Yoga is one of several types of mindfulness-based tools I offer in my practice.",
+  "I have been studying human behavior and interactions ever since I can remember. First, in my family and through literature. I became interested in Eastern Philosophy in high school and that has influenced my psychotherapy approach. \n I approach my work with five things in mind. I strive to develop a strong therapeutic relationship with you. I meet you where you are in life, welcoming you to bring your authentic self to session. I help you identify and clarify problems and challenges. I help you build and hone new skills, patterns of thought, and ways of being. Finally, we bring it all together so you can solve problems and create meaningful and lasting changes. I find value in using a variety of counseling theories and techniques, but specialize in cognitive behavioral therapy and integrating creative and active pursuits into counseling, including ceramics and hiking. Getting out of the office and into a studio or out in nature helps develop the therapeutic relationship, impacts our experience, and opens different modes of communication. \n  I have been an Academic Adviser/Counselor for over thirteen years, and am currently a Licensed Professional Counselor. I’ve focused my scholarly and professional interests on self-conscious emotions such as shame and guilt, anxiety, depression, chronic illness and disability, academic success, career exploration and decision making, human creativity and problem solving, and positive psychology and optimal experience.",
+  "Do you struggle to cope with intense emotion? Are you triggered by small, unforeseeable incidents? It may feel like your life is in shambles, but you can cope. As an LGBT+ affirming counselor, I work with you to learn how to access your inner resources so that you may live a mindful, healthy life. \n Depending on your needs and goals, I offer brief problem-solving therapy and/or longer-term psychodynamic psychotherapy. By design, I have maintained a broad-based practice, welcoming clients with many presenting concerns. However, some of my areas of special expertise include: Adoption (including adoption consultation & work with all members of adoption triad) Anxiety including AlphaStim Assertiveness Attachment and attachment issues Communication Considering parenthood (for single people, same sex couples, older parents) Couples therapy Depression Divorce/separation FASD Family of origin issues Fertility and infertility Gender identity Giftedness Grief and loss Jewish identity Life transitions LGBTQ+ identified Parenting concerns (including one's own issues playing out in parenting) Reactive attachment disorder Relationship concerns Religious and cultural legacies Self-esteem Single parenting Substance abuse Trans-cultural and trans-racial issues Trauma/PTSD Women's issues.",
+  "Are you struggling with some overwhelming issues in your life? I would love to help you overcome your obstacles, take control of your life and live it to the full. Let's collaborate together to help you reach your goals. \n Being resilient allows you to recover and adapt to difficult experiences. Instead of being overwhelmed, the resilient person is able to manage their strong feelings and impulses and communicate their concerns and needs. Resilience is not a trait that you either have or do not have. It involves behaviors, thoughts, and emotions that can be learned and developed in all of us. Couples who are resilient are open, attuned, and responsive to each other. They are able to recognize their deepest needs and longings, and risk reaching out to their partner to communicate and connect. Most often, couples who develop an enhanced emotional connection also experience greater intimacy and sexual satisfaction.",
+  "I am a positive and nurturing person, bringing heart and soul into my work. Together we will find creative solutions to complicated problems and help you feel empowered and optimistic about the challenges you face. Please email me to schedule a free 20 minute phone consultation. \n My approach to working with children, teens and adults is eclectic and guided by the needs of my client. I have training and experience in cognitive-behavioral, DBT, brief solution-focused, motivational interviewing and narrative therapies. I also use Collaborative Problem Solving in addressing behavioral and communication issues.",
+  "Each person seeking counseling deserves to be seen and respected as an individual, and the counseling process must reflect this individuality. It is my job as a counselor to help my clients plan and use their personal strengths, resources, and supports to find new ways to live. \n I am trained in Emotionally Focused Therapy (EFT), and my passion is working with intimate partners and individuals who are struggling with relationship dynamics. My work is rooted in attachment and family systems theories, supporting my understanding of how everything is relational. I invite you to show up no matter what form your relationship takes as we work to heal and strengthen your relationship bond. \n In addition to my ongoing EFT training, I have a background in trauma recovery work as well as working with individuals and their families impacted by chronic illness. I am honored to work with people of all gender expressions, sexual orientations, relationship models, races, religions, ages, sizes and differing abilities. I am a sex positive therapist and work from a trauma-informed perspective. Let me support you in discovering the tools you need to help you thrive!",
+  "The problem is on one side of the table, you and I sit on the other. I’ve got your back. I also tools and evidenced-based practices to support the process. \n I use an integrative approach to therapy by blending somatic, person-centered (humanistic), internal family systems, narrative, and acceptance-commitment therapy, all with the goal of providing an individually tailored approach for each client and situation. \n My therapeutic approach allows me to effectively serve people dealing with trauma, grief and loss, difficult life transitions, anxiety, depression, substance use issues, and integrating experiences of non-ordinary states of consciousness.",
+  "Decision coaching, career counseling, personal productivity coaching, strategic planning and achieving goals. Specialites: lifestyle and career choices; change and transitions; leadership and team decisions, time-management and productivity. \n I believe that we are comprised of psychological, physiological, relational and spiritual facets that are all interrelated. Therefore, an integrated counseling approach will help understand your story to bring awareness to the many facets that make up your varying identities. I work from a systems perspective that helps to uncover how your family-of-origin and past experiences have shaped the person you are today. I also incorporate my studies in Cognitive Behavioral Therapy, Solution-focused therapy and various mindfulness modalities. \n  I enjoy working with the marginalized experience of People of Color, immigrants, refugees and those navigating a bi-cultural experience. I work with individuals and couples on issues related to anxiety, depression, grief/loss, relationships, codependency, trauma, life transitions, infertility, self-worth/identity and communication skills. I also welcome conversations about spirituality and the integration of faith to facilitate growth.",
+  "I specialize in working with adults searching for meaning and clarity as they contemplate making life changes. These changes can cause anxiety, which we immediately want to suppress, but what if we used anxiety to fuel curiosity about our lives? /n I work from a client-centered and integrative foundation. This means that I consider my clients' unique needs, experiences, and situations when developing our working relationship. I work from a place of deep empathy, understanding, intuition, and humor -- I also draw from an extensive array of counseling theories and tools to create a relevant and productive therapeutic environment for personal growth and positive change. I frequently draw upon narrative therapy, ecotherapy, relational-cultural therapy, animal assisted therapy, and creative expression in my practice. \n I have provided individual counseling, group work, and crisis intervention and have extensive experience with the following issues: complex trauma, PTSD, abuse, depression, anxiety, self-esteem, emotional dysregulation, domestic & interpersonal violence, sexual assault, grief & loss, parenting, attachment, and family of origin. Specific modalities in which I have trained and worked include: EMDR, Dialectal Behavior Therapy, Narrative Therapy, Ecopsychology, Mindfulness, Trauma First Aid, and Positive Peer Culture.", "Hi, and welcome to my profile page. I am a Clinical Social Worker who prides herself on supporting and being fully present to others. My therapeutic experience includes the public sector--Head Start Consultation --and the private sector--working with individuals and families. \n My philosophy is mental health healing, recovering and elevation through honest communication, self-reflections, and goal setting. My style is spirited and direct which promotes a authentic client/clinician partnership. My practice is spiritually based therefore, I will encourage you to reach your greatest potential and highest good by being willing to do the work that will allow for this growth! \n I am a Licensed Clinical Social Worker, focusing on children, teens, and individuals, families and couples. I have an a extensive background providing case management services to families and children. I several years of providing advocacy, coaching and guidance. I hold a Master's in Social Work and a Graduate Certificate in Gerontology.", "We are all capable of growth. Through secure tele-therapy/online sessions, I aim to provide a space for self exploration and healing through the cultivation of insight, understanding, and compassion. Together, we look into the inner conflicts that are obstacles on the path to a more fulfilled life. \n I work collaboratively with couples and individuals to find the path that will lead to what they want in their lives, and then I help them to navigate the path until they can do it on their own. I provide a safe, supportive, and nonjudgmental environment to do this work. I will also share insights about what we know from research and other resources if it is helpful to you. \n I have training in various forms of therapy, including Cognitive-Behavioral and Solution-Focused models. I am experienced in working with adults, children, and families and have worked in both schools and community mental health settings. I have specialized in issues facing adolescent & young adult women. Most recently I have developed an interest in working with women and their partners during pregnancy and the post-partum period. I am a proud advocate for the LGTBQI community and welcome clients of all sexual orientations and/or gender identities.", "Successful counseling is built on a positive and trusting relationship, much as successful living is dependent on trusting, healthy relationships. Most importantly I bring myself; my heart, my humor, my understanding, knowledge and years of experience. \n I have completed a Master's Degree in Couples, Marriage, and Family Counseling. I have done training in Emotionally Focused Therapy through the International Centre for Excellence in Emotionally Focused Therapy. I also have training in trauma, suicide, and Interpersonal Neurobiology. \n My training is rooted in depth psychology yet in our sessions we take a very practical approach as to what is needed. I practice individual counseling and couples or group counseling. Relationships can mean so much to us and I thrive in bringing greater insight and skill in this realm. Increasing our socio-, relational-, emotional intelligence and presence in the world can bring us great satisfaction."
 ]
 
 PHOTOSWOMEN = [
@@ -238,7 +227,7 @@ while i < 50
     first_name: FIRSTNAMESF[i],
     last_name: LASTNAMES.sample,
     avg_rating: half_value(rndr.rand(3.0..5.0)),
-    language: language,
+    language: LANGUAGES.sample,
     bio: BIOS.sample,
     years_exp: rndr.rand(1..5),
     remote_photo_url: PHOTOSWOMEN[i],
@@ -260,7 +249,7 @@ while n < 50
     first_name: FIRSTNAMESM[n],
     last_name: LASTNAMES.sample,
     avg_rating: half_value(rndr.rand(3.0..5.0)),
-    language: language,
+    language: LANGUAGES.sample,
     bio: BIOS.sample,
     years_exp: rndr.rand(1..5),
     remote_photo_url: PHOTOSMEN[n],
@@ -282,101 +271,443 @@ users = User.all
 
 puts "giving the therapists availabilities"
 
+TIMESLOTS = [['09:00:00', '10:00:00'], ['10:00:00', '11:00:00'], ['13:00:00', '14:00:00'], ['14:00:00', '15:00:00'],  ]
 
 therapists.all.each do |therapist|
+
   Availability.create!(
       date: '2019-09-01',
-      start_time: '09:00:00',
-      end_time:'10:00:00',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[1],
+      therapist: therapist
+    )
+  Availability.create!(
+      date: '2019-09-01',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[1],
+      therapist: therapist
+    )
+  Availability.create!(
+      date: '2019-09-01',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[1],
       therapist: therapist
     )
   Availability.create!(
       date: '2019-09-04',
-      start_time: '09:00:00',
-      end_time:'10:00:00',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: therapist
+    )
+  Availability.create!(
+      date: '2019-09-04',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
       therapist: therapist
     )
    Availability.create!(
       date: '2019-09-05',
-      start_time: '09:00:00',
-      end_time:'10:00:00',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: therapist
+    )
+   Availability.create!(
+      date: '2019-09-05',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: therapist
+    )
+   Availability.create!(
+      date: '2019-09-05',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
       therapist: therapist
     )
     Availability.create!(
       date: '2019-09-07',
-      start_time: '09:00:00',
-      end_time:'10:00:00',
+      start_time: TIMESLOTS.sample[0],
+      end_time: TIMESLOTS.sample[0],
+      therapist: therapist
+    )
+    Availability.create!(
+      date: '2019-09-07',
+      start_time: TIMESLOTS.sample[0],
+      end_time: TIMESLOTS.sample[0],
+      therapist: therapist
+    )
+    Availability.create!(
+      date: '2019-09-07',
+      start_time: TIMESLOTS.sample[0],
+      end_time: TIMESLOTS.sample[0],
       therapist: therapist
     )
     Availability.create!(
       date: '2019-09-30',
-      start_time: '09:00:00',
-      end_time:'10:00:00',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: therapist
+    )
+     Availability.create!(
+      date: '2019-09-30',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: therapist
+    )
+      Availability.create!(
+      date: '2019-09-30',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
       therapist: therapist
     )
     Availability.create!(
       date: '2019-09-09',
-      start_time: '09:00:00',
-      end_time:'10:00:00',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: therapist
+    )
+    Availability.create!(
+      date: '2019-09-09',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
       therapist: therapist
     )
     Availability.create!(
       date: '2019-09-25',
-      start_time: '09:00:00',
-      end_time:'10:00:00',
+      start_time: TIMESLOTS.sample[0],
+      end_time: TIMESLOTS.sample[0],
       therapist: therapist
     )
     Availability.create!(
       date: '2019-09-16',
-      start_time: '09:00:00',
-      end_time:'10:00:00',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: therapist
+    )
+    Availability.create!(
+      date: '2019-09-16',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: therapist
+    )
+    Availability.create!(
+      date: '2019-09-16',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
       therapist: therapist
     )
     Availability.create!(
       date: '2019-09-17',
-      start_time: '09:00:00',
-      end_time:'10:00:00',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: therapist
+    )
+     Availability.create!(
+      date: '2019-09-17',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: therapist
+    )
+      Availability.create!(
+      date: '2019-09-17',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
       therapist: therapist
     )
     Availability.create!(
       date: '2019-09-18',
-      start_time: '09:00:00',
-      end_time:'10:00:00',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: therapist
+    )
+    Availability.create!(
+      date: '2019-09-18',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: therapist
+    )
+    Availability.create!(
+      date: '2019-09-18',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: therapist
+    )
+    Availability.create!(
+      date: '2019-09-18',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
       therapist: therapist
     )
     Availability.create!(
       date: '2019-09-19',
-      start_time: '09:00:00',
-      end_time:'10:00:00',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: therapist
+    )
+    Availability.create!(
+      date: '2019-09-19',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: therapist
+    )
+    Availability.create!(
+      date: '2019-09-19',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
       therapist: therapist
     )
     Availability.create!(
       date: '2019-09-20',
-      start_time: '09:00:00',
-      end_time:'10:00:00',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: therapist
+    )
+    Availability.create!(
+      date: '2019-09-20',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: therapist
+    )
+    Availability.create!(
+      date: '2019-09-20',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
       therapist: therapist
     )
     Availability.create!(
       date: '2019-09-21',
-      start_time: '09:00:00',
-      end_time:'10:00:00',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: therapist
+    )
+    Availability.create!(
+      date: '2019-09-21',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
       therapist: therapist
     )
     Availability.create!(
       date: '2019-09-24',
-      start_time: '09:00:00',
-      end_time:'10:00:00',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: therapist
+    )
+    Availability.create!(
+      date: '2019-09-24',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: therapist
+    )
+    Availability.create!(
+      date: '2019-09-24',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
       therapist: therapist
     )
     Availability.create!(
       date: '2019-09-23',
-      start_time: '09:00:00',
-      end_time:'10:00:00',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
       therapist: therapist
     )
-
+    Availability.create!(
+      date: '2019-09-23',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: therapist
+    )
+    Availability.create!(
+      date: '2019-09-23',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: therapist
+    )
+      Availability.create!(
+      date: '2019-10-01',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[1],
+      therapist: therapist
+    )
+        Availability.create!(
+      date: '2019-10-01',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[1],
+      therapist: therapist
+    )
+  Availability.create!(
+      date: '2019-10-04',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: therapist
+    )
+  Availability.create!(
+      date: '2019-10-04',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: therapist
+    )
+   Availability.create!(
+      date: '2019-10-05',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: therapist
+    )
+   Availability.create!(
+      date: '2019-10-05',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: therapist
+    )
+    Availability.create!(
+      date: '2019-10-07',
+      start_time: TIMESLOTS.sample[0],
+      end_time: TIMESLOTS.sample[0],
+      therapist: therapist
+    )
+    Availability.create!(
+      date: '2019-10-07',
+      start_time: TIMESLOTS.sample[0],
+      end_time: TIMESLOTS.sample[0],
+      therapist: therapist
+    )
+    Availability.create!(
+      date: '2019-10-07',
+      start_time: TIMESLOTS.sample[0],
+      end_time: TIMESLOTS.sample[0],
+      therapist: therapist
+    )
+    Availability.create!(
+      date: '2019-10-30',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: therapist
+    )
+    Availability.create!(
+      date: '2019-10-30',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: therapist
+    )
+    Availability.create!(
+      date: '2019-10-30',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: therapist
+    )
+    Availability.create!(
+      date: '2019-10-09',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: therapist
+    )
+    Availability.create!(
+      date: '2019-10-09',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: therapist
+    )
+    Availability.create!(
+      date: '2019-10-25',
+      start_time: TIMESLOTS.sample[0],
+      end_time: TIMESLOTS.sample[0],
+      therapist: therapist
+    )
+    Availability.create!(
+      date: '2019-10-25',
+      start_time: TIMESLOTS.sample[0],
+      end_time: TIMESLOTS.sample[0],
+      therapist: therapist
+    )
+    Availability.create!(
+      date: '2019-10-16',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: therapist
+    )
+    Availability.create!(
+      date: '2019-10-16',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: therapist
+    )
+    Availability.create!(
+      date: '2019-10-17',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: therapist
+    )
+    Availability.create!(
+      date: '2019-10-18',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: therapist
+    )
+    Availability.create!(
+      date: '2019-10-18',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: therapist
+    )
+    Availability.create!(
+      date: '2019-10-18',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: therapist
+    )
+    Availability.create!(
+      date: '2019-10-19',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: therapist
+    )
+    Availability.create!(
+      date: '2019-10-19',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: therapist
+    )
+    Availability.create!(
+      date: '2019-10-19',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: therapist
+    )
+    Availability.create!(
+      date: '2019-10-20',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: therapist
+    )
+    Availability.create!(
+      date: '2019-10-21',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: therapist
+    )
+    Availability.create!(
+      date: '2019-10-21',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: therapist
+    )
+    Availability.create!(
+      date: '2019-10-24',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: therapist
+    )
+     Availability.create!(
+      date: '2019-10-24',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: therapist
+    )
+    Availability.create!(
+      date: '2019-10-23',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: therapist
+    )
 end
-
 
 
 
@@ -409,15 +740,32 @@ puts "#{TherapistSpecialty.count} tags created"
 
 puts "now creating some bookings"
 
-#myself to have two past bookings
+#demo user should have two past bookings
 
 puts "#{Booking.count} bookings created"
 
+puts "now creating reviews !"
+
+therapists.each do |therapist|
+  Review.create!(content: "", rating: 5, therapist: therapist, user: User.take)
+  Review.create!(content: "", rating: 5, therapist: therapist, user: User.take)
+  Review.create!(content: "", rating: 5, therapist: therapist, user: User.take)
+  Review.create!(content: "", rating: 5, therapist: therapist, user: User.take)
+  Review.create!(content: "", rating: 4, therapist: therapist, user: User.take)
+  Review.create!(content: "", rating: 4.5, therapist: therapist, user: User.take)
+  Review.create!(content: "", rating: 3, therapist: therapist, user: User.take)
+  Review.create!(content: "", rating: 4.5, therapist: therapist, user: User.take)
+
+end
+
+puts "#{Review.count} reviews written total"
+
+
 puts "current stats :"
-  puts "Therapists: #{Therapist.count}"
-  puts "Availabilities: #{Availability.count}"
-  puts "Bookings: #{Booking.count}"
-  puts "Reviews: #{Review.count}"
-  puts "Specialties: #{Specialty.count}"
-  puts "Therapist specialty tags: #{TherapistSpecialty.count}"
-  puts "Users: #{User.count}"
+puts "Therapists: #{Therapist.count}"
+puts "Availabilities: #{Availability.count}"
+puts "Bookings: #{Booking.count}"
+puts "Reviews: #{Review.count}"
+puts "Specialties: #{Specialty.count}"
+puts "Therapist specialty tags: #{TherapistSpecialty.count}"
+puts "Users: #{User.count}"
