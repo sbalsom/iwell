@@ -6,6 +6,7 @@
   #absolute {
     position:absolute;
     top: -50px;
+    margin-top:1rem;
   }
 
   .relative {
@@ -53,6 +54,20 @@
     margin-left:30px;
   }
 
+}
+
+#no-therapist {
+  // opacity:0.5;
+  background:
+  linear-gradient(
+      rgba(120, 130, 233, 0.45),
+      rgba(120, 130, 233, 0.45)
+    ),
+  image_url('question.png'),
+  image_url('faces.png')
+  ;
+  background-size:cover;
+  width:140px;
 }
 // past bookings styling
 .past {

@@ -8,7 +8,10 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   get 'sandbox', to: 'pages#sandbox'
-  get 'video_session', to: 'pages#video_session'
+  resources :bookings, only: :show do
+    get 'video_session', to: 'pages#video_session'
+  end
+
 
 end
 

@@ -10,5 +10,8 @@ class PagesController < ApplicationController
   end
 
   def video_session
+    @booking = Booking.find(params[:booking_id])
+    @booking.completed!
+
   end
 end
