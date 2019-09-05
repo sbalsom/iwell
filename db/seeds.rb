@@ -8,13 +8,7 @@ FIRSTNAMESF = %w(Anna Bertha Elisabeth Emma Frieda Gertrude Margarethe Maria Mar
 FIRSTNAMESM = %w(Ernst Friedrich Hans Heinrich Hermann Karl Otto Paul Walter Wilhelm Gerhard Günter Hans Heinz Helmut Herbert Karl Kurt Walter Werner Günter Hans Horst Jürgen Klaus Manfred Peter Wolfgang Andreas Frank Jörg Jürgen Klaus Michael Peter Stefan Thomas Alexander Christian Daniel Dennis Jan Martin Michael Sebastian Stefan Thomas Finn Jan Jannik Jonas Leon Luca Lukas Niklas Tim Tom)
 LASTNAMES = %w(Abel Aber Achen Ackert Adelberg Ahlgrim Aller Altenberg Altmann Ames Anders Angert Anschuetz Appel Asch Ascher Aulbach Austen Babler Bach Bachmann Bahler Bahn Ballmann Balsinger Bank Banner Bartel Bauch Bauer Baum Bayer Beck Beemer Behringer Bellinger Belser Berg Berger Bernd Bernstein Bertels Bertram Bickel Bieber Biehl Biel Birk Blacker Blaschko Blatt Bliss Blum Blumberg Bluth Boeder Bohnert Bohr Bose Brahm Brandt Brecker Brenner Brickle Buck Buller Burger Burr Buseman Butz Clemens Cruse Dahm Danner Debus Decker Degler Deichert Dell Denhart Denning Denzel Deutsch Dewitz Dick Dickmann Dieleman Dieter Dinkelman Dittmann Doppler Dorfman Dorner Dreiling Duell Eben Eberhhardt Eckard Eckelman Edinger Egle Eichmann Eidman Eiker Eisenberg Eisenhauer Eleazer Elfman Elm Emmerich Endorf Engel Erler Esther Eulberg Eyer Fackler Fahrer Falkner Fassbender Faust Federer Fehler Feldmann Fey Fickle Fieber Fink Finkel Fitz Florman Frankenstein Frei Friedemann Fritz Fuhr Funke Gabel Gebhardt Gehr Geiss Geller Gerner Gerwig Giebler Ginger Glaser Glassmann Goethe Gossmann Goth Grande Greber Gressler Grimm Grimmer Grof Grund Gunderman Haag Haber Hader Hager Hahn Halberg Haling Hammerstein Handler Hansel Hardt Hardwick Harling Hasselbach Haubert Heffner Heimlich Heinkel Helberg Heller Helsing Hemp Hendler Henke Hensel Herber Hertz Hiegel Hilde Hilger Himmel Hoch Hoffman Hoffner Hogg Hopper Hoss Hummel Hurst Ingman Isaac Jackels Jaeger Jager Janowitz Jenner Johannes Judd Kafer Kahl Kalbach Kant Kaplan Katz Kaufmann Kegel Kehr Kemper Kiehl Kimmel Klamm Klauss Kleinfield Kleinmann Klopp Kloss Knapp Koback Koepf Kohl Konrad Kopp Kostner Krall Kramer Kroll Kroner Krueger Kuehler Kupper Lachmann Landt Last Lauer Lehr Lemmer Lichtenberg Liebe Lillich Linde Lindt Lockert Loeb Loewe Lottman Lowitz Ludwig Lukas Lux Mahler Majer Mandel Markus Mauer Mayer Mechler Mehr Merkel Messer Metz Moretz Muehl Muller Nacht Naser Neider Nessel Neuer Neumann Nickol Nimz Nix Norder Oberhaus Oberlin Ockert Odenwald Offen Osen Ostermeyer Ostwald Pahl Palmer Paxman Peifer Perleberg Pfeiffer Picker Pier Pine Pittman Plath Platt Pohl Polk Posner Prather Printz Radke Rahman Rand Ranger Rasner Rath Redmann Reinhart Rembold Reuter Rigler Ringer Ringwald Rinkel Ritter Rockefeller Rodebaugh Roemer Rosenbach Roth Rothschild Ruben Rucker Rummel Sachs Salzberg Schaeffer Scheffer Schlei Schmidt Scholl Schweiger Schwimmer Seifried Seiss Seltzer Seyfried Siegel Simson Sonderman Spader Spangler Spielmann Spier Stahler Stark Stein Sterling Steuber Stiller Strick Stueber Suess Tannanbaum Tinsman Traeger Tripp Uber Uehling Uhl Ulrich Ungerer Vasel Visel Voelker Vogel Berg Stein Voss Wack Wagler Walberg Wall Weigel Weimer Wein Weisel Weiser Weiss Weltman Wendle Werth Wertz Wicker Wieber Wiese Wilhelms Winkel Wisser Wurst Xander Zachmann Zaske Zeiger Zeller Zimmermann Zuckerman)
 LANGUAGES = %w(Turkish Japanese Chinese English German German German German German German English English English English English Spanish English Hindi Arabic French Italian)
-# def language
-#   if rand(10) <= 8
-#     "German"
-#   else
-#     LANGUAGES.sample
-#   end
-# end
+
 
 BIOS = [
   "I have a doctorate in psychology and am a diploma candidate in analytical psychology at the C.G. Jung Institute Zurich. I am a registered intern of the European Board of Licensed Professional Counselors & Therapists and abide by the Board's Code of Ethics and supervision requirements. \n\n My interest in psychological health began in the early 1980s, and I have been studying, practicing, and working in the field since then. \n\n I obtained my Masters degree in counseling, and have continued to learn as new knowledge in the field unfolds. I have engaged in significant personal growth, which offers an added layer of understanding to my work.  \n\n \n\n My goal is to help you understand yourself, use your inner wisdom and your strengths. I encourage compassionate treatment of self, which can greatly enhance the healing process. I use both thought- and body-based approaches, such as cognitive behavior therapy, EMDR and somatic work. I can weave in spirituality and creativity, as clients are interested. This can bring deeper meaning and a richness to life.",
@@ -174,7 +168,7 @@ PHOTOSMEN = [
 puts "checking if you are in development mode"
 
 
- if Rails.env == "development"
+
   puts "wiping the database "
   User.destroy_all
   Therapist.destroy_all
@@ -187,9 +181,8 @@ puts "checking if you are in development mode"
   puts "Specialties: #{Specialty.count}"
   puts "Therapist specialty tags: #{TherapistSpecialty.count}"
   puts "Users: #{User.count}"
- else
-   puts "you are not in development mode !"
- end
+
+
 
 puts "creating fake users"
 

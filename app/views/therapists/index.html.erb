@@ -156,6 +156,7 @@
   </div>
 
    <div class=therapist-results-header>
+
    <h4><%= @therapists.count %> Therapists Found</h4>
   </div>
 
@@ -184,6 +185,8 @@
                   <i class="far fa-star"></i>
               </div>
             <% end %>
+            <p id="total-reviews"> <%= therapist.reviews.count %> </p>
+
           </div>
         </div>
         <div class="profile-description">
