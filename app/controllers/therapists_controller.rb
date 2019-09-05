@@ -4,7 +4,7 @@ class TherapistsController < ApplicationController
   skip_after_action :verify_authorized, only: :show
 
   def index
-    @specialties = Specialty.all
+    @specialties = Specialty.all.uniq
     @therapists = policy_scope(Therapist)
     @therapists = @therapists.joins(therapist_specialties: :specialty).where('specialties.name ILIKE ?', "%#{params[:specialty]}%") if params[:specialty].present?
     @therapists = @therapists.where(language: params[:language]) if params[:language].present?
