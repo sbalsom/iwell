@@ -93,9 +93,8 @@
   align-items: center;
 }
 .white-button{
-  padding:5px 5px;
-  // height: 40px;
-  width: 160px;
+  height: 20px;
+  width: 120px;
   border-radius: 4px;
   background-color: white;
   color: #7882e9;
@@ -103,6 +102,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 20px;
+  padding: 26px 0;
+
+}
+  #esinswhitebutton {
+  padding:5px 5px;
+  width: 160px;
   font-size: 18px;
 }
-
