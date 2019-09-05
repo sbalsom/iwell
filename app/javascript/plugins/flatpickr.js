@@ -9,6 +9,7 @@ const timePicker = document.getElementById("time-picker");
 // this function only deals with the days
 flatpickr(".timepicker", {
     enableTime: true,
+    time_24hr: true,
     noCalendar: true,
     dateFormat: "H:i",
     minDate: min,
