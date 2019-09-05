@@ -240,11 +240,6 @@ puts "Bartu is created"
 puts "giving bartu specialties"
 
 
-
-TherapistSpecialty.create!(
-    therapist: bartu,
-    specialty: specialties[0])
-
 TherapistSpecialty.create!(
     therapist: bartu,
     specialty: specialties[4])
