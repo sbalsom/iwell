@@ -22,10 +22,12 @@
       </div>
       <div class="button-container d-flex justify-content-between mt-2">
         <% therapist = booking.therapist %>
+        <% if @user_therapist != therapist %>
         <%= link_to therapist_assign_me_path(therapist) do %>
         <div class="">
           Assign as my therapist
         </div>
+        <% end %>
         <% end %>
         <% reviewed = @my_reviews.where(therapist: therapist) %>
         <% if reviewed.blank? %>
