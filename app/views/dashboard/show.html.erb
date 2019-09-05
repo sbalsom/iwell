@@ -75,12 +75,12 @@
   <% end %>
   <h3 id="past-header">Past Appointments</h3>
   <% if !@past_bookings.blank? %>
-    <div class="past padded-box m-80">
+    <div class="past padded-box m-80 mb-5">
      <%= render partial: "shared/past_bookings", past_bookings: @past_bookings %>
     </div>
  <%  %>
   <% else %>
-    <div class="empty border padded-box">
+    <div class="empty border padded-box mb-5">
       <p>You have not completed any sessions. When you have, you will be able to access them here.</p>
     </div>
 <% end %>
