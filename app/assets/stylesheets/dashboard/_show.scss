@@ -10,6 +10,9 @@
   color:white;
 }
 
+.m-80 {
+    margin: 0 80px;
+}
 
 // whole page stylıng
 
@@ -47,7 +50,6 @@
 
 .empty {
   height:150px;
-  margin: 45px ;
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -98,7 +100,6 @@
 // past bookings styling
 .past {
   border: 1px solid #DFE2E7;
-  margin: 0 80px;
   padding-bottom: 30px;
 
   a {

@@ -48,7 +48,7 @@
 
 <h3 id="upcoming-header">Upcoming Appointments</h3>
   <% if @today_booking %>
-    <div class="today border padded-box d-flex mb-5 relative">
+    <div class="today border padded-box d-flex mb-5 relative m-80">
       <div class="calendar mr-4">
           <p id="date"> <%= @today_booking.starts_at.strftime("%d") %> </p>
           <i class="far fa-calendar" aria-hidden="true"></i>
@@ -69,13 +69,13 @@
 
         </div>
     <% else %>
-    <div class="empty border padded-box mb-5">
+    <div class="empty border padded-box mb-5 m-80">
       <p>You have no upcoming appointments. When you schedule one, the call button will be displayed here.</p>
     </div>
   <% end %>
   <h3 id="past-header">Past Appointments</h3>
   <% if !@past_bookings.blank? %>
-    <div class="past padded-box">
+    <div class="past padded-box m-80">
      <%= render partial: "shared/past_bookings", past_bookings: @past_bookings %>
     </div>
  <%  %>

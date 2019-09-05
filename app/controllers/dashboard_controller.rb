@@ -12,7 +12,7 @@ class DashboardController < ApplicationController
       @user_therapist = nil
     end
     @bookings = current_user.bookings
-    @next_booking = @bookings.where("starts_at > ?", Date.today)
+    @next_booking = @bookings.where("starts_at > ? and status <> ?", Date.today, 3)
     @today_booking = Booking
     .where(["starts_at = ? and status <> ?", Date.today, 3])
     .last
@@ -28,3 +28,4 @@ class DashboardController < ApplicationController
     end
   end
 end
+
