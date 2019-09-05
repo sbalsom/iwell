@@ -7,9 +7,9 @@ class DashboardController < ApplicationController
       @user_therapist = Therapist.find(@user.therapist_id)
     end
     if @user.therapist_id
-     @user_therapist = Therapist.find(@user.therapist_id)
-   else
-    @user_therapist = nil
+      @user_therapist = Therapist.find(@user.therapist_id)
+    else
+      @user_therapist = nil
     end
     @bookings = current_user.bookings
     @next_booking = @bookings.where("starts_at > ?", Date.today)
