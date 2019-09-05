@@ -10,7 +10,7 @@
      <div class="flex-1 d-flex flex-column justify-content-between">
       <div class="info">
         <h5> <%= booking.starts_at.strftime("%A, %d %B") %>
-           at <%= booking.time.strftime("%I:%M%p")%>
+           at <%= booking.time.strftime("%H:%M")%>
         </h5>
          <% if booking.free %>
          <h6> 15 Minute consultation </h6>

@@ -9,6 +9,9 @@ FIRSTNAMESM = %w(Ernst Friedrich Hans Heinrich Hermann Karl Otto Paul Walter Wil
 LASTNAMES = %w(Abel Aber Achen Ackert Adelberg Ahlgrim Aller Altenberg Altmann Ames Anders Angert Anschuetz Appel Asch Ascher Aulbach Austen Babler Bach Bachmann Bahler Bahn Ballmann Balsinger Bank Banner Bartel Bauch Bauer Baum Bayer Beck Beemer Behringer Bellinger Belser Berg Berger Bernd Bernstein Bertels Bertram Bickel Bieber Biehl Biel Birk Blacker Blaschko Blatt Bliss Blum Blumberg Bluth Boeder Bohnert Bohr Bose Brahm Brandt Brecker Brenner Brickle Buck Buller Burger Burr Buseman Butz Clemens Cruse Dahm Danner Debus Decker Degler Deichert Dell Denhart Denning Denzel Deutsch Dewitz Dick Dickmann Dieleman Dieter Dinkelman Dittmann Doppler Dorfman Dorner Dreiling Duell Eben Eberhhardt Eckard Eckelman Edinger Egle Eichmann Eidman Eiker Eisenberg Eisenhauer Eleazer Elfman Elm Emmerich Endorf Engel Erler Esther Eulberg Eyer Fackler Fahrer Falkner Fassbender Faust Federer Fehler Feldmann Fey Fickle Fieber Fink Finkel Fitz Florman Frankenstein Frei Friedemann Fritz Fuhr Funke Gabel Gebhardt Gehr Geiss Geller Gerner Gerwig Giebler Ginger Glaser Glassmann Goethe Gossmann Goth Grande Greber Gressler Grimm Grimmer Grof Grund Gunderman Haag Haber Hader Hager Hahn Halberg Haling Hammerstein Handler Hansel Hardt Hardwick Harling Hasselbach Haubert Heffner Heimlich Heinkel Helberg Heller Helsing Hemp Hendler Henke Hensel Herber Hertz Hiegel Hilde Hilger Himmel Hoch Hoffman Hoffner Hogg Hopper Hoss Hummel Hurst Ingman Isaac Jackels Jaeger Jager Janowitz Jenner Johannes Judd Kafer Kahl Kalbach Kant Kaplan Katz Kaufmann Kegel Kehr Kemper Kiehl Kimmel Klamm Klauss Kleinfield Kleinmann Klopp Kloss Knapp Koback Koepf Kohl Konrad Kopp Kostner Krall Kramer Kroll Kroner Krueger Kuehler Kupper Lachmann Landt Last Lauer Lehr Lemmer Lichtenberg Liebe Lillich Linde Lindt Lockert Loeb Loewe Lottman Lowitz Ludwig Lukas Lux Mahler Majer Mandel Markus Mauer Mayer Mechler Mehr Merkel Messer Metz Moretz Muehl Muller Nacht Naser Neider Nessel Neuer Neumann Nickol Nimz Nix Norder Oberhaus Oberlin Ockert Odenwald Offen Osen Ostermeyer Ostwald Pahl Palmer Paxman Peifer Perleberg Pfeiffer Picker Pier Pine Pittman Plath Platt Pohl Polk Posner Prather Printz Radke Rahman Rand Ranger Rasner Rath Redmann Reinhart Rembold Reuter Rigler Ringer Ringwald Rinkel Ritter Rockefeller Rodebaugh Roemer Rosenbach Roth Rothschild Ruben Rucker Rummel Sachs Salzberg Schaeffer Scheffer Schlei Schmidt Scholl Schweiger Schwimmer Seifried Seiss Seltzer Seyfried Siegel Simson Sonderman Spader Spangler Spielmann Spier Stahler Stark Stein Sterling Steuber Stiller Strick Stueber Suess Tannanbaum Tinsman Traeger Tripp Uber Uehling Uhl Ulrich Ungerer Vasel Visel Voelker Vogel Berg Stein Voss Wack Wagler Walberg Wall Weigel Weimer Wein Weisel Weiser Weiss Weltman Wendle Werth Wertz Wicker Wieber Wiese Wilhelms Winkel Wisser Wurst Xander Zachmann Zaske Zeiger Zeller Zimmermann Zuckerman)
 LANGUAGES = %w(Turkish Japanese Chinese English German German German German German German English English English English English Spanish English Hindi Arabic French Italian)
 
+SPECIALTIES = ['Anxiety', 'Depression', 'Eating Disorders', 'Relationship problems', 'Stress', 'Anger Management', 'Bipolar', 'ADHD', 'Insomnia', 'Mindfulness', 'Psychoanalysis', 'Family Counseling', 'Couples therapy', 'Grief counseling', 'Post-Partum Depression']
+TIMESLOTS = [['09:00:00', '10:00:00'], ['10:00:00', '11:00:00'], ['13:00:00', '14:00:00'], ['14:00:00', '15:00:00'],  ]
+
 
 BIOS = [
   "I have a doctorate in psychology and am a diploma candidate in analytical psychology at the C.G. Jung Institute Zurich. I am a registered intern of the European Board of Licensed Professional Counselors & Therapists and abide by the Board's Code of Ethics and supervision requirements. \n\n My interest in psychological health began in the early 1980s, and I have been studying, practicing, and working in the field since then. \n\n I obtained my Masters degree in counseling, and have continued to learn as new knowledge in the field unfolds. I have engaged in significant personal growth, which offers an added layer of understanding to my work.  \n\n \n\n My goal is to help you understand yourself, use your inner wisdom and your strengths. I encourage compassionate treatment of self, which can greatly enhance the healing process. I use both thought- and body-based approaches, such as cognitive behavior therapy, EMDR and somatic work. I can weave in spirituality and creativity, as clients are interested. This can bring deeper meaning and a richness to life.",
@@ -211,6 +214,486 @@ puts "#{User.count} users created"
 
 puts "creating therapists"
 
+puts "creating Bartu's profile"
+
+bartu = Therapist.create!(
+    first_name: "Bartu",
+    last_name: "Culha",
+    avg_rating: 5,
+    language: "English",
+    bio: "I have over a decade of experience in the addictions/mental health field and have specialized training in mindfulness/meditation, cognitive behavioral therapy and career changes. I specialise in providing a safe, supportive environment where you can continue the process of exploring the challenges in your life. I am well suited to work with people with a variety of concerns, so whether you are struggling with anxiety, stress, depression, life changes or just need a supportive ear to listen while you vent, I can be helpful to you. Therapy can be a very powerful and enjoyable experience, and you are one step closer to experiencing it for yourself! \n My counseling style is supportive and goal oriented. I believe in treating everyone with respect, sensitivity, and compassion, and I don't believe in stigmatizing labels. Depending on my clients’ needs, I draw from diverse counseling techniques that can include: Acceptance Commitment Therapy (ACT), Cognitive Behavioral Therapy (CBT), Mindfulness-Based Cognitive Therapy (MBCT), Motivational Interviewing (MI), as well as psychodynamic therapy techniques. Every client is unique, so all counseling is individualized to meet their individual strengths and challenges. I look forward to working with you!",
+    years_exp: 5,
+    remote_photo_url: "https://i.ibb.co/p0tWdHd/IMG-2980.jpg",
+    rate: 45
+    )
+puts "Bartu is created"
+
+puts "giving bartu specialties"
+
+TherapistSpecialty.create!(
+    therapist: bartu,
+    specialty: "Stress")
+
+TherapistSpecialty.create!(
+    therapist: bartu,
+    specialty: "Anxiety")
+
+TherapistSpecialty.create!(
+    therapist: bartu,
+    specialty: "Mindfulness")
+
+
+puts "giving bartu reviews"
+
+
+  Review.create!(content: "He is very understanding and professional. He gets back to me super fast and is always on time when we have meetings and gives me excellent feedback and helpful information. ", rating: 4, therapist: bartu, user: User.take)
+  Review.create!(content: "I felt that even though he was listening me, he did not take enough time to understand my problems. I didn't get useful advise which I can apply to my life.", rating: 4, therapist: bartu, user: User.take)
+  Review.create!(content: "He is a wonderful person, mentor, and counselor. He’s, patient, non-judgmental, and really shows how much he cares. It’s comforting to know that I am able to contact him at anytime for any problem. ", rating: 4.5, therapist: bartu, user: User.take)
+  Review.create!(content: "He is an amazing counsellor. He is great to work with and always made me feel like I could say any thing that was on my mind", rating: 4.5, therapist: bartu, user: User.take)
+  Review.create!(content: "He has been amazing. He truly understands my concerns and empathizes with me. He works hard to check in and help me create goals and long lasting plans. I’m so happy I found my therapist!", rating: 4.5, therapist: bartu, user: User.take)
+  Review.create!(content: "Very capable and competent, and very nice to deal with. A real professional with a good guiding hand toward getting to the root of problems and building toward solutions.", rating: 4.5, therapist: bartu, user: User.take)
+
+
+puts "giving Bartu availabilties"
+
+Availability.create!(
+      date: '2019-09-06',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[1],
+      therapist: bartu
+    )
+  Availability.create!(
+      date: '2019-09-06',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[1],
+      therapist: bartu
+    )
+  Availability.create!(
+      date: '2019-09-06',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[1],
+      therapist: bartu
+    )
+  Availability.create!(
+      date: '2019-09-06',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+  Availability.create!(
+      date: '2019-09-06',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+   Availability.create!(
+      date: '2019-09-06',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+   Availability.create!(
+      date: '2019-09-06',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+   Availability.create!(
+      date: '2019-09-06',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+    Availability.create!(
+      date: '2019-09-07',
+      start_time: TIMESLOTS.sample[0],
+      end_time: TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+    Availability.create!(
+      date: '2019-09-07',
+      start_time: TIMESLOTS.sample[0],
+      end_time: TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+    Availability.create!(
+      date: '2019-09-07',
+      start_time: TIMESLOTS.sample[0],
+      end_time: TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+    Availability.create!(
+      date: '2019-09-30',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+     Availability.create!(
+      date: '2019-09-30',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+      Availability.create!(
+      date: '2019-09-30',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+    Availability.create!(
+      date: '2019-09-09',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+    Availability.create!(
+      date: '2019-09-09',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+    Availability.create!(
+      date: '2019-09-25',
+      start_time: TIMESLOTS.sample[0],
+      end_time: TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+    Availability.create!(
+      date: '2019-09-16',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+    Availability.create!(
+      date: '2019-09-16',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+    Availability.create!(
+      date: '2019-09-16',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+    Availability.create!(
+      date: '2019-09-17',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+     Availability.create!(
+      date: '2019-09-17',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+      Availability.create!(
+      date: '2019-09-17',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+    Availability.create!(
+      date: '2019-09-18',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+    Availability.create!(
+      date: '2019-09-18',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+    Availability.create!(
+      date: '2019-09-18',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+    Availability.create!(
+      date: '2019-09-18',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+    Availability.create!(
+      date: '2019-09-19',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+    Availability.create!(
+      date: '2019-09-19',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+    Availability.create!(
+      date: '2019-09-19',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+    Availability.create!(
+      date: '2019-09-20',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+    Availability.create!(
+      date: '2019-09-20',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+    Availability.create!(
+      date: '2019-09-20',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+    Availability.create!(
+      date: '2019-09-21',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+    Availability.create!(
+      date: '2019-09-21',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+    Availability.create!(
+      date: '2019-09-24',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+    Availability.create!(
+      date: '2019-09-24',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+    Availability.create!(
+      date: '2019-09-24',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+    Availability.create!(
+      date: '2019-09-23',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+    Availability.create!(
+      date: '2019-09-23',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+    Availability.create!(
+      date: '2019-09-23',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+      Availability.create!(
+      date: '2019-10-01',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[1],
+      therapist: bartu
+    )
+        Availability.create!(
+      date: '2019-10-01',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[1],
+      therapist: bartu
+    )
+  Availability.create!(
+      date: '2019-10-04',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+  Availability.create!(
+      date: '2019-10-04',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+   Availability.create!(
+      date: '2019-10-05',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+   Availability.create!(
+      date: '2019-10-05',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+    Availability.create!(
+      date: '2019-10-07',
+      start_time: TIMESLOTS.sample[0],
+      end_time: TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+    Availability.create!(
+      date: '2019-10-07',
+      start_time: TIMESLOTS.sample[0],
+      end_time: TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+    Availability.create!(
+      date: '2019-10-07',
+      start_time: TIMESLOTS.sample[0],
+      end_time: TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+    Availability.create!(
+      date: '2019-10-30',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+    Availability.create!(
+      date: '2019-10-30',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+    Availability.create!(
+      date: '2019-10-30',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+    Availability.create!(
+      date: '2019-10-09',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+    Availability.create!(
+      date: '2019-10-09',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+    Availability.create!(
+      date: '2019-10-25',
+      start_time: TIMESLOTS.sample[0],
+      end_time: TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+    Availability.create!(
+      date: '2019-10-25',
+      start_time: TIMESLOTS.sample[0],
+      end_time: TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+    Availability.create!(
+      date: '2019-10-16',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+    Availability.create!(
+      date: '2019-10-16',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+    Availability.create!(
+      date: '2019-10-17',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+    Availability.create!(
+      date: '2019-10-18',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+    Availability.create!(
+      date: '2019-10-18',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+    Availability.create!(
+      date: '2019-10-18',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+    Availability.create!(
+      date: '2019-10-19',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+    Availability.create!(
+      date: '2019-10-19',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+    Availability.create!(
+      date: '2019-10-19',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+    Availability.create!(
+      date: '2019-10-20',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+    Availability.create!(
+      date: '2019-10-21',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+    Availability.create!(
+      date: '2019-10-21',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+    Availability.create!(
+      date: '2019-10-24',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+     Availability.create!(
+      date: '2019-10-24',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+    Availability.create!(
+      date: '2019-10-23',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[0],
+      therapist: bartu
+    )
+puts "creating english speaking therapists"
+
+30.times do
+
+end
+
 #creating female therapists
 i = 0
 while i < 50
@@ -222,7 +705,7 @@ while i < 50
     bio: BIOS.sample,
     years_exp: rndr.rand(1..5),
     remote_photo_url: PHOTOSWOMEN[i],
-    rate: rndr.rand(20..60)
+    rate: rndr.rand(35..60)
     )
   Review.create!(content: "She been nothing but helpful and supportive. Talking to my therapist has been clarifying and affirming, and I appreciate her understanding of different situations. Thank you! ", rating: 4, therapist: t, user: User.take)
   Review.create!(content: "I felt that even though she was listening me, she did not take enough time to understand my problems. I didn't get useful advise which I can apply to my life.", rating: 3, therapist: t, user: User.take)
@@ -243,8 +726,8 @@ while n < 50
     language: LANGUAGES.sample,
     bio: BIOS.sample,
     years_exp: rndr.rand(1..5),
-    remote_photo_url: PHOTOSMEN[n],
-    rate: rndr.rand(20..60)
+    remote_photo_url: PHOTOSMEN[i],
+    rate: rndr.rand(35..60)
     )
   Review.create!(content: "He is very understanding and professional. He gets back to me super fast and is always on time when we have meetings and gives me excellent feedback and helpful information. ", rating: 4, therapist: t, user: User.take)
   Review.create!(content: "I felt that even though he was listening me, he did not take enough time to understand my problems. I didn't get useful advise which I can apply to my life.", rating: 3, therapist: t, user: User.take)
@@ -257,12 +740,11 @@ end
 
 puts "#{Therapist.count} therapists created"
 
-therapists = Therapist.all
+therapists = Therapist.where("first_name <> ?", "Bartu")
 users = User.all
 
 puts "giving the therapists availabilities"
 
-TIMESLOTS = [['09:00:00', '10:00:00'], ['10:00:00', '11:00:00'], ['13:00:00', '14:00:00'], ['14:00:00', '15:00:00'],  ]
 
 therapists.all.each do |therapist|
 
@@ -706,7 +1188,6 @@ puts "#{Availability.count} availabilities created"
 
 puts "creating specialties"
 
-SPECIALTIES = ['Anxiety', 'Depression', 'Eating Disorders', 'Relationship problems', 'Stress', 'Anger Management', 'Bipolar', 'ADHD', 'Insomnia', 'Mindfulness', 'Psychoanalysis', 'Family Counseling', 'Couples therapy', 'Grief counseling', 'Post-Partum Depression']
 
 SPECIALTIES.each do |specialty|
   Specialty.create!(name: specialty)
@@ -737,17 +1218,6 @@ puts "#{Booking.count} bookings created"
 
 puts "now creating reviews !"
 
-therapists.each do |therapist|
-  Review.create!(content: "", rating: 5, therapist: therapist, user: User.take)
-  Review.create!(content: "", rating: 5, therapist: therapist, user: User.take)
-  Review.create!(content: "", rating: 5, therapist: therapist, user: User.take)
-  Review.create!(content: "", rating: 5, therapist: therapist, user: User.take)
-  Review.create!(content: "", rating: 4, therapist: therapist, user: User.take)
-  Review.create!(content: "", rating: 4.5, therapist: therapist, user: User.take)
-  Review.create!(content: "", rating: 3, therapist: therapist, user: User.take)
-  Review.create!(content: "", rating: 4.5, therapist: therapist, user: User.take)
-
-end
 
 puts "#{Review.count} reviews written total"
 

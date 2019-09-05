@@ -54,7 +54,7 @@
           <i class="far fa-calendar" aria-hidden="true"></i>
         </div>
         <div class="calendar-date pl-3 flex-grow">
-          <h3 class="mb-3 today-date"> <%= @today_booking.starts_at.strftime("%A, %d %B") %> at <%= @today_booking.time.strftime("%I:%M%p")%></h3>
+          <h3 class="mb-3 today-date"> <%= @today_booking.starts_at.strftime("%A, %d %B") %> at <%= @today_booking.time.strftime("%H:%M")%></h3>
           <%= link_to  therapist_booking_video_session_path(@today_booking.therapist, @today_booking), class: "d-flex flex-column align-items-center" do %>
             <i class="fas fa-video mb-3" aria-hidden="true"></i>
             <% end %>
