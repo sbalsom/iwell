@@ -3,9 +3,9 @@
 
   <% if @user_therapist %>
   <div class="assigned d-flex flex-column justify-content-center">
- <div class="content-wrap d-flex px-5 mb-5">
+ <div class="content-wrap d-flex px-5 mb-3">
       <%= link_to therapist_path(@user_therapist) do %>
-   <%= cl_image_tag @user_therapist.photo, width: 140, class: "avatar-small mb-3" %>
+   <%= cl_image_tag @user_therapist.photo, width: 140, class: "avatar-small" %>
    <% end %>
    <div class="flex-2">
      <h4>Your assigned therapist is <%=
