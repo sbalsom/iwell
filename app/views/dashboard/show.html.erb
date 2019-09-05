@@ -7,8 +7,8 @@
     <%= cl_image_tag @user_therapist.photo, width: 140, class: "avatar-small mb-3" %>
     <% end %>
     <div class="flex-2">
-      <h3>Your assigned therapist is <%=
-        @user_therapist.first_name %> <%= @user_therapist.last_name %></h3>
+      <h4>Your assigned therapist is <%=
+        @user_therapist.first_name %> <%= @user_therapist.last_name %></h4>
         <% if @user_therapist %>
         <%= link_to therapist_path(@user_therapist) do %>
         <div class="white-button">
@@ -27,14 +27,14 @@
   </div>
   <% else %>
     <div class="assigned d-flex px-5">
-      <div class="avatar-small mb-3" id="no-therapist">
+      <div id="no-therapist">
 
       </div>
     <div class="flex-2">
-      <h3>You don't have an assigned therapist yet !</h3>
+      <h5>You don't have an assigned therapist yet.</h5>
         <%= link_to therapists_path do %>
         <div class="white-button">
-          Book now
+          Find a Therapist
         </div>
         <% end %>
       </div>
@@ -52,16 +52,16 @@
         </div>
         <div class="calendar-date pl-3 flex-grow">
           <h3 class="mb-3"> <%= @today_booking.starts_at.strftime("%A, %d.%m.%Y") %>  <%= @today_booking.time.strftime("%H:%M")%></h3>
-          <div class="d-flex flex-column justify-content-center">
+          <div class="d-flex">
             <%= link_to  therapist_booking_video_session_path(@today_booking.therapist, @today_booking) do %>
             <i class="fas fa-video mb-3" aria-hidden="true"></i>
             <% end %>
-            <h5>Start Call</h5>
+            <h5 class="button-navy-md" id="call" >Start Call</h5>
           </div>
         </div>
         <div class="avatar-box">
           <%= link_to therapist_path(@today_booking.therapist) do %>
-          <%= cl_image_tag @today_booking.therapist.photo, width: 140, class: "avatar-small mb-3" %>
+          <%= cl_image_tag @today_booking.therapist.photo, width: 140, class: "avatar-small-dashboard mb-3" %>
           <% end %>
            <h5>Dr. <%= @today_booking.therapist.first_name %> <%= @today_booking.therapist.last_name %> </h5>
         </div>
