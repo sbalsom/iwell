@@ -114,7 +114,6 @@ PHOTOSMEN = [
   'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
   'https://images.unsplash.com/photo-1548372290-8d01b6c8e78c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
   'https://images.unsplash.com/photo-1553267751-1c148a7280a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
-  'https://images.unsplash.com/photo-1557862921-37829c790f19?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
   'https://images.unsplash.com/photo-1546672657-366775449156?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
   'https://images.unsplash.com/photo-1514222709107-a180c68d72b4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
   'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
@@ -212,6 +211,16 @@ end
 
 puts "#{User.count} users created"
 
+puts "creating specialties"
+
+specialties = SPECIALTIES.map do |specialty|
+  Specialty.create!(name: specialty)
+end
+
+puts "#{Specialty.count} specialties created"
+
+
+
 puts "creating therapists"
 
 puts "creating Bartu's profile"
@@ -230,9 +239,7 @@ puts "Bartu is created"
 
 puts "giving bartu specialties"
 
-specialties = SPECIALTIES.map do |specialty|
-  Specialty.create!(name: specialty)
-end
+
 
 TherapistSpecialty.create!(
     therapist: bartu,
@@ -719,13 +726,12 @@ ENGLISHPHOTOSF = [ "http://cdn7.dissolve.com/p/D18_76_051/D18_76_051_0004_600.jp
   "http://images.unsplash.com/photo-1528475775637-ed767f76e6b6?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMDd9",
   "https://www.thebalancecareers.com/thmb/_aDuzn7q-qo_lzFAyOHzpTklizg=/400x0/463028425-56b098cd5f9b58b7d024486b.jpg",
   "http://www.sfpbenefits.com/sites/492/uploaded/images/planadministration.jpg",
-  "http://www.sfpbenefits.com/sites/492/uploaded/images/planadministration.jpg",
   "https://creeclaw.org/wp-content/uploads/2018/08/078.jpg"
 ]
 
 i = 0
 
-while i < 14
+while i < 10
 t = Therapist.create!(
     first_name: FIRSTNAMESF[i],
     last_name: LASTNAMES.sample,
@@ -767,9 +773,16 @@ t = Therapist.create!(
 i += 1
 end
 
+est = Therapist.all
+est.each do |e|
+  TherapistSpecialty.create!(
+    therapist: e,
+    specialty: specialties[0])
+end
+
 #creating female therapists
 i = 0
-while i < 50
+while i < 20
   t = Therapist.create!(
     first_name: FIRSTNAMESF[i],
     last_name: LASTNAMES.sample,
@@ -791,7 +804,7 @@ end
 
 n = 0
 # creating male therapists
-while n < 50
+while n < 20
   t = Therapist.create!(
     first_name: FIRSTNAMESM[n],
     last_name: LASTNAMES.sample,
@@ -1259,15 +1272,11 @@ end
 
 puts "#{Availability.count} availabilities created"
 
-puts "creating specialties"
 
-
-
-puts "#{Specialty.count} specialties created"
 
 puts "now assigning specialties to therapists"
 
-specialties = Specialty.all
+specialties = specialties.drop(1)
 
 therapists.each do |therapist|
   n = rndr.rand(1..3)
