@@ -16,9 +16,9 @@ class DashboardController < ApplicationController
     @today_booking = Booking
     .where(["starts_at = ? and status <> ?", Date.today, 3])
     .last
-    if @today_booking.blank?
-      @today_booking = @next_booking.last
-    end
+    # if @today_booking.blank?
+    #   @today_booking = @next_booking.last
+    # end
     past_bookings = @bookings.where(["starts_at < ? or status = ? ", Date.today, 3])
     past_bookings = past_bookings.order(starts_at: :desc)
     @past_bookings = past_bookings.order(updated_at: :desc)
