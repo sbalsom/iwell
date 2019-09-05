@@ -6,23 +6,20 @@
 
 }
 
+.white-text {
+  color:white;
+}
+
+
 // whole page stylıng
 
 .dashboard-container {
 
-  // .absolute-badge {
-  //   position:absolute;
-  //   top: 12px;
-  //   right: 12px;
-  // }
 
-  // #badge-name {
-  //   font-size:13px;
-  //   position:absolute;
-  //   top: 17px;
-  //   right: 69px;
-  //   color:grey;
-  // }
+#dash {
+  width:fit-content;
+  padding: 20px 10px;
+}
 
   a, a:hover {
     text-decoration:none;
