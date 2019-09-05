@@ -16,6 +16,7 @@ class DashboardController < ApplicationController
     @today_booking = Booking
     .where(["starts_at = ? and status <> ?", Date.today, 3])
     .last
+    # this bit of code is supposed to display the next booking you book in the future, if none is scheduled for today. but, it doesn't work reliably
     # if @today_booking.blank?
     #   @today_booking = @next_booking.last
     # end
@@ -28,4 +29,3 @@ class DashboardController < ApplicationController
     end
   end
 end
-
