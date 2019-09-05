@@ -6,23 +6,23 @@
 
 }
 
+.white-text {
+  color:white;
+}
+
+.m-80 {
+    margin: 0 80px;
+}
+
 // whole page stylıng
 
 .dashboard-container {
 
-  // .absolute-badge {
-  //   position:absolute;
-  //   top: 12px;
-  //   right: 12px;
-  // }
 
-  // #badge-name {
-  //   font-size:13px;
-  //   position:absolute;
-  //   top: 17px;
-  //   right: 69px;
-  //   color:grey;
-  // }
+#dash {
+  width:fit-content;
+  padding: 20px 10px;
+}
 
   a, a:hover {
     text-decoration:none;
@@ -50,7 +50,6 @@
 
 .empty {
   height:150px;
-  margin: 45px ;
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -101,7 +100,6 @@
 // past bookings styling
 .past {
   border: 1px solid #DFE2E7;
-  margin: 0 80px;
   padding-bottom: 30px;
 
   a {
