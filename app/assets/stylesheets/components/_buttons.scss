@@ -21,19 +21,18 @@
 .button-home {
   padding:10px 20px;
   border-radius: 4px;
-  background-color: transparent;
+  background-color: $main;
   color:white;
   text-align: center;
   font-size:22px;
   line-height: 60px;
-  border:1px solid white;
 }
 
 .button-home:hover {
-  background: #7881E9;
+  background: rgba(255, 255, 255, 0.25);
   text-decoration: none;
   color: white;
-  border: none;
+  border: 1px solid white;
 }
 
 .button-navy-small {
@@ -113,5 +112,5 @@
 }
 
 #welcome_page-button {
-  width: 270px;
+  width: 341px;
 }
