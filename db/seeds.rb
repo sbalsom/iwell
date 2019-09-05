@@ -254,10 +254,10 @@ puts "giving bartu reviews"
 
   Review.create!(content: "He is very understanding and professional. He gets back to me super fast and is always on time when we have meetings and gives me excellent feedback and helpful information. ", rating: 4, therapist: bartu, user: User.take)
   Review.create!(content: "I felt that even though he was listening me, he did not take enough time to understand my problems. I didn't get useful advise which I can apply to my life.", rating: 4, therapist: bartu, user: User.take)
-  Review.create!(content: "He is a wonderful person, mentor, and counselor. He’s, patient, non-judgmental, and really shows how much he cares. It’s comforting to know that I am able to contact him at anytime for any problem. ", rating: 4.5, therapist: bartu, user: User.take)
-  Review.create!(content: "He is an amazing counsellor. He is great to work with and always made me feel like I could say any thing that was on my mind", rating: 4.5, therapist: bartu, user: User.take)
-  Review.create!(content: "He has been amazing. He truly understands my concerns and empathizes with me. He works hard to check in and help me create goals and long lasting plans. I’m so happy I found my therapist!", rating: 4.5, therapist: bartu, user: User.take)
-  Review.create!(content: "Very capable and competent, and very nice to deal with. A real professional with a good guiding hand toward getting to the root of problems and building toward solutions.", rating: 4.5, therapist: bartu, user: User.take)
+  Review.create!(content: "He is a wonderful person, mentor, and counselor. He’s, patient, non-judgmental, and really shows how much he cares. It’s comforting to know that I am able to contact him at anytime for any problem. ", rating: 5, therapist: bartu, user: User.take)
+  Review.create!(content: "He is an amazing counsellor. He is great to work with and always made me feel like I could say any thing that was on my mind", rating: 5, therapist: bartu, user: User.take)
+  Review.create!(content: "He has been amazing. He truly understands my concerns and empathizes with me. He works hard to check in and help me create goals and long lasting plans. I’m so happy I found my therapist!", rating: 5, therapist: bartu, user: User.take)
+  Review.create!(content: "Very capable and competent, and very nice to deal with. A real professional with a good guiding hand toward getting to the root of problems and building toward solutions.", rating: 5, therapist: bartu, user: User.take)
 
 
 puts "giving Bartu availabilties"
