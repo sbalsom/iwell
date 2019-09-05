@@ -18,7 +18,7 @@
         <% end %>
     </div>
     <div>
-      <h4 class="pb-2 pt-4"><strong>Specialty</strong></h4>
+      <h4 class="pb-2 pt-4"><strong>What are you struggling with?</strong></h4>
       <%= select_tag "specialty", options_from_collection_for_select(@specialties, 'name', 'name', :selected => params[:specialty]), class: "form-control" %>
         <% if params[:query].present? %>
           <%= hidden_field_tag :query, params[:query] %>
