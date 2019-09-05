@@ -1,5 +1,5 @@
-<div class="container mt-5">
-    <h3>Welcome to iWell. So that we can show the best professionals for you, please enter the following info first:</h3>
+<div class="container welcome_page-container">
+    <h4 id="welcome_page-header">Welcome to iWell. So that we can show the best professionals for you, please enter the following info first:</h4>
   <div class="show-page-form d-flex justify-content-center">
     <%= form_tag therapists_path, class: "show-form-container", method: :get do %>
       <% languages = [] %>
@@ -8,7 +8,7 @@
       <% languages = languages.uniq %>
     <% end %>
     <div>
-      <h4 class="pb-2 mt-5">Language</h4>
+      <h4 class="pb-2"><strong>Language</strong></h4>
       <%= select_tag "language", options_for_select(languages.map{|s| ["#{s}", s]},:selected => params[:language]), class: "form-control" %>
         <% if params[:query].present? %>
           <%= hidden_field_tag :query, params[:query] %>
@@ -18,7 +18,7 @@
         <% end %>
     </div>
     <div>
-      <h4 class="pb-2 pt-4">Specialty</h4>
+      <h4 class="pb-2 pt-4"><strong>Specialty</strong></h4>
       <%= select_tag "specialty", options_from_collection_for_select(@specialties, 'name', 'name', :selected => params[:specialty]), class: "form-control" %>
         <% if params[:query].present? %>
           <%= hidden_field_tag :query, params[:query] %>
@@ -27,7 +27,7 @@
           <%= hidden_field_tag :language, params[:language] %>
         <% end %>
     </div>
-    <%= submit_tag "Show therapists", class: "button-navy mt-4 d-flex justify-content-center" %>
+    <%= submit_tag "Show therapists", class: "button-navy mt-4 mx-0 d-flex justify-content-center", id: "welcome_page-button" %>
     <% end %>
   </div>
 </div>
