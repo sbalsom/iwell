@@ -10,6 +10,8 @@ class ApplicationController < ActionController::Base
   after_action :verify_authorized, except: :index, unless: :skip_pundit?
   after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
 
+  before_filter :expire_hsts
+
   # Uncomment when you *really understand* Pundit!
   # rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
   # def user_not_authorized
@@ -30,14 +32,18 @@ end
 
  private
 
- def storable_location?
-      request.get? && is_navigational_format? && !devise_controller? && !request.xhr?
-    end
+  def expire_hsts
+    response.headers["Strict-Transport-Security"] = 'max-age=0'
+  end
 
-    def store_user_location!
-      # :user is the scope we are authenticating
-      store_location_for(:user, request.fullpath)
-    end
+  def storable_location?
+    request.get? && is_navigational_format? && !devise_controller? && !request.xhr?
+  end
+
+  def store_user_location!
+    # :user is the scope we are authenticating
+    store_location_for(:user, request.fullpath)
+  end
 
 #     def after_sign_in_path_for(resource_or_scope)
 #   stored_location_for(resource_or_scope) || super
