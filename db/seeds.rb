@@ -291,9 +291,10 @@
 
 TIMESLOTS = [['09:00:00', '10:00:00'], ['10:00:00', '11:00:00'], ['13:00:00', '14:00:00'], ['14:00:00', '15:00:00'],  ]
 MONTHS = []
-i = 1
+i = 0
 while i < 13
-  MONTHS << (Date.today..Date.today + i.months).map(&:to_s)
+  n = i + 1
+  MONTHS << (Date.today + i.months..Date.today + n.months).map(&:to_s)
   i = i + 1
 end
 
