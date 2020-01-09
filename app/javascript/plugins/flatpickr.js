@@ -26,8 +26,7 @@ flatpickr(".datepicker", {
   altInput: true,
   dateFormat: "Y-m-d",
   minDate: "today",
-  maxDate: new Date().fp_incr(60),
-  enable: days
+  enable: days,
 });
 
 
