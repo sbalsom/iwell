@@ -486,7 +486,7 @@ end
 
 
 puts "current stats :"
-puts "bartus specialties are : #{bartu.specialties_list}"
+# puts "bartus specialties are : #{bartu.specialties_list}"
 puts "Therapists: #{Therapist.count}"
 puts "Availabilities: #{Availability.count}"
 puts "Bookings: #{Booking.count}"
