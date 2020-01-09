@@ -317,6 +317,7 @@ MONTHS.each do |month_days|
           end_time:TIMESLOTS.sample[1],
           therapist: therapist
         )
+      i = i + 1
     end
   end
 end
