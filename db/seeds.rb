@@ -14,7 +14,7 @@
 # LANGUAGES = %w(Turkish Japanese Chinese English German German German German German German English English English English English Spanish English Hindi Arabic French Italian)
 
 # SPECIALTIES = ['Anxiety', 'Depression', 'Eating Disorders', 'Relationship problems', 'Stress', 'Anger Management', 'Bipolar', 'ADHD', 'Insomnia', 'Mindfulness', 'Psychoanalysis', 'Family Counseling', 'Couples therapy', 'Grief counseling', 'Post-Partum Depression']
-# TIMESLOTS = [['09:00:00', '10:00:00'], ['10:00:00', '11:00:00'], ['13:00:00', '14:00:00'], ['14:00:00', '15:00:00'],  ]
+TIMESLOTS = [['09:00:00', '10:00:00'], ['10:00:00', '11:00:00'], ['13:00:00', '14:00:00'], ['14:00:00', '15:00:00'],  ]
 
 
 # BIOS = [
