@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dxbauvv2n
+  api_key: '271251562871997'
+  api_secret: DwOw_kA6BT2lpn-s1Ois_wq4XCk
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: dxbauvv2n
+  api_key: '271251562871997'
+  api_secret: DwOw_kA6BT2lpn-s1Ois_wq4XCk
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: dxbauvv2n
+  api_key: '271251562871997'
+  api_secret: DwOw_kA6BT2lpn-s1Ois_wq4XCk
+  enhance_image_tag: true
+  static_file_support: false
