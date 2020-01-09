@@ -306,9 +306,9 @@ puts "giving #{therapists.count} therapists availabilities"
 
 MONTHS.each do |month_days|
 
-  therapists.all.each do |therapist|
+  therapists.each do |therapist|
 
-    20.times do
+    30.times do
       Availability.create!(
           date: month_days.sample,
           start_time: TIMESLOTS.sample[0],
