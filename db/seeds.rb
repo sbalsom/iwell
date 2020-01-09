@@ -308,9 +308,11 @@ MONTHS.each do |month_days|
 
   therapists.each do |therapist|
 
-    30.times do
+    i = 1
+    while i < 30
+
       Availability.create!(
-          date: month_days.sample,
+          date: month_days[i],
           start_time: TIMESLOTS.sample[0],
           end_time:TIMESLOTS.sample[1],
           therapist: therapist
