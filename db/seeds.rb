@@ -287,55 +287,55 @@ bartu = Therapist.create!(
 puts "Bartu is created"
 
 # ////////////////////////////////////////////////////
-# Availability.delete_all
+Availability.delete_all
 
-# TIMESLOTS = [['09:00:00', '10:00:00'], ['10:00:00', '11:00:00'], ['13:00:00', '14:00:00'], ['14:00:00', '15:00:00'],  ]
-# MONTHS = []
-# i = 0
-# while i < 13
-#   n = i + 1
-#   MONTHS << (Date.today + i.months..Date.today + n.months).map(&:to_s)
-#   i = i + 1
-# end
-
-
-# therapists = Therapist.all
-# users = User.all
-
-# puts "giving #{therapists.count} therapists availabilities"
-
-# MONTHS.each do |month_days|
-
-#   therapists.each do |therapist|
-
-#     i = 1
-#     while i < 30
-
-#       Availability.create!(
-#           date: month_days[i],
-#           start_time: TIMESLOTS.sample[0],
-#           end_time:TIMESLOTS.sample[1],
-#           therapist: therapist
-#         )
-#       i = i + 1
-#     end
-#   end
-# end
+TIMESLOTS = [['09:00:00', '10:00:00'], ['10:00:00', '11:00:00'], ['13:00:00', '14:00:00'], ['14:00:00', '15:00:00'],  ]
+MONTHS = []
+i = 0
+while i < 13
+  n = i + 1
+  MONTHS << (Date.today + i.months..Date.today + n.months).map(&:to_s)
+  i = i + 1
+end
 
 
+therapists = Therapist.all
+users = User.all
 
-# puts "#{Availability.count} availabilities created"
+puts "giving #{therapists.count} therapists availabilities"
 
-# bartu = Therapist.find_by(first_name: "Bartu")
+MONTHS.each do |month_days|
 
-# puts "giving Bartu availabilties"
+  therapists.each do |therapist|
 
-# Availability.create!(
-#       date: '2020-01-06',
-#       start_time: TIMESLOTS.sample[0],
-#       end_time:TIMESLOTS.sample[1],
-#       therapist: bartu
-#     )
+    i = 1
+    while i < 30
+
+      Availability.create!(
+          date: month_days[i],
+          start_time: TIMESLOTS.sample[0],
+          end_time:TIMESLOTS.sample[1],
+          therapist: therapist
+        )
+      i = i + 1
+    end
+  end
+end
+
+
+
+puts "#{Availability.count} availabilities created"
+
+bartu = Therapist.find_by(first_name: "Bartu")
+
+puts "giving Bartu availabilties"
+
+Availability.create!(
+      date: '2020-01-06',
+      start_time: TIMESLOTS.sample[0],
+      end_time:TIMESLOTS.sample[1],
+      therapist: bartu
+    )
 
 
 
