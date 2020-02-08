@@ -169,57 +169,54 @@ PHOTOSMEN = [
   'https://live.staticflickr.com/4364/37030994992_d48ece848e_b.jpg'
 ]
 
-puts "checking if you are in development mode"
+
+puts "wiping the database "
+User.destroy_all
+Therapist.destroy_all
+Specialty.destroy_all
+puts "current stats :"
+puts "Therapists: #{Therapist.count}"
+puts "Availabilities: #{Availability.count}"
+puts "Bookings: #{Booking.count}"
+puts "Reviews: #{Review.count}"
+puts "Specialties: #{Specialty.count}"
+puts "Therapist specialty tags: #{TherapistSpecialty.count}"
+puts "Users: #{User.count}"
 
 
 
-  puts "wiping the database "
-  User.destroy_all
-  Therapist.destroy_all
-  Specialty.destroy_all
-  puts "current stats :"
-  puts "Therapists: #{Therapist.count}"
-  puts "Availabilities: #{Availability.count}"
-  puts "Bookings: #{Booking.count}"
-  puts "Reviews: #{Review.count}"
-  puts "Specialties: #{Specialty.count}"
-  puts "Therapist specialty tags: #{TherapistSpecialty.count}"
-  puts "Users: #{User.count}"
+puts "creating fake users"
+
+puts "creating 10 men"
+
+10.times do
+  User.create!(
+    email: "#{FIRSTNAMESM.sample}.#{LASTNAMES.sample}@example.com",
+    password: "123456",
+    name: FIRSTNAMESM.sample
+  )
+end
+
+ puts "creating 10 women out of the rib of ten men"
+
+10.times do
+  User.create!(
+    email: "#{FIRSTNAMESF.sample}.#{LASTNAMES.sample}@example.com",
+    password: "123456",
+    name: FIRSTNAMESF.sample
+  )
+end
 
 
+puts "#{User.count} users created"
 
-# puts "creating fake users"
+puts "creating specialties"
 
-# puts "creating 10 men"
+specialties = SPECIALTIES.map do |specialty|
+  Specialty.create!(name: specialty)
+end
 
-# 10.times do
-#   User.create!(
-#     email: "#{FIRSTNAMESM.sample}.#{LASTNAMES.sample}@example.com",
-#     password: "123456",
-#     name: FIRSTNAMESM.sample
-#   )
-# end
-
-#  puts "creating 10 women out of the rib of ten men"
-
-# 10.times do
-#   User.create!(
-#     email: "#{FIRSTNAMESF.sample}.#{LASTNAMES.sample}@example.com",
-#     password: "123456",
-#     name: FIRSTNAMESF.sample
-#   )
-# end
-
-
-# puts "#{User.count} users created"
-
-# puts "creating specialties"
-
-# specialties = SPECIALTIES.map do |specialty|
-#   Specialty.create!(name: specialty)
-# end
-
-# puts "#{Specialty.count} specialties created"
+puts "#{Specialty.count} specialties created"
 
 
 
@@ -411,8 +408,7 @@ puts "giving bartu reviews"
   Review.create!(content: "He has been amazing. He truly understands my concerns and empathizes with me. He works hard to check in and help me create goals and long lasting plans. I’m so happy I found my therapist!", rating: 5, therapist: bartu, user: User.take)
   Review.create!(content: "Very capable and competent, and very nice to deal with. A real professional with a good guiding hand toward getting to the root of problems and building toward solutions.", rating: 5, therapist: bartu, user: User.take)
 
-////////////////////////////////////////////////////
-
+# ///////////////
 
 i = 0
 
